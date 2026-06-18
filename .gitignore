@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node (si se agrega después)
+node_modules/
+dist/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Reports grandes (regenerables)
+materials_report.json
+formulas_extracted.json
+
+# Opcional: descomentar si BASE es muy pesado para git
+# BASE/*.pptx
+# BASE/*.pdf
+# BASE/*.xlsx
+# BASE/*.xls
+
+# Secrets
+.env
+*.env

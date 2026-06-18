@@ -1,0 +1,220 @@
+{
+  "course": "BEG06 - Formulacion y Evaluacion de Proyectos",
+  "methodology": "Concepto en español → mapa de celdas → practica con formulas",
+  "estimated_hours": 4,
+  "modules": [
+    {
+      "id": "m1-depreciacion",
+      "order": 1,
+      "title": "Depreciacion",
+      "duration_min": 35,
+      "source": ["Capitulo V. Depreciacion Parte I.pdf", "Capitulo V. Depreciacion Parte II.pdf"],
+      "objectives": [
+        "Depreciacion lineal: (Capital − VR) ÷ Vida",
+        "En FCE la dep va negativa en fila 8"
+      ],
+      "tips": [
+        {
+          "human": "La depreciacion reparte el costo del activo entre los años de vida util.",
+          "excel": "Dep anual = (Capital − VR) ÷ Vida"
+        },
+        {
+          "human": "En el flujo FCE la depreciacion va en fila 8 con signo negativo (no es desembolso).",
+          "excel": "Celda D8 = −J6 (J6 = dep anual)"
+        }
+      ],
+      "steps": [
+        {
+          "type": "formula",
+          "title": "Depreciacion lineal",
+          "formula": "Dep anual = (Capital − Valor residual) ÷ Vida util",
+          "excel_equiv": "=(I5-L6)/B8",
+          "excel_note": "I5 = capital, L6 = VR, B8 = años. En algunos ejercicios el profe pone 40 fijo en vez de celda.",
+          "legendId": "depreciacion_s6"
+        },
+        {
+          "type": "grid",
+          "gridId": "depreciacion_s6",
+          "title": "Practica: arma la formula tocando Capital, VR y Vida"
+        }
+      ]
+    },
+    {
+      "id": "m2-fce",
+      "order": 2,
+      "title": "Flujo de Caja Economico (FCE)",
+      "duration_min": 45,
+      "source": ["S6 Flujo basico FCE y FCF.xlsx → FCE"],
+      "objectives": [
+        "UAII = Ingresos + Egresos + Depreciacion",
+        "Flujo = Utilidad neta − Dep (porque dep es negativa en fila)"
+      ],
+      "tips": [
+        {
+          "human": "UAII = utilidad antes de intereses e impuestos. Suma ingresos, egresos y depreciacion.",
+          "excel": "D9 = D6 + D7 + D8"
+        },
+        {
+          "human": "Impuesto = 30% de la UAI (utilidad antes de impuestos).",
+          "excel": "D12 = −0,3 × D11"
+        },
+        {
+          "human": "Flujo de fondos = utilidad neta + depreciacion (ajuste contable).",
+          "excel": "D14 = D13 − D8 + D5"
+        },
+        {
+          "human": "VAN se llama Vaf-I en S6: valor actual neto.",
+          "excel": "C17 = C16 + C14"
+        }
+      ],
+      "steps": [
+        {
+          "type": "concept",
+          "title": "Cadena del FCE (periodo 1)",
+          "body": "Ingresos → Egresos → Depreciacion → UAII → Intereses → UAI → Impuesto 30% → Utilidad neta → Flujo de fondos. Lee la tabla de celdas antes de practicar.",
+          "legendId": "fce_cadena_s6"
+        },
+        {
+          "type": "grid",
+          "gridId": "fce_cadena_s6",
+          "title": "Practica periodo 1 con nombres claros"
+        }
+      ]
+    },
+    {
+      "id": "m3-tasas",
+      "order": 3,
+      "title": "Tasa de actualizacion",
+      "duration_min": 30,
+      "tips": [
+        {
+          "human": "Ke = costo del capital. Combina tasa libre de riesgo, beta y riesgo pais.",
+          "excel": "Celda D8 en hoja Tasas de S6"
+        }
+      ],
+      "steps": [
+        {
+          "type": "formula",
+          "title": "CAPM",
+          "formula": "Ke = Rf + Beta × (Rm − Rf) + Riesgo pais",
+          "excel_equiv": "=Rf+Beta*(Rm-Rf)+RiesgoPais"
+        },
+        {
+          "type": "practice",
+          "worksheet": "s6_tasas",
+          "title": "Calcula Ke"
+        }
+      ]
+    },
+    {
+      "id": "m4-van-tir",
+      "order": 4,
+      "title": "Vaf, VAN y TIR",
+      "duration_min": 40,
+      "tips": [
+        {
+          "human": "Vaf = valor actual de los flujos futuros (sin contar la inversion inicial).",
+          "excel": "=NPV(k, flujos P1 a Pn)"
+        },
+        {
+          "human": "VAN = Vaf + flujo del periodo 0 (la inversion negativa).",
+          "excel": "C18 = C17 + C6"
+        }
+      ],
+      "steps": [
+        {
+          "type": "concept",
+          "title": "Vaf vs VAN",
+          "body": "Vaf descuenta solo los flujos de operacion. VAN suma la inversion inicial. Si VAN > 0, el proyecto crea valor.",
+          "legendId": "van_s7"
+        },
+        {
+          "type": "grid",
+          "gridId": "van_s7",
+          "title": "Practica Vaf y VAN"
+        }
+      ]
+    },
+    {
+      "id": "m5-financiamiento",
+      "order": 5,
+      "title": "Financiamiento S8",
+      "duration_min": 50,
+      "tips": [
+        {
+          "human": "Cuota constante del prestamo con PMT.",
+          "excel": "=-PMT(tasa, plazo, monto)"
+        },
+        {
+          "human": "Con deuda: intereses reducen UAI; cuota sale en fila prestamo.",
+          "excel": "VANF en S8 (columna con prestamo)"
+        }
+      ],
+      "steps": [
+        {
+          "type": "concept",
+          "title": "Prestamo y cuota",
+          "body": "Interes periodo 1 = saldo × tasa. Cuota = PMT. Amortizacion = cuota − interes.",
+          "legendId": "s8_amort_pmt"
+        },
+        {
+          "type": "grid",
+          "gridId": "s8_amort_pmt",
+          "title": "Practica PMT e interes"
+        },
+        {
+          "type": "practice",
+          "worksheet": "s8_fcf",
+          "title": "VANF con prestamo 500"
+        }
+      ]
+    },
+    {
+      "id": "m6-escenarios",
+      "order": 6,
+      "title": "Escenarios S8",
+      "duration_min": 40,
+      "tips": [
+        {
+          "human": "VANE = evaluacion sin deuda. VANF = con financiamiento.",
+          "excel": "Comparar columnas A-E vs H-L en S8"
+        }
+      ],
+      "steps": [
+        {
+          "type": "concept",
+          "title": "VANE vs VANF",
+          "body": "Mas deuda puede subir VANF al accionista si el proyecto renta mas que la tasa del credito, pero aumenta riesgo."
+        },
+        {
+          "type": "practice",
+          "worksheet": "s8_fce",
+          "title": "Caso base VANE"
+        },
+        {
+          "type": "practice",
+          "worksheet": "s8_fcf",
+          "title": "Con deuda VANF"
+        }
+      ]
+    },
+    {
+      "id": "m7-integrador",
+      "order": 7,
+      "title": "Simulacro Word",
+      "duration_min": 60,
+      "steps": [
+        {
+          "type": "concept",
+          "title": "Receta examen",
+          "body": "1) Armar flujos fila a fila. 2) Vaf=NPV. 3) VAN=Vaf+P0. 4) Si hay credito: PMT, VANF. 5) Comparar alternativas."
+        },
+        {
+          "type": "practice",
+          "worksheet": "s7_van_tir",
+          "title": "Repaso VAN+TIR"
+        }
+      ]
+    }
+  ]
+}

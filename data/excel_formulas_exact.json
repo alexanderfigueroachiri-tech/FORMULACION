@@ -1,0 +1,4883 @@
+{
+  "S6": {
+    "FCE": {
+      "B2": {
+        "row_label": "",
+        "value": "k",
+        "is_formula": false
+      },
+      "C2": {
+        "row_label": "k",
+        "value": "=+Tasas!D8",
+        "is_formula": true
+      },
+      "B3": {
+        "row_label": "",
+        "value": "Flujo económico (solo capital propio)",
+        "is_formula": false
+      },
+      "H3": {
+        "row_label": "Flujo económico (solo capital propio)",
+        "value": "flujo de depreciacion",
+        "is_formula": false
+      },
+      "B4": {
+        "row_label": "",
+        "value": "Periodo",
+        "is_formula": false
+      },
+      "C4": {
+        "row_label": "Periodo",
+        "value": "0",
+        "is_formula": false
+      },
+      "D4": {
+        "row_label": "Periodo",
+        "value": "1",
+        "is_formula": false
+      },
+      "E4": {
+        "row_label": "Periodo",
+        "value": "2",
+        "is_formula": false
+      },
+      "F4": {
+        "row_label": "Periodo",
+        "value": "3",
+        "is_formula": false
+      },
+      "H4": {
+        "row_label": "Periodo",
+        "value": "N°",
+        "is_formula": false
+      },
+      "I4": {
+        "row_label": "Periodo",
+        "value": "Capital",
+        "is_formula": false
+      },
+      "J4": {
+        "row_label": "Periodo",
+        "value": "d",
+        "is_formula": false
+      },
+      "K4": {
+        "row_label": "Periodo",
+        "value": "D",
+        "is_formula": false
+      },
+      "L4": {
+        "row_label": "Periodo",
+        "value": "V",
+        "is_formula": false
+      },
+      "B5": {
+        "row_label": "",
+        "value": "Inversion",
+        "is_formula": false
+      },
+      "C5": {
+        "row_label": "Inversion",
+        "value": "-1240",
+        "is_formula": false
+      },
+      "F5": {
+        "row_label": "Inversion",
+        "value": "40",
+        "is_formula": false
+      },
+      "H5": {
+        "row_label": "Inversion",
+        "value": "0",
+        "is_formula": false
+      },
+      "I5": {
+        "row_label": "Inversion",
+        "value": "1240",
+        "is_formula": false
+      },
+      "J5": {
+        "row_label": "Inversion",
+        "value": "0",
+        "is_formula": false
+      },
+      "K5": {
+        "row_label": "Inversion",
+        "value": "0",
+        "is_formula": false
+      },
+      "L5": {
+        "row_label": "Inversion",
+        "value": "1240",
+        "is_formula": false
+      },
+      "B6": {
+        "row_label": "",
+        "value": "Ingresos",
+        "is_formula": false
+      },
+      "C6": {
+        "row_label": "Ingresos",
+        "value": "0",
+        "is_formula": false
+      },
+      "D6": {
+        "row_label": "Ingresos",
+        "value": "=+D21",
+        "is_formula": true
+      },
+      "E6": {
+        "row_label": "Ingresos",
+        "value": "=+E21",
+        "is_formula": true
+      },
+      "F6": {
+        "row_label": "Ingresos",
+        "value": "=+F21",
+        "is_formula": true
+      },
+      "H6": {
+        "row_label": "Ingresos",
+        "value": "1",
+        "is_formula": false
+      },
+      "J6": {
+        "row_label": "Ingresos",
+        "value": "=+(I5-40)/3",
+        "is_formula": true
+      },
+      "K6": {
+        "row_label": "Ingresos",
+        "value": "=+J6+K5",
+        "is_formula": true
+      },
+      "L6": {
+        "row_label": "Ingresos",
+        "value": "=1240-K6",
+        "is_formula": true
+      },
+      "B7": {
+        "row_label": "",
+        "value": "Egresos",
+        "is_formula": false
+      },
+      "C7": {
+        "row_label": "Egresos",
+        "value": "0",
+        "is_formula": false
+      },
+      "D7": {
+        "row_label": "Egresos",
+        "value": "-100",
+        "is_formula": false
+      },
+      "E7": {
+        "row_label": "Egresos",
+        "value": "-200",
+        "is_formula": false
+      },
+      "F7": {
+        "row_label": "Egresos",
+        "value": "-200",
+        "is_formula": false
+      },
+      "H7": {
+        "row_label": "Egresos",
+        "value": "2",
+        "is_formula": false
+      },
+      "J7": {
+        "row_label": "Egresos",
+        "value": "=+J6",
+        "is_formula": true
+      },
+      "K7": {
+        "row_label": "Egresos",
+        "value": "=+J7+K6",
+        "is_formula": true
+      },
+      "L7": {
+        "row_label": "Egresos",
+        "value": "=1240-K7",
+        "is_formula": true
+      },
+      "B8": {
+        "row_label": "",
+        "value": "Depreciación",
+        "is_formula": false
+      },
+      "C8": {
+        "row_label": "Depreciación",
+        "value": "0",
+        "is_formula": false
+      },
+      "D8": {
+        "row_label": "Depreciación",
+        "value": "=-J6",
+        "is_formula": true
+      },
+      "E8": {
+        "row_label": "Depreciación",
+        "value": "=-J7",
+        "is_formula": true
+      },
+      "F8": {
+        "row_label": "Depreciación",
+        "value": "=-J8",
+        "is_formula": true
+      },
+      "H8": {
+        "row_label": "Depreciación",
+        "value": "3",
+        "is_formula": false
+      },
+      "J8": {
+        "row_label": "Depreciación",
+        "value": "=+J7",
+        "is_formula": true
+      },
+      "K8": {
+        "row_label": "Depreciación",
+        "value": "=+J8+K7",
+        "is_formula": true
+      },
+      "L8": {
+        "row_label": "Depreciación",
+        "value": "=1240-K8",
+        "is_formula": true
+      },
+      "B9": {
+        "row_label": "",
+        "value": "UAII",
+        "is_formula": false
+      },
+      "C9": {
+        "row_label": "UAII",
+        "value": "0",
+        "is_formula": false
+      },
+      "D9": {
+        "row_label": "UAII",
+        "value": "=+D6+D7+D8",
+        "is_formula": true
+      },
+      "E9": {
+        "row_label": "UAII",
+        "value": "=+E6+E7+E8",
+        "is_formula": true
+      },
+      "F9": {
+        "row_label": "UAII",
+        "value": "=+F6+F7+F8",
+        "is_formula": true
+      },
+      "B10": {
+        "row_label": "",
+        "value": "I",
+        "is_formula": false
+      },
+      "C10": {
+        "row_label": "I",
+        "value": "0",
+        "is_formula": false
+      },
+      "D10": {
+        "row_label": "I",
+        "value": "0",
+        "is_formula": false
+      },
+      "E10": {
+        "row_label": "I",
+        "value": "0",
+        "is_formula": false
+      },
+      "F10": {
+        "row_label": "I",
+        "value": "0",
+        "is_formula": false
+      },
+      "B11": {
+        "row_label": "",
+        "value": "UAI ",
+        "is_formula": false
+      },
+      "C11": {
+        "row_label": "UAI",
+        "value": "0",
+        "is_formula": false
+      },
+      "D11": {
+        "row_label": "UAI",
+        "value": "=+D9+D10",
+        "is_formula": true
+      },
+      "E11": {
+        "row_label": "UAI",
+        "value": "=+E9+E10",
+        "is_formula": true
+      },
+      "F11": {
+        "row_label": "UAI",
+        "value": "=+F9+F10",
+        "is_formula": true
+      },
+      "B12": {
+        "row_label": "",
+        "value": "I (30% UAI)",
+        "is_formula": false
+      },
+      "C12": {
+        "row_label": "I (30% UAI)",
+        "value": "0",
+        "is_formula": false
+      },
+      "D12": {
+        "row_label": "I (30% UAI)",
+        "value": "=-0.3*D11",
+        "is_formula": true
+      },
+      "E12": {
+        "row_label": "I (30% UAI)",
+        "value": "=-0.3*E11",
+        "is_formula": true
+      },
+      "F12": {
+        "row_label": "I (30% UAI)",
+        "value": "=-0.3*F11",
+        "is_formula": true
+      },
+      "B13": {
+        "row_label": "",
+        "value": "UN",
+        "is_formula": false
+      },
+      "C13": {
+        "row_label": "UN",
+        "value": "0",
+        "is_formula": false
+      },
+      "D13": {
+        "row_label": "UN",
+        "value": "=+D11+D12",
+        "is_formula": true
+      },
+      "E13": {
+        "row_label": "UN",
+        "value": "=+E11+E12",
+        "is_formula": true
+      },
+      "F13": {
+        "row_label": "UN",
+        "value": "=+F11+F12",
+        "is_formula": true
+      },
+      "B14": {
+        "row_label": "",
+        "value": "f",
+        "is_formula": false
+      },
+      "C14": {
+        "row_label": "f",
+        "value": "=+C13-C8+C5",
+        "is_formula": true
+      },
+      "D14": {
+        "row_label": "f",
+        "value": "=+D13-D8+D5",
+        "is_formula": true
+      },
+      "E14": {
+        "row_label": "f",
+        "value": "=+E13-E8+E5",
+        "is_formula": true
+      },
+      "F14": {
+        "row_label": "f",
+        "value": "=+F13-F8+F5",
+        "is_formula": true
+      },
+      "B16": {
+        "row_label": "",
+        "value": "Vaf",
+        "is_formula": false
+      },
+      "C16": {
+        "row_label": "Vaf",
+        "value": "=+D16+E16+F16",
+        "is_formula": true
+      },
+      "D16": {
+        "row_label": "Vaf",
+        "value": "=D14/(1+C2)",
+        "is_formula": true
+      },
+      "E16": {
+        "row_label": "Vaf",
+        "value": "=E14/(1+C2)^2",
+        "is_formula": true
+      },
+      "F16": {
+        "row_label": "Vaf",
+        "value": "=F14/(1+C2)^3",
+        "is_formula": true
+      },
+      "B17": {
+        "row_label": "",
+        "value": "Vaf -I",
+        "is_formula": false
+      },
+      "C17": {
+        "row_label": "Vaf -I",
+        "value": "=+C16+C14",
+        "is_formula": true
+      },
+      "B18": {
+        "row_label": "",
+        "value": "rentabilidad",
+        "is_formula": false
+      },
+      "C18": {
+        "row_label": "rentabilidad",
+        "value": "=+C17/-C14",
+        "is_formula": true
+      },
+      "C20": {
+        "row_label": "",
+        "value": "Ingresos",
+        "is_formula": false
+      },
+      "D20": {
+        "row_label": "",
+        "value": "1",
+        "is_formula": false
+      },
+      "E20": {
+        "row_label": "",
+        "value": "2",
+        "is_formula": false
+      },
+      "F20": {
+        "row_label": "",
+        "value": "3",
+        "is_formula": false
+      },
+      "H20": {
+        "row_label": "",
+        "value": "Vaf",
+        "is_formula": false
+      },
+      "C21": {
+        "row_label": "",
+        "value": "Pesimista",
+        "is_formula": false
+      },
+      "D21": {
+        "row_label": "",
+        "value": "600",
+        "is_formula": false
+      },
+      "E21": {
+        "row_label": "",
+        "value": "700",
+        "is_formula": false
+      },
+      "F21": {
+        "row_label": "",
+        "value": "800",
+        "is_formula": false
+      },
+      "H21": {
+        "row_label": "",
+        "value": "1323.2",
+        "is_formula": false
+      },
+      "C22": {
+        "row_label": "",
+        "value": "Medio",
+        "is_formula": false
+      },
+      "D22": {
+        "row_label": "",
+        "value": "600",
+        "is_formula": false
+      },
+      "E22": {
+        "row_label": "",
+        "value": "800",
+        "is_formula": false
+      },
+      "F22": {
+        "row_label": "",
+        "value": "1000",
+        "is_formula": false
+      },
+      "H22": {
+        "row_label": "",
+        "value": "1498.6",
+        "is_formula": false
+      },
+      "C23": {
+        "row_label": "",
+        "value": "Optimista",
+        "is_formula": false
+      },
+      "D23": {
+        "row_label": "",
+        "value": "600",
+        "is_formula": false
+      },
+      "E23": {
+        "row_label": "",
+        "value": "900",
+        "is_formula": false
+      },
+      "F23": {
+        "row_label": "",
+        "value": "1200",
+        "is_formula": false
+      },
+      "H23": {
+        "row_label": "",
+        "value": "1674.1",
+        "is_formula": false
+      }
+    },
+    "FCEF": {
+      "B2": {
+        "row_label": "",
+        "value": "k",
+        "is_formula": false
+      },
+      "C2": {
+        "row_label": "k",
+        "value": "0.1",
+        "is_formula": false
+      },
+      "H2": {
+        "row_label": "k",
+        "value": "Flujo del prestamo",
+        "is_formula": false
+      },
+      "B3": {
+        "row_label": "",
+        "value": "Flujo económico financiero (incluye préstamo)",
+        "is_formula": false
+      },
+      "H3": {
+        "row_label": "Flujo económico financiero (incluye préstamo)",
+        "value": "Prestamo",
+        "is_formula": false
+      },
+      "I3": {
+        "row_label": "Flujo económico financiero (incluye préstamo)",
+        "value": "=+C6",
+        "is_formula": true
+      },
+      "J3": {
+        "row_label": "Flujo económico financiero (incluye préstamo)",
+        "value": "=+I3/-C5",
+        "is_formula": true
+      },
+      "B4": {
+        "row_label": "",
+        "value": "Periodo",
+        "is_formula": false
+      },
+      "C4": {
+        "row_label": "Periodo",
+        "value": "0",
+        "is_formula": false
+      },
+      "D4": {
+        "row_label": "Periodo",
+        "value": "1",
+        "is_formula": false
+      },
+      "E4": {
+        "row_label": "Periodo",
+        "value": "2",
+        "is_formula": false
+      },
+      "F4": {
+        "row_label": "Periodo",
+        "value": "3",
+        "is_formula": false
+      },
+      "H4": {
+        "row_label": "Periodo",
+        "value": "Interes",
+        "is_formula": false
+      },
+      "I4": {
+        "row_label": "Periodo",
+        "value": "0.08",
+        "is_formula": false
+      },
+      "B5": {
+        "row_label": "",
+        "value": "Inversion",
+        "is_formula": false
+      },
+      "C5": {
+        "row_label": "Inversion",
+        "value": "-1240",
+        "is_formula": false
+      },
+      "F5": {
+        "row_label": "Inversion",
+        "value": "40",
+        "is_formula": false
+      },
+      "I5": {
+        "row_label": "Inversion",
+        "value": "Capital",
+        "is_formula": false
+      },
+      "J5": {
+        "row_label": "Inversion",
+        "value": "Interes",
+        "is_formula": false
+      },
+      "K5": {
+        "row_label": "Inversion",
+        "value": "amortiz",
+        "is_formula": false
+      },
+      "L5": {
+        "row_label": "Inversion",
+        "value": "Cuota",
+        "is_formula": false
+      },
+      "B6": {
+        "row_label": "",
+        "value": "Prestamo",
+        "is_formula": false
+      },
+      "C6": {
+        "row_label": "Prestamo",
+        "value": "1000",
+        "is_formula": false
+      },
+      "D6": {
+        "row_label": "Prestamo",
+        "value": "=-K7",
+        "is_formula": true
+      },
+      "E6": {
+        "row_label": "Prestamo",
+        "value": "=-K8",
+        "is_formula": true
+      },
+      "F6": {
+        "row_label": "Prestamo",
+        "value": "=-K9",
+        "is_formula": true
+      },
+      "H6": {
+        "row_label": "Prestamo",
+        "value": "0",
+        "is_formula": false
+      },
+      "I6": {
+        "row_label": "Prestamo",
+        "value": "=+I3",
+        "is_formula": true
+      },
+      "B7": {
+        "row_label": "",
+        "value": "Ingresos",
+        "is_formula": false
+      },
+      "C7": {
+        "row_label": "Ingresos",
+        "value": "0",
+        "is_formula": false
+      },
+      "D7": {
+        "row_label": "Ingresos",
+        "value": "=+D23",
+        "is_formula": true
+      },
+      "E7": {
+        "row_label": "Ingresos",
+        "value": "=+E23",
+        "is_formula": true
+      },
+      "F7": {
+        "row_label": "Ingresos",
+        "value": "=+F23",
+        "is_formula": true
+      },
+      "H7": {
+        "row_label": "Ingresos",
+        "value": "1",
+        "is_formula": false
+      },
+      "J7": {
+        "row_label": "Ingresos",
+        "value": "=+I6*I4",
+        "is_formula": true
+      },
+      "K7": {
+        "row_label": "Ingresos",
+        "value": "0",
+        "is_formula": false
+      },
+      "L7": {
+        "row_label": "Ingresos",
+        "value": "=+K7+J7",
+        "is_formula": true
+      },
+      "B8": {
+        "row_label": "",
+        "value": "Egresos",
+        "is_formula": false
+      },
+      "C8": {
+        "row_label": "Egresos",
+        "value": "0",
+        "is_formula": false
+      },
+      "D8": {
+        "row_label": "Egresos",
+        "value": "-100",
+        "is_formula": false
+      },
+      "E8": {
+        "row_label": "Egresos",
+        "value": "-200",
+        "is_formula": false
+      },
+      "F8": {
+        "row_label": "Egresos",
+        "value": "-200",
+        "is_formula": false
+      },
+      "H8": {
+        "row_label": "Egresos",
+        "value": "2",
+        "is_formula": false
+      },
+      "J8": {
+        "row_label": "Egresos",
+        "value": "=+J7",
+        "is_formula": true
+      },
+      "K8": {
+        "row_label": "Egresos",
+        "value": "0",
+        "is_formula": false
+      },
+      "L8": {
+        "row_label": "Egresos",
+        "value": "=+K8+J8",
+        "is_formula": true
+      },
+      "B9": {
+        "row_label": "",
+        "value": "Ing-egr",
+        "is_formula": false
+      },
+      "C9": {
+        "row_label": "Ing-egr",
+        "value": "0",
+        "is_formula": false
+      },
+      "D9": {
+        "row_label": "Ing-egr",
+        "value": "=+D7+D8",
+        "is_formula": true
+      },
+      "E9": {
+        "row_label": "Ing-egr",
+        "value": "=+E7+E8",
+        "is_formula": true
+      },
+      "F9": {
+        "row_label": "Ing-egr",
+        "value": "=+F7+F8",
+        "is_formula": true
+      },
+      "H9": {
+        "row_label": "Ing-egr",
+        "value": "3",
+        "is_formula": false
+      },
+      "J9": {
+        "row_label": "Ing-egr",
+        "value": "=+J8",
+        "is_formula": true
+      },
+      "K9": {
+        "row_label": "Ing-egr",
+        "value": "=+I3",
+        "is_formula": true
+      },
+      "L9": {
+        "row_label": "Ing-egr",
+        "value": "=+K9+J9",
+        "is_formula": true
+      },
+      "B10": {
+        "row_label": "",
+        "value": "Depreciación",
+        "is_formula": false
+      },
+      "C10": {
+        "row_label": "Depreciación",
+        "value": "0",
+        "is_formula": false
+      },
+      "D10": {
+        "row_label": "Depreciación",
+        "value": "=-J14",
+        "is_formula": true
+      },
+      "E10": {
+        "row_label": "Depreciación",
+        "value": "=-J15",
+        "is_formula": true
+      },
+      "F10": {
+        "row_label": "Depreciación",
+        "value": "=-J16",
+        "is_formula": true
+      },
+      "B11": {
+        "row_label": "",
+        "value": "UAII",
+        "is_formula": false
+      },
+      "C11": {
+        "row_label": "UAII",
+        "value": "0",
+        "is_formula": false
+      },
+      "D11": {
+        "row_label": "UAII",
+        "value": "=+D9+D10",
+        "is_formula": true
+      },
+      "E11": {
+        "row_label": "UAII",
+        "value": "=+E9+E10",
+        "is_formula": true
+      },
+      "F11": {
+        "row_label": "UAII",
+        "value": "=+F9+F10",
+        "is_formula": true
+      },
+      "H11": {
+        "row_label": "UAII",
+        "value": "flujo de depreciacion",
+        "is_formula": false
+      },
+      "B12": {
+        "row_label": "",
+        "value": "Intereses",
+        "is_formula": false
+      },
+      "C12": {
+        "row_label": "Intereses",
+        "value": "0",
+        "is_formula": false
+      },
+      "D12": {
+        "row_label": "Intereses",
+        "value": "=-J7",
+        "is_formula": true
+      },
+      "E12": {
+        "row_label": "Intereses",
+        "value": "=-J8",
+        "is_formula": true
+      },
+      "F12": {
+        "row_label": "Intereses",
+        "value": "=-J9",
+        "is_formula": true
+      },
+      "I12": {
+        "row_label": "Intereses",
+        "value": "Capital",
+        "is_formula": false
+      },
+      "J12": {
+        "row_label": "Intereses",
+        "value": "d",
+        "is_formula": false
+      },
+      "K12": {
+        "row_label": "Intereses",
+        "value": "D",
+        "is_formula": false
+      },
+      "L12": {
+        "row_label": "Intereses",
+        "value": "V",
+        "is_formula": false
+      },
+      "B13": {
+        "row_label": "",
+        "value": "UAI ",
+        "is_formula": false
+      },
+      "C13": {
+        "row_label": "UAI",
+        "value": "0",
+        "is_formula": false
+      },
+      "D13": {
+        "row_label": "UAI",
+        "value": "=+D11+D12",
+        "is_formula": true
+      },
+      "E13": {
+        "row_label": "UAI",
+        "value": "=+E11+E12",
+        "is_formula": true
+      },
+      "F13": {
+        "row_label": "UAI",
+        "value": "=+F11+F12",
+        "is_formula": true
+      },
+      "H13": {
+        "row_label": "UAI",
+        "value": "0",
+        "is_formula": false
+      },
+      "I13": {
+        "row_label": "UAI",
+        "value": "1240",
+        "is_formula": false
+      },
+      "J13": {
+        "row_label": "UAI",
+        "value": "0",
+        "is_formula": false
+      },
+      "K13": {
+        "row_label": "UAI",
+        "value": "0",
+        "is_formula": false
+      },
+      "L13": {
+        "row_label": "UAI",
+        "value": "0",
+        "is_formula": false
+      },
+      "B14": {
+        "row_label": "",
+        "value": "I (30% UAI)",
+        "is_formula": false
+      },
+      "C14": {
+        "row_label": "I (30% UAI)",
+        "value": "0",
+        "is_formula": false
+      },
+      "D14": {
+        "row_label": "I (30% UAI)",
+        "value": "=IF(D13<=0,0,-D13*0.3)",
+        "is_formula": true
+      },
+      "E14": {
+        "row_label": "I (30% UAI)",
+        "value": "=IF(E13<=0,0,-E13*0.3)",
+        "is_formula": true
+      },
+      "F14": {
+        "row_label": "I (30% UAI)",
+        "value": "=IF(F13<=0,0,-F13*0.3)",
+        "is_formula": true
+      },
+      "H14": {
+        "row_label": "I (30% UAI)",
+        "value": "1",
+        "is_formula": false
+      },
+      "J14": {
+        "row_label": "I (30% UAI)",
+        "value": "=+(I13-40)/3",
+        "is_formula": true
+      },
+      "K14": {
+        "row_label": "I (30% UAI)",
+        "value": "=+J14+K13",
+        "is_formula": true
+      },
+      "L14": {
+        "row_label": "I (30% UAI)",
+        "value": "=1240-K14",
+        "is_formula": true
+      },
+      "B15": {
+        "row_label": "",
+        "value": "UN",
+        "is_formula": false
+      },
+      "C15": {
+        "row_label": "UN",
+        "value": "0",
+        "is_formula": false
+      },
+      "D15": {
+        "row_label": "UN",
+        "value": "=+D13+D14",
+        "is_formula": true
+      },
+      "E15": {
+        "row_label": "UN",
+        "value": "=+E13+E14",
+        "is_formula": true
+      },
+      "F15": {
+        "row_label": "UN",
+        "value": "=+F13+F14",
+        "is_formula": true
+      },
+      "H15": {
+        "row_label": "UN",
+        "value": "2",
+        "is_formula": false
+      },
+      "J15": {
+        "row_label": "UN",
+        "value": "=+J14",
+        "is_formula": true
+      },
+      "K15": {
+        "row_label": "UN",
+        "value": "=+J15+K14",
+        "is_formula": true
+      },
+      "L15": {
+        "row_label": "UN",
+        "value": "=1240-K15",
+        "is_formula": true
+      },
+      "B16": {
+        "row_label": "",
+        "value": "f",
+        "is_formula": false
+      },
+      "C16": {
+        "row_label": "f",
+        "value": "=+C15-C10+C6+C5",
+        "is_formula": true
+      },
+      "D16": {
+        "row_label": "f",
+        "value": "=+D15-D10+D6+D5",
+        "is_formula": true
+      },
+      "E16": {
+        "row_label": "f",
+        "value": "=+E15-E10+E6+E5",
+        "is_formula": true
+      },
+      "F16": {
+        "row_label": "f",
+        "value": "=+F15-F10+F6+F5",
+        "is_formula": true
+      },
+      "H16": {
+        "row_label": "f",
+        "value": "3",
+        "is_formula": false
+      },
+      "J16": {
+        "row_label": "f",
+        "value": "=+J15",
+        "is_formula": true
+      },
+      "K16": {
+        "row_label": "f",
+        "value": "=+J16+K15",
+        "is_formula": true
+      },
+      "L16": {
+        "row_label": "f",
+        "value": "=1240-K16",
+        "is_formula": true
+      },
+      "B18": {
+        "row_label": "",
+        "value": "Vaf",
+        "is_formula": false
+      },
+      "C18": {
+        "row_label": "Vaf",
+        "value": "=+D18+E18+F18",
+        "is_formula": true
+      },
+      "D18": {
+        "row_label": "Vaf",
+        "value": "=D16/(1+C2)",
+        "is_formula": true
+      },
+      "E18": {
+        "row_label": "Vaf",
+        "value": "=E16/(1+C2)^2",
+        "is_formula": true
+      },
+      "F18": {
+        "row_label": "Vaf",
+        "value": "=F16/(1+C2)^3",
+        "is_formula": true
+      },
+      "B19": {
+        "row_label": "",
+        "value": "Vaf - I",
+        "is_formula": false
+      },
+      "C19": {
+        "row_label": "Vaf - I",
+        "value": "=+C18+C16",
+        "is_formula": true
+      },
+      "B20": {
+        "row_label": "",
+        "value": "rentabilidad",
+        "is_formula": false
+      },
+      "C20": {
+        "row_label": "rentabilidad",
+        "value": "=+C19/-C16",
+        "is_formula": true
+      },
+      "C22": {
+        "row_label": "",
+        "value": "Ingresos",
+        "is_formula": false
+      },
+      "D22": {
+        "row_label": "",
+        "value": "1",
+        "is_formula": false
+      },
+      "E22": {
+        "row_label": "",
+        "value": "2",
+        "is_formula": false
+      },
+      "F22": {
+        "row_label": "",
+        "value": "3",
+        "is_formula": false
+      },
+      "C23": {
+        "row_label": "",
+        "value": "Pesimista",
+        "is_formula": false
+      },
+      "D23": {
+        "row_label": "",
+        "value": "600",
+        "is_formula": false
+      },
+      "E23": {
+        "row_label": "",
+        "value": "700",
+        "is_formula": false
+      },
+      "F23": {
+        "row_label": "",
+        "value": "800",
+        "is_formula": false
+      },
+      "C24": {
+        "row_label": "",
+        "value": "Medio",
+        "is_formula": false
+      },
+      "D24": {
+        "row_label": "",
+        "value": "600",
+        "is_formula": false
+      },
+      "E24": {
+        "row_label": "",
+        "value": "800",
+        "is_formula": false
+      },
+      "F24": {
+        "row_label": "",
+        "value": "1000",
+        "is_formula": false
+      },
+      "C25": {
+        "row_label": "",
+        "value": "Optimista",
+        "is_formula": false
+      },
+      "D25": {
+        "row_label": "",
+        "value": "600",
+        "is_formula": false
+      },
+      "E25": {
+        "row_label": "",
+        "value": "900",
+        "is_formula": false
+      },
+      "F25": {
+        "row_label": "",
+        "value": "1200",
+        "is_formula": false
+      }
+    },
+    "Tasas": {
+      "B2": {
+        "row_label": "",
+        "value": "Tasa de actualización",
+        "is_formula": false
+      },
+      "B3": {
+        "row_label": "",
+        "value": "Tasa libre de riesgo",
+        "is_formula": false
+      },
+      "C3": {
+        "row_label": "Tasa libre de riesgo",
+        "value": "Rf",
+        "is_formula": false
+      },
+      "D3": {
+        "row_label": "Tasa libre de riesgo",
+        "value": "0.0315",
+        "is_formula": false
+      },
+      "B4": {
+        "row_label": "",
+        "value": "Prima de mercado",
+        "is_formula": false
+      },
+      "C4": {
+        "row_label": "Prima de mercado",
+        "value": "(Rm-Rf)",
+        "is_formula": false
+      },
+      "D4": {
+        "row_label": "Prima de mercado",
+        "value": "0.0307",
+        "is_formula": false
+      },
+      "B5": {
+        "row_label": "",
+        "value": "Beta",
+        "is_formula": false
+      },
+      "C5": {
+        "row_label": "Beta",
+        "value": "β",
+        "is_formula": false
+      },
+      "D5": {
+        "row_label": "Beta",
+        "value": "1.4",
+        "is_formula": false
+      },
+      "B6": {
+        "row_label": "",
+        "value": "Riesgo país",
+        "is_formula": false
+      },
+      "C6": {
+        "row_label": "Riesgo país",
+        "value": "rp",
+        "is_formula": false
+      },
+      "D6": {
+        "row_label": "Riesgo país",
+        "value": "0.0255",
+        "is_formula": false
+      },
+      "B7": {
+        "row_label": "",
+        "value": "Tasa impositiva a la renta",
+        "is_formula": false
+      },
+      "C7": {
+        "row_label": "Tasa impositiva a la renta",
+        "value": "t",
+        "is_formula": false
+      },
+      "D7": {
+        "row_label": "Tasa impositiva a la renta",
+        "value": "0.3",
+        "is_formula": false
+      },
+      "B8": {
+        "row_label": "",
+        "value": "Costo de capital propio",
+        "is_formula": false
+      },
+      "C8": {
+        "row_label": "Costo de capital propio",
+        "value": "Ke",
+        "is_formula": false
+      },
+      "D8": {
+        "row_label": "Costo de capital propio",
+        "value": "=+D3+D5*D4+D6",
+        "is_formula": true
+      },
+      "B9": {
+        "row_label": "",
+        "value": "ke = Rf + β (Rm-Rf) + rp",
+        "is_formula": false
+      },
+      "B10": {
+        "row_label": "",
+        "value": "Costo de la deuda (kd)",
+        "is_formula": false
+      },
+      "C10": {
+        "row_label": "Costo de la deuda (kd)",
+        "value": " i (1-t)",
+        "is_formula": false
+      },
+      "D10": {
+        "row_label": "Costo de la deuda (kd)",
+        "value": "=+D11*(1-D7)",
+        "is_formula": true
+      },
+      "B11": {
+        "row_label": "",
+        "value": "Tasa activa del mercado",
+        "is_formula": false
+      },
+      "C11": {
+        "row_label": "Tasa activa del mercado",
+        "value": " i",
+        "is_formula": false
+      },
+      "D11": {
+        "row_label": "Tasa activa del mercado",
+        "value": "0.09",
+        "is_formula": false
+      },
+      "B12": {
+        "row_label": "",
+        "value": "Costo ponderado de capital",
+        "is_formula": false
+      },
+      "C12": {
+        "row_label": "Costo ponderado de capital",
+        "value": "WACC",
+        "is_formula": false
+      },
+      "D12": {
+        "row_label": "Costo ponderado de capital",
+        "value": "=+D14*D8+D13*D10",
+        "is_formula": true
+      },
+      "B13": {
+        "row_label": "",
+        "value": "Peso deuda",
+        "is_formula": false
+      },
+      "C13": {
+        "row_label": "Peso deuda",
+        "value": "wd",
+        "is_formula": false
+      },
+      "D13": {
+        "row_label": "Peso deuda",
+        "value": "=+FCEF!#REF!",
+        "is_formula": true
+      },
+      "B14": {
+        "row_label": "",
+        "value": "Peso capital propio",
+        "is_formula": false
+      },
+      "C14": {
+        "row_label": "Peso capital propio",
+        "value": "we",
+        "is_formula": false
+      },
+      "D14": {
+        "row_label": "Peso capital propio",
+        "value": "=+FCEF!#REF!",
+        "is_formula": true
+      }
+    }
+  },
+  "S7": {
+    "Nuevo o usado": {
+      "A1": {
+        "row_label": "",
+        "value": "Parte a.",
+        "is_formula": false
+      },
+      "A2": {
+        "row_label": "",
+        "value": "Proyecto con maquina en operación",
+        "is_formula": false
+      },
+      "B3": {
+        "row_label": "",
+        "value": "cok",
+        "is_formula": false
+      },
+      "C3": {
+        "row_label": "cok",
+        "value": "0.1",
+        "is_formula": false
+      },
+      "C5": {
+        "row_label": "",
+        "value": "0",
+        "is_formula": false
+      },
+      "D5": {
+        "row_label": "",
+        "value": "1",
+        "is_formula": false
+      },
+      "E5": {
+        "row_label": "",
+        "value": "2",
+        "is_formula": false
+      },
+      "F5": {
+        "row_label": "",
+        "value": "3",
+        "is_formula": false
+      },
+      "G5": {
+        "row_label": "",
+        "value": "4",
+        "is_formula": false
+      },
+      "B6": {
+        "row_label": "",
+        "value": "Inversion",
+        "is_formula": false
+      },
+      "C6": {
+        "row_label": "Inversion",
+        "value": "-80",
+        "is_formula": false
+      },
+      "G6": {
+        "row_label": "Inversion",
+        "value": "0",
+        "is_formula": false
+      },
+      "B7": {
+        "row_label": "",
+        "value": "Ingresos",
+        "is_formula": false
+      },
+      "D7": {
+        "row_label": "Ingresos",
+        "value": "50",
+        "is_formula": false
+      },
+      "E7": {
+        "row_label": "Ingresos",
+        "value": "52",
+        "is_formula": false
+      },
+      "F7": {
+        "row_label": "Ingresos",
+        "value": "54",
+        "is_formula": false
+      },
+      "G7": {
+        "row_label": "Ingresos",
+        "value": "54",
+        "is_formula": false
+      },
+      "B8": {
+        "row_label": "",
+        "value": "Coym",
+        "is_formula": false
+      },
+      "D8": {
+        "row_label": "Coym",
+        "value": "12",
+        "is_formula": false
+      },
+      "E8": {
+        "row_label": "Coym",
+        "value": "12",
+        "is_formula": false
+      },
+      "F8": {
+        "row_label": "Coym",
+        "value": "12",
+        "is_formula": false
+      },
+      "G8": {
+        "row_label": "Coym",
+        "value": "12",
+        "is_formula": false
+      },
+      "B9": {
+        "row_label": "",
+        "value": "UO",
+        "is_formula": false
+      },
+      "D9": {
+        "row_label": "UO",
+        "value": "=+D7-D8",
+        "is_formula": true
+      },
+      "E9": {
+        "row_label": "UO",
+        "value": "=+E7-E8",
+        "is_formula": true
+      },
+      "F9": {
+        "row_label": "UO",
+        "value": "=+F7-F8",
+        "is_formula": true
+      },
+      "G9": {
+        "row_label": "UO",
+        "value": "=+G7-G8",
+        "is_formula": true
+      },
+      "B10": {
+        "row_label": "",
+        "value": "d",
+        "is_formula": false
+      },
+      "D10": {
+        "row_label": "d",
+        "value": "=+(-C6-G6)/4",
+        "is_formula": true
+      },
+      "E10": {
+        "row_label": "d",
+        "value": "=+D10",
+        "is_formula": true
+      },
+      "F10": {
+        "row_label": "d",
+        "value": "=+E10",
+        "is_formula": true
+      },
+      "G10": {
+        "row_label": "d",
+        "value": "=+F10",
+        "is_formula": true
+      },
+      "B11": {
+        "row_label": "",
+        "value": "UAII",
+        "is_formula": false
+      },
+      "D11": {
+        "row_label": "UAII",
+        "value": "=+D9-D10",
+        "is_formula": true
+      },
+      "E11": {
+        "row_label": "UAII",
+        "value": "=+E9-E10",
+        "is_formula": true
+      },
+      "F11": {
+        "row_label": "UAII",
+        "value": "=+F9-F10",
+        "is_formula": true
+      },
+      "G11": {
+        "row_label": "UAII",
+        "value": "=+G9-G10",
+        "is_formula": true
+      },
+      "B12": {
+        "row_label": "",
+        "value": "I",
+        "is_formula": false
+      },
+      "D12": {
+        "row_label": "I",
+        "value": "0",
+        "is_formula": false
+      },
+      "E12": {
+        "row_label": "I",
+        "value": "0",
+        "is_formula": false
+      },
+      "F12": {
+        "row_label": "I",
+        "value": "0",
+        "is_formula": false
+      },
+      "G12": {
+        "row_label": "I",
+        "value": "0",
+        "is_formula": false
+      },
+      "B13": {
+        "row_label": "",
+        "value": "UAI",
+        "is_formula": false
+      },
+      "D13": {
+        "row_label": "UAI",
+        "value": "=+D11-D12",
+        "is_formula": true
+      },
+      "E13": {
+        "row_label": "UAI",
+        "value": "=+E11-E12",
+        "is_formula": true
+      },
+      "F13": {
+        "row_label": "UAI",
+        "value": "=+F11-F12",
+        "is_formula": true
+      },
+      "G13": {
+        "row_label": "UAI",
+        "value": "=+G11-G12",
+        "is_formula": true
+      },
+      "B14": {
+        "row_label": "",
+        "value": "I ",
+        "is_formula": false
+      },
+      "D14": {
+        "row_label": "I",
+        "value": "=0.3*D13",
+        "is_formula": true
+      },
+      "E14": {
+        "row_label": "I",
+        "value": "=0.3*E13",
+        "is_formula": true
+      },
+      "F14": {
+        "row_label": "I",
+        "value": "=0.3*F13",
+        "is_formula": true
+      },
+      "G14": {
+        "row_label": "I",
+        "value": "=0.3*G13",
+        "is_formula": true
+      },
+      "B15": {
+        "row_label": "",
+        "value": "UN",
+        "is_formula": false
+      },
+      "D15": {
+        "row_label": "UN",
+        "value": "=+D13-D14",
+        "is_formula": true
+      },
+      "E15": {
+        "row_label": "UN",
+        "value": "=+E13-E14",
+        "is_formula": true
+      },
+      "F15": {
+        "row_label": "UN",
+        "value": "=+F13-F14",
+        "is_formula": true
+      },
+      "G15": {
+        "row_label": "UN",
+        "value": "=+G13-G14",
+        "is_formula": true
+      },
+      "B16": {
+        "row_label": "",
+        "value": "f",
+        "is_formula": false
+      },
+      "C16": {
+        "row_label": "f",
+        "value": "=+C6",
+        "is_formula": true
+      },
+      "D16": {
+        "row_label": "f",
+        "value": "=+D15+D10",
+        "is_formula": true
+      },
+      "E16": {
+        "row_label": "f",
+        "value": "=+E15+E10",
+        "is_formula": true
+      },
+      "F16": {
+        "row_label": "f",
+        "value": "=+F15+F10",
+        "is_formula": true
+      },
+      "G16": {
+        "row_label": "f",
+        "value": "=+G15+G10",
+        "is_formula": true
+      },
+      "B17": {
+        "row_label": "",
+        "value": "Vaf 1",
+        "is_formula": false
+      },
+      "C17": {
+        "row_label": "Vaf 1",
+        "value": "=NPV(10%,D16:G16)",
+        "is_formula": true
+      },
+      "B18": {
+        "row_label": "",
+        "value": "VAN 1",
+        "is_formula": false
+      },
+      "C18": {
+        "row_label": "VAN 1",
+        "value": "=+C17+C16",
+        "is_formula": true
+      },
+      "B19": {
+        "row_label": "",
+        "value": "VAE 1",
+        "is_formula": false
+      },
+      "C19": {
+        "row_label": "VAE 1",
+        "value": "=-PMT(10%,4,C18)",
+        "is_formula": true
+      },
+      "A21": {
+        "row_label": "",
+        "value": "Parte b.",
+        "is_formula": false
+      },
+      "A22": {
+        "row_label": "",
+        "value": "Proyecto con maquina nueva",
+        "is_formula": false
+      },
+      "C23": {
+        "row_label": "",
+        "value": "0",
+        "is_formula": false
+      },
+      "D23": {
+        "row_label": "",
+        "value": "1",
+        "is_formula": false
+      },
+      "E23": {
+        "row_label": "",
+        "value": "2",
+        "is_formula": false
+      },
+      "F23": {
+        "row_label": "",
+        "value": "3",
+        "is_formula": false
+      },
+      "G23": {
+        "row_label": "",
+        "value": "4",
+        "is_formula": false
+      },
+      "H23": {
+        "row_label": "",
+        "value": "5",
+        "is_formula": false
+      },
+      "I23": {
+        "row_label": "",
+        "value": "6",
+        "is_formula": false
+      },
+      "J23": {
+        "row_label": "",
+        "value": "7",
+        "is_formula": false
+      },
+      "K23": {
+        "row_label": "",
+        "value": "8",
+        "is_formula": false
+      },
+      "L23": {
+        "row_label": "",
+        "value": "9",
+        "is_formula": false
+      },
+      "M23": {
+        "row_label": "",
+        "value": "10",
+        "is_formula": false
+      },
+      "N23": {
+        "row_label": "",
+        "value": "11",
+        "is_formula": false
+      },
+      "O23": {
+        "row_label": "",
+        "value": "12",
+        "is_formula": false
+      },
+      "B24": {
+        "row_label": "",
+        "value": "Inversion",
+        "is_formula": false
+      },
+      "C24": {
+        "row_label": "Inversion",
+        "value": "196.3317110766113",
+        "is_formula": false
+      },
+      "O24": {
+        "row_label": "Inversion",
+        "value": "0",
+        "is_formula": false
+      },
+      "B25": {
+        "row_label": "",
+        "value": "Ingresos",
+        "is_formula": false
+      },
+      "D25": {
+        "row_label": "Ingresos",
+        "value": "55",
+        "is_formula": false
+      },
+      "E25": {
+        "row_label": "Ingresos",
+        "value": "55",
+        "is_formula": false
+      },
+      "F25": {
+        "row_label": "Ingresos",
+        "value": "55",
+        "is_formula": false
+      },
+      "G25": {
+        "row_label": "Ingresos",
+        "value": "55",
+        "is_formula": false
+      },
+      "H25": {
+        "row_label": "Ingresos",
+        "value": "55",
+        "is_formula": false
+      },
+      "I25": {
+        "row_label": "Ingresos",
+        "value": "55",
+        "is_formula": false
+      },
+      "J25": {
+        "row_label": "Ingresos",
+        "value": "55",
+        "is_formula": false
+      },
+      "K25": {
+        "row_label": "Ingresos",
+        "value": "55",
+        "is_formula": false
+      },
+      "L25": {
+        "row_label": "Ingresos",
+        "value": "55",
+        "is_formula": false
+      },
+      "M25": {
+        "row_label": "Ingresos",
+        "value": "55",
+        "is_formula": false
+      },
+      "N25": {
+        "row_label": "Ingresos",
+        "value": "55",
+        "is_formula": false
+      },
+      "O25": {
+        "row_label": "Ingresos",
+        "value": "55",
+        "is_formula": false
+      },
+      "B26": {
+        "row_label": "",
+        "value": "Coym",
+        "is_formula": false
+      },
+      "D26": {
+        "row_label": "Coym",
+        "value": "8",
+        "is_formula": false
+      },
+      "E26": {
+        "row_label": "Coym",
+        "value": "=+D26",
+        "is_formula": true
+      },
+      "F26": {
+        "row_label": "Coym",
+        "value": "=+E26",
+        "is_formula": true
+      },
+      "G26": {
+        "row_label": "Coym",
+        "value": "=+F26",
+        "is_formula": true
+      },
+      "H26": {
+        "row_label": "Coym",
+        "value": "=+G26",
+        "is_formula": true
+      },
+      "I26": {
+        "row_label": "Coym",
+        "value": "=+H26",
+        "is_formula": true
+      },
+      "J26": {
+        "row_label": "Coym",
+        "value": "=+I26",
+        "is_formula": true
+      },
+      "K26": {
+        "row_label": "Coym",
+        "value": "=+J26",
+        "is_formula": true
+      },
+      "L26": {
+        "row_label": "Coym",
+        "value": "=+K26",
+        "is_formula": true
+      },
+      "M26": {
+        "row_label": "Coym",
+        "value": "=+L26",
+        "is_formula": true
+      },
+      "N26": {
+        "row_label": "Coym",
+        "value": "=+M26",
+        "is_formula": true
+      },
+      "O26": {
+        "row_label": "Coym",
+        "value": "=+N26",
+        "is_formula": true
+      },
+      "B27": {
+        "row_label": "",
+        "value": "UO",
+        "is_formula": false
+      },
+      "D27": {
+        "row_label": "UO",
+        "value": "=+D25-D26",
+        "is_formula": true
+      },
+      "E27": {
+        "row_label": "UO",
+        "value": "=+E25-E26",
+        "is_formula": true
+      },
+      "F27": {
+        "row_label": "UO",
+        "value": "=+F25-F26",
+        "is_formula": true
+      },
+      "G27": {
+        "row_label": "UO",
+        "value": "=+G25-G26",
+        "is_formula": true
+      },
+      "H27": {
+        "row_label": "UO",
+        "value": "=+H25-H26",
+        "is_formula": true
+      },
+      "I27": {
+        "row_label": "UO",
+        "value": "=+I25-I26",
+        "is_formula": true
+      },
+      "J27": {
+        "row_label": "UO",
+        "value": "=+J25-J26",
+        "is_formula": true
+      },
+      "K27": {
+        "row_label": "UO",
+        "value": "=+K25-K26",
+        "is_formula": true
+      },
+      "L27": {
+        "row_label": "UO",
+        "value": "=+L25-L26",
+        "is_formula": true
+      },
+      "M27": {
+        "row_label": "UO",
+        "value": "=+M25-M26",
+        "is_formula": true
+      },
+      "N27": {
+        "row_label": "UO",
+        "value": "=+N25-N26",
+        "is_formula": true
+      },
+      "O27": {
+        "row_label": "UO",
+        "value": "=+O25-O26",
+        "is_formula": true
+      },
+      "B28": {
+        "row_label": "",
+        "value": "d",
+        "is_formula": false
+      },
+      "D28": {
+        "row_label": "d",
+        "value": "=+(C24-O24)/12",
+        "is_formula": true
+      },
+      "E28": {
+        "row_label": "d",
+        "value": "=+D28",
+        "is_formula": true
+      },
+      "F28": {
+        "row_label": "d",
+        "value": "=+E28",
+        "is_formula": true
+      },
+      "G28": {
+        "row_label": "d",
+        "value": "=+F28",
+        "is_formula": true
+      },
+      "H28": {
+        "row_label": "d",
+        "value": "=+G28",
+        "is_formula": true
+      },
+      "I28": {
+        "row_label": "d",
+        "value": "=+H28",
+        "is_formula": true
+      },
+      "J28": {
+        "row_label": "d",
+        "value": "=+I28",
+        "is_formula": true
+      },
+      "K28": {
+        "row_label": "d",
+        "value": "=+J28",
+        "is_formula": true
+      },
+      "L28": {
+        "row_label": "d",
+        "value": "=+K28",
+        "is_formula": true
+      },
+      "M28": {
+        "row_label": "d",
+        "value": "=+L28",
+        "is_formula": true
+      },
+      "N28": {
+        "row_label": "d",
+        "value": "=+M28",
+        "is_formula": true
+      },
+      "O28": {
+        "row_label": "d",
+        "value": "=+N28",
+        "is_formula": true
+      },
+      "B29": {
+        "row_label": "",
+        "value": "UAII",
+        "is_formula": false
+      },
+      "D29": {
+        "row_label": "UAII",
+        "value": "=+D27-D28",
+        "is_formula": true
+      },
+      "E29": {
+        "row_label": "UAII",
+        "value": "=+E27-E28",
+        "is_formula": true
+      },
+      "F29": {
+        "row_label": "UAII",
+        "value": "=+F27-F28",
+        "is_formula": true
+      },
+      "G29": {
+        "row_label": "UAII",
+        "value": "=+G27-G28",
+        "is_formula": true
+      },
+      "H29": {
+        "row_label": "UAII",
+        "value": "=+H27-H28",
+        "is_formula": true
+      },
+      "I29": {
+        "row_label": "UAII",
+        "value": "=+I27-I28",
+        "is_formula": true
+      },
+      "J29": {
+        "row_label": "UAII",
+        "value": "=+J27-J28",
+        "is_formula": true
+      },
+      "K29": {
+        "row_label": "UAII",
+        "value": "=+K27-K28",
+        "is_formula": true
+      },
+      "L29": {
+        "row_label": "UAII",
+        "value": "=+L27-L28",
+        "is_formula": true
+      },
+      "M29": {
+        "row_label": "UAII",
+        "value": "=+M27-M28",
+        "is_formula": true
+      },
+      "N29": {
+        "row_label": "UAII",
+        "value": "=+N27-N28",
+        "is_formula": true
+      },
+      "O29": {
+        "row_label": "UAII",
+        "value": "=+O27-O28",
+        "is_formula": true
+      },
+      "B30": {
+        "row_label": "",
+        "value": "I",
+        "is_formula": false
+      },
+      "D30": {
+        "row_label": "I",
+        "value": "0",
+        "is_formula": false
+      },
+      "E30": {
+        "row_label": "I",
+        "value": "0",
+        "is_formula": false
+      },
+      "F30": {
+        "row_label": "I",
+        "value": "0",
+        "is_formula": false
+      },
+      "G30": {
+        "row_label": "I",
+        "value": "0",
+        "is_formula": false
+      },
+      "H30": {
+        "row_label": "I",
+        "value": "0",
+        "is_formula": false
+      },
+      "I30": {
+        "row_label": "I",
+        "value": "0",
+        "is_formula": false
+      },
+      "J30": {
+        "row_label": "I",
+        "value": "0",
+        "is_formula": false
+      },
+      "K30": {
+        "row_label": "I",
+        "value": "0",
+        "is_formula": false
+      },
+      "L30": {
+        "row_label": "I",
+        "value": "0",
+        "is_formula": false
+      },
+      "M30": {
+        "row_label": "I",
+        "value": "0",
+        "is_formula": false
+      },
+      "N30": {
+        "row_label": "I",
+        "value": "0",
+        "is_formula": false
+      },
+      "O30": {
+        "row_label": "I",
+        "value": "0",
+        "is_formula": false
+      },
+      "B31": {
+        "row_label": "",
+        "value": "UAII",
+        "is_formula": false
+      },
+      "D31": {
+        "row_label": "UAII",
+        "value": "=+D29-D30",
+        "is_formula": true
+      },
+      "E31": {
+        "row_label": "UAII",
+        "value": "=+E29-E30",
+        "is_formula": true
+      },
+      "F31": {
+        "row_label": "UAII",
+        "value": "=+F29-F30",
+        "is_formula": true
+      },
+      "G31": {
+        "row_label": "UAII",
+        "value": "=+G29-G30",
+        "is_formula": true
+      },
+      "H31": {
+        "row_label": "UAII",
+        "value": "=+H29-H30",
+        "is_formula": true
+      },
+      "I31": {
+        "row_label": "UAII",
+        "value": "=+I29-I30",
+        "is_formula": true
+      },
+      "J31": {
+        "row_label": "UAII",
+        "value": "=+J29-J30",
+        "is_formula": true
+      },
+      "K31": {
+        "row_label": "UAII",
+        "value": "=+K29-K30",
+        "is_formula": true
+      },
+      "L31": {
+        "row_label": "UAII",
+        "value": "=+L29-L30",
+        "is_formula": true
+      },
+      "M31": {
+        "row_label": "UAII",
+        "value": "=+M29-M30",
+        "is_formula": true
+      },
+      "N31": {
+        "row_label": "UAII",
+        "value": "=+N29-N30",
+        "is_formula": true
+      },
+      "O31": {
+        "row_label": "UAII",
+        "value": "=+O29-O30",
+        "is_formula": true
+      },
+      "B32": {
+        "row_label": "",
+        "value": "I ",
+        "is_formula": false
+      },
+      "D32": {
+        "row_label": "I",
+        "value": "=IF( D31<=0, 0,0.3*D31)",
+        "is_formula": true
+      },
+      "E32": {
+        "row_label": "I",
+        "value": "=IF( E31<=0, 0,0.3*E31)",
+        "is_formula": true
+      },
+      "F32": {
+        "row_label": "I",
+        "value": "=IF( F31<=0, 0,0.3*F31)",
+        "is_formula": true
+      },
+      "G32": {
+        "row_label": "I",
+        "value": "=IF( G31<=0, 0,0.3*G31)",
+        "is_formula": true
+      },
+      "H32": {
+        "row_label": "I",
+        "value": "=IF( H31<=0, 0,0.3*H31)",
+        "is_formula": true
+      },
+      "I32": {
+        "row_label": "I",
+        "value": "=IF( I31<=0, 0,0.3*I31)",
+        "is_formula": true
+      },
+      "J32": {
+        "row_label": "I",
+        "value": "=IF( J31<=0, 0,0.3*J31)",
+        "is_formula": true
+      },
+      "K32": {
+        "row_label": "I",
+        "value": "=IF( K31<=0, 0,0.3*K31)",
+        "is_formula": true
+      },
+      "L32": {
+        "row_label": "I",
+        "value": "=IF( L31<=0, 0,0.3*L31)",
+        "is_formula": true
+      },
+      "M32": {
+        "row_label": "I",
+        "value": "=IF( M31<=0, 0,0.3*M31)",
+        "is_formula": true
+      },
+      "N32": {
+        "row_label": "I",
+        "value": "=IF( N31<=0, 0,0.3*N31)",
+        "is_formula": true
+      },
+      "O32": {
+        "row_label": "I",
+        "value": "=IF( O31<=0, 0,0.3*O31)",
+        "is_formula": true
+      },
+      "B33": {
+        "row_label": "",
+        "value": "UN",
+        "is_formula": false
+      },
+      "D33": {
+        "row_label": "UN",
+        "value": "=+D31-D32",
+        "is_formula": true
+      },
+      "E33": {
+        "row_label": "UN",
+        "value": "=+E31-E32",
+        "is_formula": true
+      },
+      "F33": {
+        "row_label": "UN",
+        "value": "=+F31-F32",
+        "is_formula": true
+      },
+      "G33": {
+        "row_label": "UN",
+        "value": "=+G31-G32",
+        "is_formula": true
+      },
+      "H33": {
+        "row_label": "UN",
+        "value": "=+H31-H32",
+        "is_formula": true
+      },
+      "I33": {
+        "row_label": "UN",
+        "value": "=+I31-I32",
+        "is_formula": true
+      },
+      "J33": {
+        "row_label": "UN",
+        "value": "=+J31-J32",
+        "is_formula": true
+      },
+      "K33": {
+        "row_label": "UN",
+        "value": "=+K31-K32",
+        "is_formula": true
+      },
+      "L33": {
+        "row_label": "UN",
+        "value": "=+L31-L32",
+        "is_formula": true
+      },
+      "M33": {
+        "row_label": "UN",
+        "value": "=+M31-M32",
+        "is_formula": true
+      },
+      "N33": {
+        "row_label": "UN",
+        "value": "=+N31-N32",
+        "is_formula": true
+      },
+      "O33": {
+        "row_label": "UN",
+        "value": "=+O31-O32",
+        "is_formula": true
+      },
+      "B34": {
+        "row_label": "",
+        "value": "f",
+        "is_formula": false
+      },
+      "C34": {
+        "row_label": "f",
+        "value": "=-C24",
+        "is_formula": true
+      },
+      "D34": {
+        "row_label": "f",
+        "value": "=+D33+D28",
+        "is_formula": true
+      },
+      "E34": {
+        "row_label": "f",
+        "value": "=+E33+E28",
+        "is_formula": true
+      },
+      "F34": {
+        "row_label": "f",
+        "value": "=+F33+F28",
+        "is_formula": true
+      },
+      "G34": {
+        "row_label": "f",
+        "value": "=+G33+G28",
+        "is_formula": true
+      },
+      "H34": {
+        "row_label": "f",
+        "value": "=+H33+H28",
+        "is_formula": true
+      },
+      "I34": {
+        "row_label": "f",
+        "value": "=+I33+I28",
+        "is_formula": true
+      },
+      "J34": {
+        "row_label": "f",
+        "value": "=+J33+J28",
+        "is_formula": true
+      },
+      "K34": {
+        "row_label": "f",
+        "value": "=+K33+K28",
+        "is_formula": true
+      },
+      "L34": {
+        "row_label": "f",
+        "value": "=+L33+L28",
+        "is_formula": true
+      },
+      "M34": {
+        "row_label": "f",
+        "value": "=+M33+M28",
+        "is_formula": true
+      },
+      "N34": {
+        "row_label": "f",
+        "value": "=+N33+N28",
+        "is_formula": true
+      },
+      "O34": {
+        "row_label": "f",
+        "value": "=+O33+O28",
+        "is_formula": true
+      },
+      "B35": {
+        "row_label": "",
+        "value": "Vaf 2",
+        "is_formula": false
+      },
+      "C35": {
+        "row_label": "Vaf 2",
+        "value": "=NPV(10%,D34:O34)",
+        "is_formula": true
+      }
+    },
+    "Eolico": {
+      "B1": {
+        "row_label": "",
+        "value": "Potencia",
+        "is_formula": false
+      },
+      "C1": {
+        "row_label": "Potencia",
+        "value": "16",
+        "is_formula": false
+      },
+      "D1": {
+        "row_label": "Potencia",
+        "value": "MW",
+        "is_formula": false
+      },
+      "I1": {
+        "row_label": "Potencia",
+        "value": "Prestamo",
+        "is_formula": false
+      },
+      "B2": {
+        "row_label": "",
+        "value": "Inversion u",
+        "is_formula": false
+      },
+      "C2": {
+        "row_label": "Inversion u",
+        "value": "845",
+        "is_formula": false
+      },
+      "D2": {
+        "row_label": "Inversion u",
+        "value": "US$/kW",
+        "is_formula": false
+      },
+      "I2": {
+        "row_label": "Inversion u",
+        "value": "Porcentaje",
+        "is_formula": false
+      },
+      "J2": {
+        "row_label": "Inversion u",
+        "value": "0.6",
+        "is_formula": false
+      },
+      "B3": {
+        "row_label": "",
+        "value": "Inversion central",
+        "is_formula": false
+      },
+      "C3": {
+        "row_label": "Inversion central",
+        "value": "=+C1*1000*C2",
+        "is_formula": true
+      },
+      "D3": {
+        "row_label": "Inversion central",
+        "value": "US$",
+        "is_formula": false
+      },
+      "I3": {
+        "row_label": "Inversion central",
+        "value": "i",
+        "is_formula": false
+      },
+      "J3": {
+        "row_label": "Inversion central",
+        "value": "=+AA19",
+        "is_formula": true
+      },
+      "B4": {
+        "row_label": "",
+        "value": "Inversion facilidades",
+        "is_formula": false
+      },
+      "C4": {
+        "row_label": "Inversion facilidades",
+        "value": "1350000",
+        "is_formula": false
+      },
+      "D4": {
+        "row_label": "Inversion facilidades",
+        "value": "US$ ",
+        "is_formula": false
+      },
+      "B5": {
+        "row_label": "",
+        "value": "Inversion civiles",
+        "is_formula": false
+      },
+      "C5": {
+        "row_label": "Inversion civiles",
+        "value": "1850000",
+        "is_formula": false
+      },
+      "D5": {
+        "row_label": "Inversion civiles",
+        "value": "US$",
+        "is_formula": false
+      },
+      "B6": {
+        "row_label": "",
+        "value": "Factor de capacidad",
+        "is_formula": false
+      },
+      "C6": {
+        "row_label": "Factor de capacidad",
+        "value": "0.4",
+        "is_formula": false
+      },
+      "B7": {
+        "row_label": "",
+        "value": "Producción",
+        "is_formula": false
+      },
+      "C7": {
+        "row_label": "Producción",
+        "value": "=+C1*8760*C6*1000",
+        "is_formula": true
+      },
+      "D7": {
+        "row_label": "Producción",
+        "value": "kWh",
+        "is_formula": false
+      },
+      "B8": {
+        "row_label": "",
+        "value": "Precio",
+        "is_formula": false
+      },
+      "C8": {
+        "row_label": "Precio",
+        "value": "40.89693206092363",
+        "is_formula": false
+      },
+      "D8": {
+        "row_label": "Precio",
+        "value": "US$/MWh",
+        "is_formula": false
+      },
+      "F8": {
+        "row_label": "Precio",
+        "value": "Delta ingresos",
+        "is_formula": false
+      },
+      "H8": {
+        "row_label": "Precio",
+        "value": "0",
+        "is_formula": false
+      },
+      "B9": {
+        "row_label": "",
+        "value": "Gastos op",
+        "is_formula": false
+      },
+      "C9": {
+        "row_label": "Gastos op",
+        "value": "553280",
+        "is_formula": false
+      },
+      "D9": {
+        "row_label": "Gastos op",
+        "value": "US$",
+        "is_formula": false
+      },
+      "F9": {
+        "row_label": "Gastos op",
+        "value": "Delta egresos",
+        "is_formula": false
+      },
+      "H9": {
+        "row_label": "Gastos op",
+        "value": "0",
+        "is_formula": false
+      },
+      "B10": {
+        "row_label": "",
+        "value": "cok",
+        "is_formula": false
+      },
+      "C10": {
+        "row_label": "cok",
+        "value": "=+AA16",
+        "is_formula": true
+      },
+      "B12": {
+        "row_label": "",
+        "value": "0",
+        "is_formula": false
+      },
+      "C12": {
+        "row_label": "",
+        "value": "1",
+        "is_formula": false
+      },
+      "D12": {
+        "row_label": "",
+        "value": "2",
+        "is_formula": false
+      },
+      "E12": {
+        "row_label": "",
+        "value": "3",
+        "is_formula": false
+      },
+      "F12": {
+        "row_label": "",
+        "value": "4",
+        "is_formula": false
+      },
+      "G12": {
+        "row_label": "",
+        "value": "5",
+        "is_formula": false
+      },
+      "H12": {
+        "row_label": "",
+        "value": "6",
+        "is_formula": false
+      },
+      "I12": {
+        "row_label": "",
+        "value": "7",
+        "is_formula": false
+      },
+      "J12": {
+        "row_label": "",
+        "value": "8",
+        "is_formula": false
+      },
+      "K12": {
+        "row_label": "",
+        "value": "9",
+        "is_formula": false
+      },
+      "L12": {
+        "row_label": "",
+        "value": "10",
+        "is_formula": false
+      },
+      "M12": {
+        "row_label": "",
+        "value": "11",
+        "is_formula": false
+      },
+      "N12": {
+        "row_label": "",
+        "value": "12",
+        "is_formula": false
+      },
+      "O12": {
+        "row_label": "",
+        "value": "13",
+        "is_formula": false
+      },
+      "P12": {
+        "row_label": "",
+        "value": "14",
+        "is_formula": false
+      },
+      "A13": {
+        "row_label": "",
+        "value": "Inversion",
+        "is_formula": false
+      },
+      "B13": {
+        "row_label": "",
+        "value": "=+C3+C4+C5",
+        "is_formula": true
+      },
+      "A14": {
+        "row_label": "",
+        "value": "Prestamo",
+        "is_formula": false
+      },
+      "B14": {
+        "row_label": "",
+        "value": "=+B13*J2",
+        "is_formula": true
+      },
+      "C14": {
+        "row_label": "=+B13*J2",
+        "value": "=+C38",
+        "is_formula": true
+      },
+      "D14": {
+        "row_label": "=+B13*J2",
+        "value": "=+D38",
+        "is_formula": true
+      },
+      "E14": {
+        "row_label": "=+B13*J2",
+        "value": "=+E38",
+        "is_formula": true
+      },
+      "F14": {
+        "row_label": "=+B13*J2",
+        "value": "=+F38",
+        "is_formula": true
+      },
+      "G14": {
+        "row_label": "=+B13*J2",
+        "value": "=+G38",
+        "is_formula": true
+      },
+      "H14": {
+        "row_label": "=+B13*J2",
+        "value": "=+H38",
+        "is_formula": true
+      },
+      "I14": {
+        "row_label": "=+B13*J2",
+        "value": "=+I38",
+        "is_formula": true
+      },
+      "J14": {
+        "row_label": "=+B13*J2",
+        "value": "=+J38",
+        "is_formula": true
+      },
+      "K14": {
+        "row_label": "=+B13*J2",
+        "value": "=+K38",
+        "is_formula": true
+      },
+      "L14": {
+        "row_label": "=+B13*J2",
+        "value": "=+L38",
+        "is_formula": true
+      },
+      "A15": {
+        "row_label": "",
+        "value": "Ingresos",
+        "is_formula": false
+      },
+      "C15": {
+        "row_label": "",
+        "value": "=+($C$7*$C$8/1000)*(1+$H$8)^C12",
+        "is_formula": true
+      },
+      "D15": {
+        "row_label": "",
+        "value": "=+($C$7*$C$8/1000)*(1+$H$8)^D12",
+        "is_formula": true
+      },
+      "E15": {
+        "row_label": "",
+        "value": "=+($C$7*$C$8/1000)*(1+$H$8)^E12",
+        "is_formula": true
+      },
+      "F15": {
+        "row_label": "",
+        "value": "=+($C$7*$C$8/1000)*(1+$H$8)^F12",
+        "is_formula": true
+      },
+      "G15": {
+        "row_label": "",
+        "value": "=+($C$7*$C$8/1000)*(1+$H$8)^G12",
+        "is_formula": true
+      },
+      "H15": {
+        "row_label": "",
+        "value": "=+($C$7*$C$8/1000)*(1+$H$8)^H12",
+        "is_formula": true
+      },
+      "I15": {
+        "row_label": "",
+        "value": "=+($C$7*$C$8/1000)*(1+$H$8)^I12",
+        "is_formula": true
+      },
+      "J15": {
+        "row_label": "",
+        "value": "=+($C$7*$C$8/1000)*(1+$H$8)^J12",
+        "is_formula": true
+      },
+      "K15": {
+        "row_label": "",
+        "value": "=+($C$7*$C$8/1000)*(1+$H$8)^K12",
+        "is_formula": true
+      },
+      "L15": {
+        "row_label": "",
+        "value": "=+($C$7*$C$8/1000)*(1+$H$8)^L12",
+        "is_formula": true
+      },
+      "M15": {
+        "row_label": "",
+        "value": "=+($C$7*$C$8/1000)*(1+$H$8)^M12",
+        "is_formula": true
+      },
+      "N15": {
+        "row_label": "",
+        "value": "=+($C$7*$C$8/1000)*(1+$H$8)^N12",
+        "is_formula": true
+      },
+      "O15": {
+        "row_label": "",
+        "value": "=+($C$7*$C$8/1000)*(1+$H$8)^O12",
+        "is_formula": true
+      },
+      "P15": {
+        "row_label": "",
+        "value": "=+($C$7*$C$8/1000)*(1+$H$8)^P12",
+        "is_formula": true
+      },
+      "A16": {
+        "row_label": "",
+        "value": "Egresos",
+        "is_formula": false
+      },
+      "C16": {
+        "row_label": "",
+        "value": "=+$C$9*(1+$H$9)^C12",
+        "is_formula": true
+      },
+      "D16": {
+        "row_label": "",
+        "value": "=+$C$9*(1+$H$9)^D12",
+        "is_formula": true
+      },
+      "E16": {
+        "row_label": "",
+        "value": "=+$C$9*(1+$H$9)^E12",
+        "is_formula": true
+      },
+      "F16": {
+        "row_label": "",
+        "value": "=+$C$9*(1+$H$9)^F12",
+        "is_formula": true
+      },
+      "G16": {
+        "row_label": "",
+        "value": "=+$C$9*(1+$H$9)^G12",
+        "is_formula": true
+      },
+      "H16": {
+        "row_label": "",
+        "value": "=+$C$9*(1+$H$9)^H12",
+        "is_formula": true
+      },
+      "I16": {
+        "row_label": "",
+        "value": "=+$C$9*(1+$H$9)^I12",
+        "is_formula": true
+      },
+      "J16": {
+        "row_label": "",
+        "value": "=+$C$9*(1+$H$9)^J12",
+        "is_formula": true
+      },
+      "K16": {
+        "row_label": "",
+        "value": "=+$C$9*(1+$H$9)^K12",
+        "is_formula": true
+      },
+      "L16": {
+        "row_label": "",
+        "value": "=+$C$9*(1+$H$9)^L12",
+        "is_formula": true
+      },
+      "M16": {
+        "row_label": "",
+        "value": "=+$C$9*(1+$H$9)^M12",
+        "is_formula": true
+      },
+      "N16": {
+        "row_label": "",
+        "value": "=+$C$9*(1+$H$9)^N12",
+        "is_formula": true
+      },
+      "O16": {
+        "row_label": "",
+        "value": "=+$C$9*(1+$H$9)^O12",
+        "is_formula": true
+      },
+      "P16": {
+        "row_label": "",
+        "value": "=+$C$9*(1+$H$9)^P12",
+        "is_formula": true
+      },
+      "A17": {
+        "row_label": "",
+        "value": "UO",
+        "is_formula": false
+      },
+      "C17": {
+        "row_label": "",
+        "value": "=+C15-C16",
+        "is_formula": true
+      },
+      "D17": {
+        "row_label": "",
+        "value": "=+D15-D16",
+        "is_formula": true
+      },
+      "E17": {
+        "row_label": "",
+        "value": "=+E15-E16",
+        "is_formula": true
+      },
+      "F17": {
+        "row_label": "",
+        "value": "=+F15-F16",
+        "is_formula": true
+      },
+      "G17": {
+        "row_label": "",
+        "value": "=+G15-G16",
+        "is_formula": true
+      },
+      "H17": {
+        "row_label": "",
+        "value": "=+H15-H16",
+        "is_formula": true
+      },
+      "I17": {
+        "row_label": "",
+        "value": "=+I15-I16",
+        "is_formula": true
+      },
+      "J17": {
+        "row_label": "",
+        "value": "=+J15-J16",
+        "is_formula": true
+      },
+      "K17": {
+        "row_label": "",
+        "value": "=+K15-K16",
+        "is_formula": true
+      },
+      "L17": {
+        "row_label": "",
+        "value": "=+L15-L16",
+        "is_formula": true
+      },
+      "M17": {
+        "row_label": "",
+        "value": "=+M15-M16",
+        "is_formula": true
+      },
+      "N17": {
+        "row_label": "",
+        "value": "=+N15-N16",
+        "is_formula": true
+      },
+      "O17": {
+        "row_label": "",
+        "value": "=+O15-O16",
+        "is_formula": true
+      },
+      "P17": {
+        "row_label": "",
+        "value": "=+P15-P16",
+        "is_formula": true
+      },
+      "A18": {
+        "row_label": "",
+        "value": "Deprec",
+        "is_formula": false
+      },
+      "C18": {
+        "row_label": "",
+        "value": "=+C45+C53+C60",
+        "is_formula": true
+      },
+      "D18": {
+        "row_label": "",
+        "value": "=+D45++D53+D60",
+        "is_formula": true
+      },
+      "E18": {
+        "row_label": "",
+        "value": "=+E45++E53+E60",
+        "is_formula": true
+      },
+      "F18": {
+        "row_label": "",
+        "value": "=+F45++F53+F60",
+        "is_formula": true
+      },
+      "G18": {
+        "row_label": "",
+        "value": "=+G45++G53+G60",
+        "is_formula": true
+      },
+      "H18": {
+        "row_label": "",
+        "value": "=+H45++H53+H60",
+        "is_formula": true
+      },
+      "I18": {
+        "row_label": "",
+        "value": "=+I45++I53+I60",
+        "is_formula": true
+      },
+      "J18": {
+        "row_label": "",
+        "value": "=+J45++J53+J60",
+        "is_formula": true
+      },
+      "K18": {
+        "row_label": "",
+        "value": "=+K45++K53+K60",
+        "is_formula": true
+      },
+      "L18": {
+        "row_label": "",
+        "value": "=+L45++L53+L60",
+        "is_formula": true
+      },
+      "M18": {
+        "row_label": "",
+        "value": "=+M45++M53+M60",
+        "is_formula": true
+      },
+      "N18": {
+        "row_label": "",
+        "value": "=+N45++N53+N60",
+        "is_formula": true
+      },
+      "O18": {
+        "row_label": "",
+        "value": "=+O45++O53+O60",
+        "is_formula": true
+      },
+      "P18": {
+        "row_label": "",
+        "value": "=+P45++P53+P60",
+        "is_formula": true
+      },
+      "A19": {
+        "row_label": "",
+        "value": "UAII",
+        "is_formula": false
+      },
+      "C19": {
+        "row_label": "",
+        "value": "=+C17-C18",
+        "is_formula": true
+      },
+      "D19": {
+        "row_label": "",
+        "value": "=+D17-D18",
+        "is_formula": true
+      },
+      "E19": {
+        "row_label": "",
+        "value": "=+E17-E18",
+        "is_formula": true
+      },
+      "F19": {
+        "row_label": "",
+        "value": "=+F17-F18",
+        "is_formula": true
+      },
+      "G19": {
+        "row_label": "",
+        "value": "=+G17-G18",
+        "is_formula": true
+      },
+      "H19": {
+        "row_label": "",
+        "value": "=+H17-H18",
+        "is_formula": true
+      },
+      "I19": {
+        "row_label": "",
+        "value": "=+I17-I18",
+        "is_formula": true
+      },
+      "J19": {
+        "row_label": "",
+        "value": "=+J17-J18",
+        "is_formula": true
+      },
+      "K19": {
+        "row_label": "",
+        "value": "=+K17-K18",
+        "is_formula": true
+      },
+      "L19": {
+        "row_label": "",
+        "value": "=+L17-L18",
+        "is_formula": true
+      },
+      "M19": {
+        "row_label": "",
+        "value": "=+M17-M18",
+        "is_formula": true
+      },
+      "N19": {
+        "row_label": "",
+        "value": "=+N17-N18",
+        "is_formula": true
+      },
+      "O19": {
+        "row_label": "",
+        "value": "=+O17-O18",
+        "is_formula": true
+      },
+      "P19": {
+        "row_label": "",
+        "value": "=+P17-P18",
+        "is_formula": true
+      },
+      "A20": {
+        "row_label": "",
+        "value": "I",
+        "is_formula": false
+      },
+      "C20": {
+        "row_label": "",
+        "value": "=+C37",
+        "is_formula": true
+      },
+      "D20": {
+        "row_label": "",
+        "value": "=+D37",
+        "is_formula": true
+      },
+      "E20": {
+        "row_label": "",
+        "value": "=+E37",
+        "is_formula": true
+      },
+      "F20": {
+        "row_label": "",
+        "value": "=+F37",
+        "is_formula": true
+      },
+      "G20": {
+        "row_label": "",
+        "value": "=+G37",
+        "is_formula": true
+      },
+      "H20": {
+        "row_label": "",
+        "value": "=+H37",
+        "is_formula": true
+      },
+      "I20": {
+        "row_label": "",
+        "value": "=+I37",
+        "is_formula": true
+      },
+      "J20": {
+        "row_label": "",
+        "value": "=+J37",
+        "is_formula": true
+      },
+      "K20": {
+        "row_label": "",
+        "value": "=+K37",
+        "is_formula": true
+      },
+      "L20": {
+        "row_label": "",
+        "value": "=+L37",
+        "is_formula": true
+      },
+      "A21": {
+        "row_label": "",
+        "value": "UAI ",
+        "is_formula": false
+      },
+      "C21": {
+        "row_label": "",
+        "value": "=+C19-C20",
+        "is_formula": true
+      },
+      "D21": {
+        "row_label": "",
+        "value": "=+D19-D20",
+        "is_formula": true
+      },
+      "E21": {
+        "row_label": "",
+        "value": "=+E19-E20",
+        "is_formula": true
+      },
+      "F21": {
+        "row_label": "",
+        "value": "=+F19-F20",
+        "is_formula": true
+      },
+      "G21": {
+        "row_label": "",
+        "value": "=+G19-G20",
+        "is_formula": true
+      },
+      "H21": {
+        "row_label": "",
+        "value": "=+H19-H20",
+        "is_formula": true
+      },
+      "I21": {
+        "row_label": "",
+        "value": "=+I19-I20",
+        "is_formula": true
+      },
+      "J21": {
+        "row_label": "",
+        "value": "=+J19-J20",
+        "is_formula": true
+      },
+      "K21": {
+        "row_label": "",
+        "value": "=+K19-K20",
+        "is_formula": true
+      },
+      "L21": {
+        "row_label": "",
+        "value": "=+L19-L20",
+        "is_formula": true
+      },
+      "M21": {
+        "row_label": "",
+        "value": "=+M19-M20",
+        "is_formula": true
+      },
+      "N21": {
+        "row_label": "",
+        "value": "=+N19-N20",
+        "is_formula": true
+      },
+      "O21": {
+        "row_label": "",
+        "value": "=+O19-O20",
+        "is_formula": true
+      },
+      "P21": {
+        "row_label": "",
+        "value": "=+P19-P20",
+        "is_formula": true
+      },
+      "A22": {
+        "row_label": "",
+        "value": "I",
+        "is_formula": false
+      },
+      "C22": {
+        "row_label": "",
+        "value": "=+IF(C21<0,0,C21*0.3)",
+        "is_formula": true
+      },
+      "D22": {
+        "row_label": "",
+        "value": "=+IF(D21<0,0,D21*0.3)",
+        "is_formula": true
+      },
+      "E22": {
+        "row_label": "",
+        "value": "=+IF(E21<0,0,E21*0.3)",
+        "is_formula": true
+      },
+      "F22": {
+        "row_label": "",
+        "value": "=+IF(F21<0,0,F21*0.3)",
+        "is_formula": true
+      },
+      "G22": {
+        "row_label": "",
+        "value": "=+IF(G21<0,0,G21*0.3)",
+        "is_formula": true
+      },
+      "H22": {
+        "row_label": "",
+        "value": "=+IF(H21<0,0,H21*0.3)",
+        "is_formula": true
+      },
+      "I22": {
+        "row_label": "",
+        "value": "=+IF(I21<0,0,I21*0.3)",
+        "is_formula": true
+      },
+      "J22": {
+        "row_label": "",
+        "value": "=+IF(J21<0,0,J21*0.3)",
+        "is_formula": true
+      },
+      "K22": {
+        "row_label": "",
+        "value": "=+IF(K21<0,0,K21*0.3)",
+        "is_formula": true
+      },
+      "L22": {
+        "row_label": "",
+        "value": "=+IF(L21<0,0,L21*0.3)",
+        "is_formula": true
+      },
+      "M22": {
+        "row_label": "",
+        "value": "=+IF(M21<0,0,M21*0.3)",
+        "is_formula": true
+      },
+      "N22": {
+        "row_label": "",
+        "value": "=+IF(N21<0,0,N21*0.3)",
+        "is_formula": true
+      },
+      "O22": {
+        "row_label": "",
+        "value": "=+IF(O21<0,0,O21*0.3)",
+        "is_formula": true
+      },
+      "P22": {
+        "row_label": "",
+        "value": "=+IF(P21<0,0,P21*0.3)",
+        "is_formula": true
+      },
+      "A23": {
+        "row_label": "",
+        "value": "UN",
+        "is_formula": false
+      },
+      "C23": {
+        "row_label": "",
+        "value": "=+C21-C22",
+        "is_formula": true
+      },
+      "D23": {
+        "row_label": "",
+        "value": "=+D21-D22",
+        "is_formula": true
+      },
+      "E23": {
+        "row_label": "",
+        "value": "=+E21-E22",
+        "is_formula": true
+      },
+      "F23": {
+        "row_label": "",
+        "value": "=+F21-F22",
+        "is_formula": true
+      },
+      "G23": {
+        "row_label": "",
+        "value": "=+G21-G22",
+        "is_formula": true
+      },
+      "H23": {
+        "row_label": "",
+        "value": "=+H21-H22",
+        "is_formula": true
+      },
+      "I23": {
+        "row_label": "",
+        "value": "=+I21-I22",
+        "is_formula": true
+      },
+      "J23": {
+        "row_label": "",
+        "value": "=+J21-J22",
+        "is_formula": true
+      },
+      "K23": {
+        "row_label": "",
+        "value": "=+K21-K22",
+        "is_formula": true
+      },
+      "L23": {
+        "row_label": "",
+        "value": "=+L21-L22",
+        "is_formula": true
+      },
+      "M23": {
+        "row_label": "",
+        "value": "=+M21-M22",
+        "is_formula": true
+      },
+      "N23": {
+        "row_label": "",
+        "value": "=+N21-N22",
+        "is_formula": true
+      },
+      "O23": {
+        "row_label": "",
+        "value": "=+O21-O22",
+        "is_formula": true
+      },
+      "P23": {
+        "row_label": "",
+        "value": "=+P21-P22",
+        "is_formula": true
+      },
+      "A24": {
+        "row_label": "",
+        "value": "f",
+        "is_formula": false
+      },
+      "B24": {
+        "row_label": "",
+        "value": "=+B14-B13",
+        "is_formula": true
+      },
+      "C24": {
+        "row_label": "=+B14-B13",
+        "value": "=+C23+C18-C14",
+        "is_formula": true
+      },
+      "D24": {
+        "row_label": "=+B14-B13",
+        "value": "=+D23+D18-D14",
+        "is_formula": true
+      },
+      "E24": {
+        "row_label": "=+B14-B13",
+        "value": "=+E23+E18-E14",
+        "is_formula": true
+      },
+      "F24": {
+        "row_label": "=+B14-B13",
+        "value": "=+F23+F18-F14",
+        "is_formula": true
+      },
+      "G24": {
+        "row_label": "=+B14-B13",
+        "value": "=+G23+G18-G14",
+        "is_formula": true
+      },
+      "H24": {
+        "row_label": "=+B14-B13",
+        "value": "=+H23+H18-H14",
+        "is_formula": true
+      },
+      "I24": {
+        "row_label": "=+B14-B13",
+        "value": "=+I23+I18-I14",
+        "is_formula": true
+      },
+      "J24": {
+        "row_label": "=+B14-B13",
+        "value": "=+J23+J18-J14",
+        "is_formula": true
+      },
+      "K24": {
+        "row_label": "=+B14-B13",
+        "value": "=+K23+K18-K14",
+        "is_formula": true
+      },
+      "L24": {
+        "row_label": "=+B14-B13",
+        "value": "=+L23+L18-L14",
+        "is_formula": true
+      },
+      "M24": {
+        "row_label": "=+B14-B13",
+        "value": "=+M23+M18-M14",
+        "is_formula": true
+      },
+      "N24": {
+        "row_label": "=+B14-B13",
+        "value": "=+N23+N18-N14",
+        "is_formula": true
+      },
+      "O24": {
+        "row_label": "=+B14-B13",
+        "value": "=+O23+O18-O14",
+        "is_formula": true
+      },
+      "P24": {
+        "row_label": "=+B14-B13",
+        "value": "=+P23+P18-P14",
+        "is_formula": true
+      },
+      "A26": {
+        "row_label": "",
+        "value": "Vaf (cok)",
+        "is_formula": false
+      },
+      "B26": {
+        "row_label": "",
+        "value": "=NPV(C10,C24:V24)",
+        "is_formula": true
+      },
+      "A27": {
+        "row_label": "",
+        "value": "VAN",
+        "is_formula": false
+      },
+      "B27": {
+        "row_label": "",
+        "value": "=+B26+B24",
+        "is_formula": true
+      },
+      "E27": {
+        "row_label": "=+B26+B24",
+        "value": "Precio minimo",
+        "is_formula": false
+      },
+      "G27": {
+        "row_label": "=+B26+B24",
+        "value": "US$/MWh",
+        "is_formula": false
+      },
+      "K27": {
+        "row_label": "=+B26+B24",
+        "value": "Parte a",
+        "is_formula": false
+      },
+      "L27": {
+        "row_label": "=+B26+B24",
+        "value": "48.79",
+        "is_formula": false
+      },
+      "M27": {
+        "row_label": "=+B26+B24",
+        "value": "US$/MWh",
+        "is_formula": false
+      },
+      "A28": {
+        "row_label": "",
+        "value": "TIR",
+        "is_formula": false
+      },
+      "B28": {
+        "row_label": "",
+        "value": "=IRR(B24:V24)",
+        "is_formula": true
+      },
+      "A29": {
+        "row_label": "",
+        "value": "Rentabilidad",
+        "is_formula": false
+      },
+      "B29": {
+        "row_label": "",
+        "value": "=+B27/-B24",
+        "is_formula": true
+      },
+      "K29": {
+        "row_label": "=+B27/-B24",
+        "value": "Parte b",
+        "is_formula": false
+      },
+      "L29": {
+        "row_label": "=+B27/-B24",
+        "value": "40.9",
+        "is_formula": false
+      },
+      "M29": {
+        "row_label": "=+B27/-B24",
+        "value": "Us$/MWh",
+        "is_formula": false
+      },
+      "O29": {
+        "row_label": "=+B27/-B24",
+        "value": "En este caso hay prestamo ",
+        "is_formula": false
+      },
+      "A33": {
+        "row_label": "",
+        "value": "Prestamo",
+        "is_formula": false
+      },
+      "B33": {
+        "row_label": "",
+        "value": "I",
+        "is_formula": false
+      },
+      "C33": {
+        "row_label": "I",
+        "value": "=+J3",
+        "is_formula": true
+      },
+      "B34": {
+        "row_label": "",
+        "value": "0",
+        "is_formula": false
+      },
+      "C34": {
+        "row_label": "",
+        "value": "1",
+        "is_formula": false
+      },
+      "D34": {
+        "row_label": "",
+        "value": "2",
+        "is_formula": false
+      },
+      "E34": {
+        "row_label": "",
+        "value": "3",
+        "is_formula": false
+      },
+      "F34": {
+        "row_label": "",
+        "value": "4",
+        "is_formula": false
+      },
+      "G34": {
+        "row_label": "",
+        "value": "5",
+        "is_formula": false
+      },
+      "H34": {
+        "row_label": "",
+        "value": "6",
+        "is_formula": false
+      },
+      "I34": {
+        "row_label": "",
+        "value": "7",
+        "is_formula": false
+      },
+      "J34": {
+        "row_label": "",
+        "value": "8",
+        "is_formula": false
+      },
+      "K34": {
+        "row_label": "",
+        "value": "9",
+        "is_formula": false
+      },
+      "L34": {
+        "row_label": "",
+        "value": "10",
+        "is_formula": false
+      },
+      "A35": {
+        "row_label": "",
+        "value": "Capital",
+        "is_formula": false
+      },
+      "B35": {
+        "row_label": "",
+        "value": "=+B14",
+        "is_formula": true
+      }
+    },
+    "Vidas_dife": {
+      "B3": {
+        "row_label": "",
+        "value": "Inversiones",
+        "is_formula": false
+      },
+      "B4": {
+        "row_label": "",
+        "value": "Proyectos",
+        "is_formula": false
+      },
+      "C4": {
+        "row_label": "Proyectos",
+        "value": "Equipamiento",
+        "is_formula": false
+      },
+      "E4": {
+        "row_label": "Proyectos",
+        "value": "Infraestructura",
+        "is_formula": false
+      },
+      "C5": {
+        "row_label": "",
+        "value": "Capital",
+        "is_formula": false
+      },
+      "D5": {
+        "row_label": "",
+        "value": "Vida util",
+        "is_formula": false
+      },
+      "E5": {
+        "row_label": "",
+        "value": "Capital",
+        "is_formula": false
+      },
+      "F5": {
+        "row_label": "",
+        "value": "Vida util",
+        "is_formula": false
+      },
+      "B6": {
+        "row_label": "",
+        "value": "Alternativa 1",
+        "is_formula": false
+      },
+      "C6": {
+        "row_label": "Alternativa 1",
+        "value": "12000",
+        "is_formula": false
+      },
+      "D6": {
+        "row_label": "Alternativa 1",
+        "value": "4",
+        "is_formula": false
+      },
+      "E6": {
+        "row_label": "Alternativa 1",
+        "value": "60000",
+        "is_formula": false
+      },
+      "F6": {
+        "row_label": "Alternativa 1",
+        "value": "15",
+        "is_formula": false
+      },
+      "B7": {
+        "row_label": "",
+        "value": "Alternativa 2",
+        "is_formula": false
+      },
+      "C7": {
+        "row_label": "Alternativa 2",
+        "value": "60000",
+        "is_formula": false
+      },
+      "D7": {
+        "row_label": "Alternativa 2",
+        "value": "5",
+        "is_formula": false
+      },
+      "E7": {
+        "row_label": "Alternativa 2",
+        "value": "12000",
+        "is_formula": false
+      },
+      "F7": {
+        "row_label": "Alternativa 2",
+        "value": "20",
+        "is_formula": false
+      },
+      "A9": {
+        "row_label": "",
+        "value": "PARTE a",
+        "is_formula": false
+      },
+      "B10": {
+        "row_label": "",
+        "value": "cok",
+        "is_formula": false
+      },
+      "C10": {
+        "row_label": "cok",
+        "value": "0.12",
+        "is_formula": false
+      },
+      "A11": {
+        "row_label": "",
+        "value": "Alternativa 1",
+        "is_formula": false
+      },
+      "C11": {
+        "row_label": "",
+        "value": "0",
+        "is_formula": false
+      },
+      "D11": {
+        "row_label": "",
+        "value": "1",
+        "is_formula": false
+      },
+      "E11": {
+        "row_label": "",
+        "value": "2",
+        "is_formula": false
+      },
+      "F11": {
+        "row_label": "",
+        "value": "3",
+        "is_formula": false
+      },
+      "G11": {
+        "row_label": "",
+        "value": "4",
+        "is_formula": false
+      },
+      "H11": {
+        "row_label": "",
+        "value": "5",
+        "is_formula": false
+      },
+      "I11": {
+        "row_label": "",
+        "value": "6",
+        "is_formula": false
+      },
+      "J11": {
+        "row_label": "",
+        "value": "7",
+        "is_formula": false
+      },
+      "K11": {
+        "row_label": "",
+        "value": "8",
+        "is_formula": false
+      },
+      "L11": {
+        "row_label": "",
+        "value": "9",
+        "is_formula": false
+      },
+      "M11": {
+        "row_label": "",
+        "value": "10",
+        "is_formula": false
+      },
+      "N11": {
+        "row_label": "",
+        "value": "11",
+        "is_formula": false
+      },
+      "O11": {
+        "row_label": "",
+        "value": "12",
+        "is_formula": false
+      },
+      "P11": {
+        "row_label": "",
+        "value": "13",
+        "is_formula": false
+      },
+      "B12": {
+        "row_label": "",
+        "value": "Inversion",
+        "is_formula": false
+      },
+      "C12": {
+        "row_label": "Inversion",
+        "value": "=+C6+E6",
+        "is_formula": true
+      },
+      "B13": {
+        "row_label": "",
+        "value": "Prestamo",
+        "is_formula": false
+      },
+      "B14": {
+        "row_label": "",
+        "value": "Ingresos",
+        "is_formula": false
+      },
+      "D14": {
+        "row_label": "Ingresos",
+        "value": "16000",
+        "is_formula": false
+      },
+      "E14": {
+        "row_label": "Ingresos",
+        "value": "16000",
+        "is_formula": false
+      },
+      "F14": {
+        "row_label": "Ingresos",
+        "value": "16000",
+        "is_formula": false
+      },
+      "G14": {
+        "row_label": "Ingresos",
+        "value": "16000",
+        "is_formula": false
+      },
+      "H14": {
+        "row_label": "Ingresos",
+        "value": "16000",
+        "is_formula": false
+      },
+      "I14": {
+        "row_label": "Ingresos",
+        "value": "16000",
+        "is_formula": false
+      },
+      "J14": {
+        "row_label": "Ingresos",
+        "value": "16000",
+        "is_formula": false
+      },
+      "K14": {
+        "row_label": "Ingresos",
+        "value": "16000",
+        "is_formula": false
+      },
+      "L14": {
+        "row_label": "Ingresos",
+        "value": "16000",
+        "is_formula": false
+      },
+      "M14": {
+        "row_label": "Ingresos",
+        "value": "16000",
+        "is_formula": false
+      },
+      "N14": {
+        "row_label": "Ingresos",
+        "value": "16000",
+        "is_formula": false
+      },
+      "O14": {
+        "row_label": "Ingresos",
+        "value": "16000",
+        "is_formula": false
+      },
+      "P14": {
+        "row_label": "Ingresos",
+        "value": "16000",
+        "is_formula": false
+      },
+      "B15": {
+        "row_label": "",
+        "value": "Costos",
+        "is_formula": false
+      },
+      "D15": {
+        "row_label": "Costos",
+        "value": "1300",
+        "is_formula": false
+      },
+      "E15": {
+        "row_label": "Costos",
+        "value": "=+D15",
+        "is_formula": true
+      },
+      "F15": {
+        "row_label": "Costos",
+        "value": "=+E15",
+        "is_formula": true
+      },
+      "G15": {
+        "row_label": "Costos",
+        "value": "=+F15",
+        "is_formula": true
+      },
+      "H15": {
+        "row_label": "Costos",
+        "value": "=+G15",
+        "is_formula": true
+      },
+      "I15": {
+        "row_label": "Costos",
+        "value": "=+H15",
+        "is_formula": true
+      },
+      "J15": {
+        "row_label": "Costos",
+        "value": "=+I15",
+        "is_formula": true
+      },
+      "K15": {
+        "row_label": "Costos",
+        "value": "=+J15",
+        "is_formula": true
+      },
+      "L15": {
+        "row_label": "Costos",
+        "value": "=+K15",
+        "is_formula": true
+      },
+      "M15": {
+        "row_label": "Costos",
+        "value": "=+L15",
+        "is_formula": true
+      },
+      "N15": {
+        "row_label": "Costos",
+        "value": "=+M15",
+        "is_formula": true
+      },
+      "O15": {
+        "row_label": "Costos",
+        "value": "=+N15",
+        "is_formula": true
+      },
+      "P15": {
+        "row_label": "Costos",
+        "value": "=+O15",
+        "is_formula": true
+      },
+      "B16": {
+        "row_label": "",
+        "value": "d",
+        "is_formula": false
+      },
+      "D16": {
+        "row_label": "d",
+        "value": "=+D31",
+        "is_formula": true
+      },
+      "E16": {
+        "row_label": "d",
+        "value": "=+E31",
+        "is_formula": true
+      },
+      "F16": {
+        "row_label": "d",
+        "value": "=+F31",
+        "is_formula": true
+      },
+      "G16": {
+        "row_label": "d",
+        "value": "=+G31",
+        "is_formula": true
+      },
+      "H16": {
+        "row_label": "d",
+        "value": "=+H31",
+        "is_formula": true
+      },
+      "I16": {
+        "row_label": "d",
+        "value": "=+I31",
+        "is_formula": true
+      },
+      "J16": {
+        "row_label": "d",
+        "value": "=+J31",
+        "is_formula": true
+      },
+      "K16": {
+        "row_label": "d",
+        "value": "=+K31",
+        "is_formula": true
+      },
+      "L16": {
+        "row_label": "d",
+        "value": "=+L31",
+        "is_formula": true
+      },
+      "M16": {
+        "row_label": "d",
+        "value": "=+M31",
+        "is_formula": true
+      },
+      "N16": {
+        "row_label": "d",
+        "value": "=+N31",
+        "is_formula": true
+      },
+      "O16": {
+        "row_label": "d",
+        "value": "=+O31",
+        "is_formula": true
+      },
+      "P16": {
+        "row_label": "d",
+        "value": "=+P31",
+        "is_formula": true
+      },
+      "B17": {
+        "row_label": "",
+        "value": "UAII",
+        "is_formula": false
+      },
+      "D17": {
+        "row_label": "UAII",
+        "value": "=+D14-D15-D16",
+        "is_formula": true
+      },
+      "E17": {
+        "row_label": "UAII",
+        "value": "=+E14-E15-E16",
+        "is_formula": true
+      },
+      "F17": {
+        "row_label": "UAII",
+        "value": "=+F14-F15-F16",
+        "is_formula": true
+      },
+      "G17": {
+        "row_label": "UAII",
+        "value": "=+G14-G15-G16",
+        "is_formula": true
+      },
+      "H17": {
+        "row_label": "UAII",
+        "value": "=+H14-H15-H16",
+        "is_formula": true
+      },
+      "I17": {
+        "row_label": "UAII",
+        "value": "=+I14-I15-I16",
+        "is_formula": true
+      },
+      "J17": {
+        "row_label": "UAII",
+        "value": "=+J14-J15-J16",
+        "is_formula": true
+      },
+      "K17": {
+        "row_label": "UAII",
+        "value": "=+K14-K15-K16",
+        "is_formula": true
+      },
+      "L17": {
+        "row_label": "UAII",
+        "value": "=+L14-L15-L16",
+        "is_formula": true
+      },
+      "M17": {
+        "row_label": "UAII",
+        "value": "=+M14-M15-M16",
+        "is_formula": true
+      },
+      "N17": {
+        "row_label": "UAII",
+        "value": "=+N14-N15-N16",
+        "is_formula": true
+      },
+      "O17": {
+        "row_label": "UAII",
+        "value": "=+O14-O15-O16",
+        "is_formula": true
+      },
+      "P17": {
+        "row_label": "UAII",
+        "value": "=+P14-P15-P16",
+        "is_formula": true
+      },
+      "B18": {
+        "row_label": "",
+        "value": "I",
+        "is_formula": false
+      },
+      "D18": {
+        "row_label": "I",
+        "value": "0",
+        "is_formula": false
+      },
+      "E18": {
+        "row_label": "I",
+        "value": "0",
+        "is_formula": false
+      },
+      "F18": {
+        "row_label": "I",
+        "value": "0",
+        "is_formula": false
+      },
+      "G18": {
+        "row_label": "I",
+        "value": "0",
+        "is_formula": false
+      },
+      "H18": {
+        "row_label": "I",
+        "value": "0",
+        "is_formula": false
+      },
+      "I18": {
+        "row_label": "I",
+        "value": "0",
+        "is_formula": false
+      },
+      "J18": {
+        "row_label": "I",
+        "value": "0",
+        "is_formula": false
+      },
+      "K18": {
+        "row_label": "I",
+        "value": "0",
+        "is_formula": false
+      },
+      "L18": {
+        "row_label": "I",
+        "value": "0",
+        "is_formula": false
+      },
+      "M18": {
+        "row_label": "I",
+        "value": "0",
+        "is_formula": false
+      },
+      "N18": {
+        "row_label": "I",
+        "value": "0",
+        "is_formula": false
+      },
+      "O18": {
+        "row_label": "I",
+        "value": "0",
+        "is_formula": false
+      },
+      "P18": {
+        "row_label": "I",
+        "value": "0",
+        "is_formula": false
+      },
+      "B19": {
+        "row_label": "",
+        "value": "UAI ",
+        "is_formula": false
+      },
+      "D19": {
+        "row_label": "UAI",
+        "value": "=+D17-D18",
+        "is_formula": true
+      },
+      "E19": {
+        "row_label": "UAI",
+        "value": "=+E17-E18",
+        "is_formula": true
+      },
+      "F19": {
+        "row_label": "UAI",
+        "value": "=+F17-F18",
+        "is_formula": true
+      },
+      "G19": {
+        "row_label": "UAI",
+        "value": "=+G17-G18",
+        "is_formula": true
+      },
+      "H19": {
+        "row_label": "UAI",
+        "value": "=+H17-H18",
+        "is_formula": true
+      },
+      "I19": {
+        "row_label": "UAI",
+        "value": "=+I17-I18",
+        "is_formula": true
+      },
+      "J19": {
+        "row_label": "UAI",
+        "value": "=+J17-J18",
+        "is_formula": true
+      },
+      "K19": {
+        "row_label": "UAI",
+        "value": "=+K17-K18",
+        "is_formula": true
+      },
+      "L19": {
+        "row_label": "UAI",
+        "value": "=+L17-L18",
+        "is_formula": true
+      },
+      "M19": {
+        "row_label": "UAI",
+        "value": "=+M17-M18",
+        "is_formula": true
+      },
+      "N19": {
+        "row_label": "UAI",
+        "value": "=+N17-N18",
+        "is_formula": true
+      },
+      "O19": {
+        "row_label": "UAI",
+        "value": "=+O17-O18",
+        "is_formula": true
+      },
+      "P19": {
+        "row_label": "UAI",
+        "value": "=+P17-P18",
+        "is_formula": true
+      },
+      "B20": {
+        "row_label": "",
+        "value": "I",
+        "is_formula": false
+      },
+      "D20": {
+        "row_label": "I",
+        "value": "=+D19*0.3",
+        "is_formula": true
+      },
+      "E20": {
+        "row_label": "I",
+        "value": "=+E19*0.3",
+        "is_formula": true
+      },
+      "F20": {
+        "row_label": "I",
+        "value": "=+F19*0.3",
+        "is_formula": true
+      },
+      "G20": {
+        "row_label": "I",
+        "value": "=+G19*0.3",
+        "is_formula": true
+      },
+      "H20": {
+        "row_label": "I",
+        "value": "=+H19*0.3",
+        "is_formula": true
+      },
+      "I20": {
+        "row_label": "I",
+        "value": "=+I19*0.3",
+        "is_formula": true
+      },
+      "J20": {
+        "row_label": "I",
+        "value": "=+J19*0.3",
+        "is_formula": true
+      },
+      "K20": {
+        "row_label": "I",
+        "value": "=+K19*0.3",
+        "is_formula": true
+      },
+      "L20": {
+        "row_label": "I",
+        "value": "=+L19*0.3",
+        "is_formula": true
+      },
+      "M20": {
+        "row_label": "I",
+        "value": "=+M19*0.3",
+        "is_formula": true
+      },
+      "N20": {
+        "row_label": "I",
+        "value": "=+N19*0.3",
+        "is_formula": true
+      },
+      "O20": {
+        "row_label": "I",
+        "value": "=+O19*0.3",
+        "is_formula": true
+      },
+      "P20": {
+        "row_label": "I",
+        "value": "=+P19*0.3",
+        "is_formula": true
+      },
+      "B21": {
+        "row_label": "",
+        "value": "UN",
+        "is_formula": false
+      },
+      "D21": {
+        "row_label": "UN",
+        "value": "=+D19-D20",
+        "is_formula": true
+      },
+      "E21": {
+        "row_label": "UN",
+        "value": "=+E19-E20",
+        "is_formula": true
+      },
+      "F21": {
+        "row_label": "UN",
+        "value": "=+F19-F20",
+        "is_formula": true
+      },
+      "G21": {
+        "row_label": "UN",
+        "value": "=+G19-G20",
+        "is_formula": true
+      },
+      "H21": {
+        "row_label": "UN",
+        "value": "=+H19-H20",
+        "is_formula": true
+      },
+      "I21": {
+        "row_label": "UN",
+        "value": "=+I19-I20",
+        "is_formula": true
+      },
+      "J21": {
+        "row_label": "UN",
+        "value": "=+J19-J20",
+        "is_formula": true
+      },
+      "K21": {
+        "row_label": "UN",
+        "value": "=+K19-K20",
+        "is_formula": true
+      },
+      "L21": {
+        "row_label": "UN",
+        "value": "=+L19-L20",
+        "is_formula": true
+      },
+      "M21": {
+        "row_label": "UN",
+        "value": "=+M19-M20",
+        "is_formula": true
+      },
+      "N21": {
+        "row_label": "UN",
+        "value": "=+N19-N20",
+        "is_formula": true
+      },
+      "O21": {
+        "row_label": "UN",
+        "value": "=+O19-O20",
+        "is_formula": true
+      },
+      "P21": {
+        "row_label": "UN",
+        "value": "=+P19-P20",
+        "is_formula": true
+      },
+      "B22": {
+        "row_label": "",
+        "value": "f",
+        "is_formula": false
+      },
+      "C22": {
+        "row_label": "f",
+        "value": "=-C12",
+        "is_formula": true
+      },
+      "D22": {
+        "row_label": "f",
+        "value": "=+D21+D16",
+        "is_formula": true
+      },
+      "E22": {
+        "row_label": "f",
+        "value": "=+E21+E16",
+        "is_formula": true
+      },
+      "F22": {
+        "row_label": "f",
+        "value": "=+F21+F16",
+        "is_formula": true
+      },
+      "G22": {
+        "row_label": "f",
+        "value": "=+G21+G16",
+        "is_formula": true
+      },
+      "H22": {
+        "row_label": "f",
+        "value": "=+H21+H16",
+        "is_formula": true
+      },
+      "I22": {
+        "row_label": "f",
+        "value": "=+I21+I16",
+        "is_formula": true
+      },
+      "J22": {
+        "row_label": "f",
+        "value": "=+J21+J16",
+        "is_formula": true
+      },
+      "K22": {
+        "row_label": "f",
+        "value": "=+K21+K16",
+        "is_formula": true
+      },
+      "L22": {
+        "row_label": "f",
+        "value": "=+L21+L16",
+        "is_formula": true
+      },
+      "M22": {
+        "row_label": "f",
+        "value": "=+M21+M16",
+        "is_formula": true
+      },
+      "N22": {
+        "row_label": "f",
+        "value": "=+N21+N16",
+        "is_formula": true
+      },
+      "O22": {
+        "row_label": "f",
+        "value": "=+O21+O16",
+        "is_formula": true
+      },
+      "P22": {
+        "row_label": "f",
+        "value": "=+P21+P16",
+        "is_formula": true
+      },
+      "B23": {
+        "row_label": "",
+        "value": "Vaf",
+        "is_formula": false
+      },
+      "C23": {
+        "row_label": "Vaf",
+        "value": "=NPV(C10,D22:R22)",
+        "is_formula": true
+      },
+      "B24": {
+        "row_label": "",
+        "value": "VAN",
+        "is_formula": false
+      },
+      "C24": {
+        "row_label": "VAN",
+        "value": "=+C22+C23",
+        "is_formula": true
+      },
+      "B25": {
+        "row_label": "",
+        "value": "VAE",
+        "is_formula": false
+      },
+      "C25": {
+        "row_label": "VAE",
+        "value": "=-PMT(C10,15,C24)",
+        "is_formula": true
+      },
+      "A27": {
+        "row_label": "",
+        "value": "Depreciacion",
+        "is_formula": false
+      },
+      "B28": {
+        "row_label": "",
+        "value": "Inversion",
+        "is_formula": false
+      },
+      "C28": {
+        "row_label": "Inversion",
+        "value": "=+E6+E7",
+        "is_formula": true
+      },
+      "B29": {
+        "row_label": "",
+        "value": "d1",
+        "is_formula": false
+      },
+      "D29": {
+        "row_label": "d1",
+        "value": "=+C6/D6",
+        "is_formula": true
+      },
+      "E29": {
+        "row_label": "d1",
+        "value": "=+D29",
+        "is_formula": true
+      },
+      "F29": {
+        "row_label": "d1",
+        "value": "=+E29",
+        "is_formula": true
+      },
+      "G29": {
+        "row_label": "d1",
+        "value": "=+F29",
+        "is_formula": true
+      },
+      "B30": {
+        "row_label": "",
+        "value": "d2",
+        "is_formula": false
+      },
+      "D30": {
+        "row_label": "d2",
+        "value": "=+E6/F6",
+        "is_formula": true
+      },
+      "E30": {
+        "row_label": "d2",
+        "value": "=+D30",
+        "is_formula": true
+      },
+      "F30": {
+        "row_label": "d2",
+        "value": "=+E30",
+        "is_formula": true
+      },
+      "G30": {
+        "row_label": "d2",
+        "value": "=+F30",
+        "is_formula": true
+      },
+      "H30": {
+        "row_label": "d2",
+        "value": "=+G30",
+        "is_formula": true
+      },
+      "I30": {
+        "row_label": "d2",
+        "value": "=+H30",
+        "is_formula": true
+      },
+      "J30": {
+        "row_label": "d2",
+        "value": "=+I30",
+        "is_formula": true
+      },
+      "K30": {
+        "row_label": "d2",
+        "value": "=+J30",
+        "is_formula": true
+      },
+      "L30": {
+        "row_label": "d2",
+        "value": "=+K30",
+        "is_formula": true
+      },
+      "M30": {
+        "row_label": "d2",
+        "value": "=+L30",
+        "is_formula": true
+      },
+      "N30": {
+        "row_label": "d2",
+        "value": "=+M30",
+        "is_formula": true
+      },
+      "O30": {
+        "row_label": "d2",
+        "value": "=+N30",
+        "is_formula": true
+      },
+      "P30": {
+        "row_label": "d2",
+        "value": "=+O30",
+        "is_formula": true
+      },
+      "B31": {
+        "row_label": "",
+        "value": "d",
+        "is_formula": false
+      },
+      "D31": {
+        "row_label": "d",
+        "value": "=+D29+D30",
+        "is_formula": true
+      },
+      "E31": {
+        "row_label": "d",
+        "value": "=+E29+E30",
+        "is_formula": true
+      },
+      "F31": {
+        "row_label": "d",
+        "value": "=+F29+F30",
+        "is_formula": true
+      },
+      "G31": {
+        "row_label": "d",
+        "value": "=+G29+G30",
+        "is_formula": true
+      },
+      "H31": {
+        "row_label": "d",
+        "value": "=+H29+H30",
+        "is_formula": true
+      },
+      "I31": {
+        "row_label": "d",
+        "value": "=+I29+I30",
+        "is_formula": true
+      },
+      "J31": {
+        "row_label": "d",
+        "value": "=+J29+J30",
+        "is_formula": true
+      },
+      "K31": {
+        "row_label": "d",
+        "value": "=+K29+K30",
+        "is_formula": true
+      },
+      "L31": {
+        "row_label": "d",
+        "value": "=+L29+L30",
+        "is_formula": true
+      },
+      "M31": {
+        "row_label": "d",
+        "value": "=+M29+M30",
+        "is_formula": true
+      },
+      "N31": {
+        "row_label": "d",
+        "value": "=+N29+N30",
+        "is_formula": true
+      },
+      "O31": {
+        "row_label": "d",
+        "value": "=+O29+O30",
+        "is_formula": true
+      },
+      "P31": {
+        "row_label": "d",
+        "value": "=+P29+P30",
+        "is_formula": true
+      },
+      "B33": {
+        "row_label": "",
+        "value": "cok",
+        "is_formula": false
+      },
+      "C33": {
+        "row_label": "cok",
+        "value": "0.12",
+        "is_formula": false
+      },
+      "A34": {
+        "row_label": "",
+        "value": "Alternativa 2",
+        "is_formula": false
+      },
+      "C34": {
+        "row_label": "",
+        "value": "0",
+        "is_formula": false
+      },
+      "D34": {
+        "row_label": "",
+        "value": "1",
+        "is_formula": false
+      },
+      "E34": {
+        "row_label": "",
+        "value": "2",
+        "is_formula": false
+      },
+      "F34": {
+        "row_label": "",
+        "value": "3",
+        "is_formula": false
+      },
+      "G34": {
+        "row_label": "",
+        "value": "4",
+        "is_formula": false
+      },
+      "H34": {
+        "row_label": "",
+        "value": "5",
+        "is_formula": false
+      },
+      "I34": {
+        "row_label": "",
+        "value": "6",
+        "is_formula": false
+      },
+      "J34": {
+        "row_label": "",
+        "value": "7",
+        "is_formula": false
+      },
+      "K34": {
+        "row_label": "",
+        "value": "8",
+        "is_formula": false
+      },
+      "L34": {
+        "row_label": "",
+        "value": "9",
+        "is_formula": false
+      },
+      "M34": {
+        "row_label": "",
+        "value": "10",
+        "is_formula": false
+      },
+      "N34": {
+        "row_label": "",
+        "value": "11",
+        "is_formula": false
+      },
+      "O34": {
+        "row_label": "",
+        "value": "12",
+        "is_formula": false
+      },
+      "P34": {
+        "row_label": "",
+        "value": "13",
+        "is_formula": false
+      },
+      "B35": {
+        "row_label": "",
+        "value": "Inversion",
+        "is_formula": false
+      },
+      "C35": {
+        "row_label": "Inversion",
+        "value": "=+C28",
+        "is_formula": true
+      }
+    }
+  }
+}
