@@ -47,10 +47,17 @@ export const WORKSHEETS = {
     id: "s8_fce",
     title: "S8 — Caso base sin préstamo",
     source: "S8 Ejerc icios financiamiento.xls → Financ (cols A-E)",
-    description: "Inversión 1240, COK 12%, ingresos 600/900/800",
+    description: "Inversión 1240, COK 12%, ingresos 600/900/800, gastos 150/250/200, dep 400",
     getExpected() {
       return computeSheetS8Case({ cok: 0.12, prestamo: 0 });
     },
+    inputs: [
+      { id: "inv", label: "Inversión P0", value: -1240 },
+      { id: "cok", label: "COK", value: "12%" },
+      { id: "ing", label: "Ingresos P1-P3", value: "600 / 900 / 800" },
+      { id: "gas", label: "Gastos P1-P3", value: "150 / 250 / 200" },
+      { id: "dep", label: "Depreciación anual", value: 400 },
+    ],
     practiceCells: [
       { id: "uaii1", label: "UAII P1", formula: "= Ing - Gastos - Dep", period: 1, field: "uaii", col: "cols" },
       { id: "neto1", label: "Neto P1", formula: "= UAI - Impuestos", period: 1, field: "neto", col: "cols" },
@@ -68,6 +75,12 @@ export const WORKSHEETS = {
     getExpected() {
       return computeSheetS8Case({ cok: 0.12, prestamo: 500, iLoan: 0.1 });
     },
+    inputs: [
+      { id: "inv", label: "Inversión P0", value: -1240 },
+      { id: "prest", label: "Préstamo P0", value: 500 },
+      { id: "iloan", label: "Tasa préstamo", value: "10%" },
+      { id: "cok", label: "COK", value: "12%" },
+    ],
     practiceCells: [
       { id: "ff0", label: "Flujo fondos P0", formula: "= Inversion + Prestamo", period: 0, field: "flujoFondos", col: "cols" },
       { id: "int1", label: "Intereses P1", formula: "= Saldo × i", period: 1, field: "intereses", col: "cols" },
@@ -95,18 +108,19 @@ export const WORKSHEETS = {
   s6_tasas: {
     id: "s6_tasas",
     title: "S6 — Hoja Tasas (CAPM)",
-    source: "S6 → Tasas, referenciada en FCE C2 = Tasas!D8",
+    source: "S6 → Tasas; FCE C2 = Tasas!D8",
+    description: "Rf, prima de mercado, beta y riesgo país → Ke en D8",
     getExpected() {
-      return computeSheetS6Tasas(0.0315, 0.0307, 1.4, 0.05);
+      return computeSheetS6Tasas(0.0315, 0.0307, 1.4, 0.0255);
     },
     practiceCells: [
-      { id: "ke", label: "Ke (D8)", formula: "=Rf+Beta*(Rm-Rf)+RiesgoPaís", field: "ke" },
+      { id: "ke", label: "Ke (D8)", formula: "=D3+D5*D4+D6", field: "ke" },
     ],
     inputs: [
-      { id: "rf", label: "Rf (D8)", value: 0.0315 },
-      { id: "rmrf", label: "(Rm-Rf) (D10)", value: 0.0307 },
-      { id: "beta", label: "Beta (D12)", value: 1.4 },
-      { id: "rp", label: "Riesgo país (D14)", value: 0.05 },
+      { id: "rf", label: "Rf (D3)", value: 0.0315 },
+      { id: "rmrf", label: "(Rm-Rf) (D4)", value: 0.0307 },
+      { id: "beta", label: "Beta (D5)", value: 1.4 },
+      { id: "rp", label: "Riesgo país (D6)", value: 0.0255 },
     ],
   },
 
@@ -131,8 +145,14 @@ export const WORKSHEETS = {
     id: "s7_van_tir",
     title: "S7 — VAN + TIR (patrón Eólico)",
     source: "S7 → Eolico: B26=NPV, B27=+B26+B24, B28=IRR",
+    description: "Flujos S8 de referencia con COK 12%",
     rate: 0.12,
     flows: [-1240, 435, 575, 580],
+    inputs: [
+      { id: "cok", label: "COK (C10)", value: "12%" },
+      { id: "p0", label: "Flujo P0 (B24)", value: -1240 },
+      { id: "flows", label: "Flujos P1-P3", value: "435 / 575 / 580" },
+    ],
     practiceCells: [
       { id: "vaf", label: "Vaf (B26)", formula: "=NPV(C10,C24:V24)", get: () => round(excelVAN(0.12, [-1240, 435, 575, 580]) - (-1240 + 435 / 1.12 + 575 / 1.12 ** 2 + 580 / 1.12 ** 3) + (435 / 1.12 + 575 / 1.12 ** 2 + 580 / 1.12 ** 3)) },
       { id: "van", label: "VAN (B27)", formula: "=+B26+B24", get: () => excelVAN(0.12, [-1240, 435, 575, 580]) },

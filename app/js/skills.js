@@ -36,6 +36,13 @@ export const FORMULA_SKILLS = [
     module: 2,
   },
   {
+    id: "capm_ke",
+    name: "Ke (CAPM)",
+    formula: "Ke = Rf + β × (Rm−Rf) + Riesgo país",
+    unlockOn: { gridId: "s6_tasas" },
+    module: 3,
+  },
+  {
     id: "vaf",
     name: "Vaf",
     formula: "Vaf = NPV(tasa, flujos P1…Pn)",

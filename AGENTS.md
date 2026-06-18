@@ -14,13 +14,13 @@ Ayudar al usuario a **aprobar el examen de BEG06** (Formulación y Evaluación d
 
 | Componente | Estado |
 |------------|--------|
-| PWA en `app/` | ✅ Funcional — 7 módulos, worksheets interactivos |
+| PWA en `app/` | ✅ Funcional — 7 módulos, grids interactivos (M3 CAPM corregido) |
 | Análisis Excel | ✅ `data/workbook_analysis.json` |
 | Curriculum | ✅ `data/curriculum.json` + copia en `app/data/` |
+| GitHub + Pages | ✅ Repo `FORMULACION` publicado y desplegado |
 | PDF Depreciación I/II | ⚠️ En BASE pero no parseados al curriculum |
 | PPT Cap VI/VII | ⚠️ No parseados (error python-pptx en algunos) |
-| S8 `.xls` fórmulas | ⚠️ Solo valores leídos; lógica replicada manualmente |
-| Git remoto | ❓ Usuario debe configurar `origin` y push |
+| S8 `.xls` fórmulas | ⚠️ Solo valores leídos; lógica replicada manualmente (cuota S8 corregida jun 2026) |
 
 ## Archivos clave — leer primero
 

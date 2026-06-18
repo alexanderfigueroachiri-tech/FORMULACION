@@ -74,13 +74,20 @@ python scripts/analyze_workbooks.py
 | Qué | Estado |
 |-----|--------|
 | App local | ✅ Lista en `app/` |
-| Git commit | ⚠️ Aún sin primer commit en tu PC |
-| GitHub remoto | ⚠️ Repo `FORMULACION` no publicado (404) |
-| Nube / URL pública | ❌ No — hay que hacer push + activar Pages |
+| GitHub | ✅ [FORMULACION](https://github.com/alexanderfigueroachiri-tech/FORMULACION) |
+| GitHub Pages | ✅ [alexanderfigueroachiri-tech.github.io/FORMULACION/](https://alexanderfigueroachiri-tech.github.io/FORMULACION/) |
+| Módulos M1–M7 | ✅ 7 módulos con grids interactivos (M3 CAPM corregido jun 2026) |
+| Icono PWA | ✅ `app/icons/icon-192.png` |
 
-## Cómo usar **ahora mismo** desde el móvil (sin nube)
+## Cómo usar **ahora mismo** (nube o local)
 
-1. En la PC, abre terminal en el proyecto:
+**En la nube (recomendado para el móvil):** abre  
+[https://alexanderfigueroachiri-tech.github.io/FORMULACION/](https://alexanderfigueroachiri-tech.github.io/FORMULACION/)  
+→ menú del navegador → **Añadir a pantalla de inicio**.
+
+**En local (misma WiFi):**
+
+1. En la PC:
    ```bash
    cd app
    python -m http.server 8080
@@ -89,26 +96,13 @@ python scripts/analyze_workbooks.py
 3. En el móvil (misma WiFi), abre: `http://192.168.1.50:8080`
 4. Menú del navegador → **Añadir a pantalla de inicio** (PWA offline).
 
-> El progreso y fórmulas desbloqueadas quedan en **localStorage del navegador** de ese dispositivo — no se sincronizan solos entre PC y móvil hasta que haya cuenta/nube.
+> El progreso queda en **localStorage** del navegador — no se sincroniza entre dispositivos.
 
-## Publicar en la nube (una vez)
-
-```bash
-git add .
-git commit -m "feat: PWA BEG06 con curriculum, grids y fórmulas desbloqueables"
-git branch -M main
-git remote add origin https://github.com/alexanderfigueroachiri-tech/FORMULACION.git
-git push -u origin main
-```
-
-Luego en GitHub: **Settings → Pages → Build and deployment → GitHub Actions**.  
-La URL quedará tipo: `https://alexanderfigueroachiri-tech.github.io/FORMULACION/`
-
-El workflow `.github/workflows/pages.yml` ya está preparado (publica la carpeta `app/`).
+El workflow `.github/workflows/pages.yml` publica `app/` en cada push a `main`.
 
 ## Despliegue (GitHub Pages / Netlify)
 
-- **GitHub Pages**: push a `main` + activar Pages con GitHub Actions (ver arriba)
+- **GitHub Pages**: ya activo en el repo; push a `main` actualiza la app
 - **Netlify**: publish directory = `app`
 
 ## Git
@@ -126,7 +120,6 @@ git push -u origin main
 - [ ] Extraer texto de PDFs Depreciación I/II al curriculum
 - [ ] Más ejercicios de S7 (eólico, telecom) como worksheets
 - [ ] Modo examen con temporizador
-- [ ] Icono PWA 192×192 en `app/icons/`
 - [ ] Parsear fórmulas de `.xls` S8 con herramienta que lea BIFF
 
 ## Licencia

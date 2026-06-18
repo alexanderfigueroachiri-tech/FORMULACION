@@ -10,17 +10,17 @@
       "duration_min": 35,
       "source": ["Capitulo V. Depreciacion Parte I.pdf", "Capitulo V. Depreciacion Parte II.pdf"],
       "objectives": [
-        "Calcular depreciacion lineal con capital, VR y vida util",
-        "En el FCE: dep negativa al calcular utilidad; se suma de vuelta al pasar a flujo de fondos"
+        "Depreciacion lineal: (Capital − VR) ÷ Vida",
+        "En FCE la dep va negativa en fila 8"
       ],
       "tips": [
         {
-          "human": "La depreciacion reparte el costo del activo entre los años de vida util. Baja la utilidad (y el impuesto) pero no es plata que sale del bolsillo ese año.",
-          "formula": "Dep anual = (Capital − VR) ÷ Vida util"
+          "human": "La depreciacion reparte el costo del activo entre los años de vida util.",
+          "excel": "Dep anual = (Capital − VR) ÷ Vida"
         },
         {
-          "human": "En el flujo economico anotas la depreciacion con signo negativo junto a ingresos y costos. Al armar el flujo de fondos la devuelves porque nunca fue un desembolso.",
-          "formula": "Dep en utilidad = − Dep anual"
+          "human": "En el flujo FCE la depreciacion va en fila 8 con signo negativo (no es desembolso).",
+          "excel": "Celda D8 = −J6 (J6 = dep anual)"
         }
       ],
       "steps": [
@@ -29,13 +29,13 @@
           "title": "Depreciacion lineal",
           "formula": "Dep anual = (Capital − Valor residual) ÷ Vida util",
           "excel_equiv": "=(I5-L6)/B8",
-          "excel_note": "Necesitas tres datos del enunciado: cuanto invertiste, cuanto vale el activo al final (VR) y cuantos años dura.",
+          "excel_note": "I5 = capital, L6 = VR, B8 = años. En algunos ejercicios el profe pone 40 fijo en vez de celda.",
           "legendId": "depreciacion_s6"
         },
         {
           "type": "grid",
           "gridId": "depreciacion_s6",
-          "title": "Practica: calcula la dep y ponla en el flujo"
+          "title": "Practica: arma la formula tocando Capital, VR y Vida"
         }
       ]
     },
@@ -47,27 +47,31 @@
       "source": ["S6 Flujo basico FCE y FCF.xlsx → FCE"],
       "objectives": [
         "UAII = Ingresos + Egresos + Depreciacion",
-        "Flujo de fondos = Utilidad neta − Dep + Inversion del periodo"
+        "Flujo = Utilidad neta − Dep (porque dep es negativa en fila)"
       ],
       "tips": [
         {
-          "human": "UAII es la utilidad antes de intereses e impuestos. Suma ingresos, egresos operativos y depreciacion (con su signo).",
-          "formula": "UAII = Ingresos + Egresos + Depreciacion"
+          "human": "UAII = utilidad antes de intereses e impuestos. Suma ingresos, egresos y depreciacion.",
+          "excel": "D9 = D6 + D7 + D8"
         },
         {
-          "human": "El impuesto es 30% de la utilidad antes de impuestos (UAI). Va con signo negativo.",
-          "formula": "Impuesto = −0,30 × UAI"
+          "human": "Impuesto = 30% de la UAI (utilidad antes de impuestos).",
+          "excel": "D12 = −0,3 × D11"
         },
         {
-          "human": "El flujo de fondos corrige la depreciacion: como no fue caja, la devuelves. Si inviertes en ese periodo, resta esa inversion.",
-          "formula": "Flujo = Utilidad neta − Depreciacion + Inversion del periodo"
+          "human": "Flujo de fondos = utilidad neta + depreciacion (ajuste contable).",
+          "excel": "D14 = D13 − D8 + D5"
+        },
+        {
+          "human": "VAN se llama Vaf-I en S6: valor actual neto.",
+          "excel": "C17 = C16 + C14"
         }
       ],
       "steps": [
         {
           "type": "concept",
           "title": "Cadena del FCE (periodo 1)",
-          "body": "Ingresos → Egresos → Depreciacion → UAII → Intereses → UAI → Impuesto 30% → Utilidad neta → Flujo de fondos.",
+          "body": "Ingresos → Egresos → Depreciacion → UAII → Intereses → UAI → Impuesto 30% → Utilidad neta → Flujo de fondos. Lee la tabla de celdas antes de practicar.",
           "legendId": "fce_cadena_s6"
         },
         {
@@ -82,23 +86,34 @@
       "order": 3,
       "title": "Tasa de actualizacion",
       "duration_min": 30,
+      "source": ["S6 Flujo basico FCE y FCF.xlsx → hoja Tasas"],
+      "objectives": [
+        "Ke = Rf + Beta × (Rm − Rf) + Riesgo pais",
+        "En S6, FCE toma la tasa de Tasas!D8"
+      ],
       "tips": [
         {
-          "human": "Ke es el costo del capital del proyecto. Combina la tasa libre de riesgo, el riesgo sistematico (beta) y el riesgo pais.",
-          "formula": "Ke = Rf + Beta × (Rm − Rf) + Riesgo pais"
+          "human": "Ke es el costo del capital del proyecto. Combina tasa libre de riesgo, beta y riesgo pais.",
+          "excel": "D8 = D3 + D5×D4 + D6 en hoja Tasas"
+        },
+        {
+          "human": "En el FCE de S6, la celda C2 apunta a la hoja Tasas — no escribas la tasa a mano.",
+          "excel": "FCE C2 = Tasas!D8"
         }
       ],
       "steps": [
         {
           "type": "formula",
-          "title": "CAPM",
+          "title": "CAPM — costo del capital",
           "formula": "Ke = Rf + Beta × (Rm − Rf) + Riesgo pais",
-          "excel_equiv": "=Rf+Beta*(Rm-Rf)+RiesgoPais"
+          "excel_equiv": "=D3+D5*D4+D6",
+          "excel_note": "D3=Rf, D4=prima mercado, D5=beta, D6=riesgo pais. Resultado en D8.",
+          "legendId": "s6_tasas"
         },
         {
-          "type": "practice",
-          "worksheet": "s6_tasas",
-          "title": "Calcula Ke"
+          "type": "grid",
+          "gridId": "s6_tasas",
+          "title": "Practica: calcula Ke en la hoja Tasas"
         }
       ]
     },
@@ -109,12 +124,12 @@
       "duration_min": 40,
       "tips": [
         {
-          "human": "Vaf es el valor actual de los flujos futuros de operacion, sin contar la inversion inicial.",
-          "formula": "Vaf = NPV(tasa, flujos del periodo 1 al n)"
+          "human": "Vaf = valor actual de los flujos futuros (sin contar la inversion inicial).",
+          "excel": "=NPV(k, flujos P1 a Pn)"
         },
         {
-          "human": "VAN suma la inversion inicial (negativa). Si VAN > 0, el proyecto crea valor.",
-          "formula": "VAN = Vaf + Flujo periodo 0"
+          "human": "VAN = Vaf + flujo del periodo 0 (la inversion negativa).",
+          "excel": "C18 = C17 + C6"
         }
       ],
       "steps": [
@@ -138,12 +153,12 @@
       "duration_min": 50,
       "tips": [
         {
-          "human": "La cuota del prestamo es constante cada periodo si la tasa y el plazo son fijos.",
-          "formula": "Cuota = PMT(tasa, plazo, monto prestado)"
+          "human": "Cuota constante del prestamo con PMT.",
+          "excel": "=-PMT(tasa, plazo, monto)"
         },
         {
-          "human": "Con deuda, los intereses reducen la utilidad antes de impuestos. La cuota (capital + interes) sale en el flujo financiero.",
-          "formula": "Interes periodo = Saldo × tasa"
+          "human": "Con deuda: intereses reducen UAI; cuota sale en fila prestamo.",
+          "excel": "VANF en S8 (columna con prestamo)"
         }
       ],
       "steps": [
@@ -172,8 +187,8 @@
       "duration_min": 40,
       "tips": [
         {
-          "human": "VANE evalua el proyecto como si no hubiera deuda. VANF incluye el efecto del financiamiento sobre el flujo del accionista.",
-          "formula": "Compara ambos con la misma tasa de descuento"
+          "human": "VANE = evaluacion sin deuda. VANF = con financiamiento.",
+          "excel": "Comparar columnas A-E vs H-L en S8"
         }
       ],
       "steps": [

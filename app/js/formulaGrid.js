@@ -73,6 +73,62 @@ export const GRID_SHEETS = {
     },
   },
 
+  s6_tasas: {
+    id: "s6_tasas",
+    title: "CAPM — costo del capital (Ke)",
+    source: "S6 Flujo basico FCE y FCF.xlsx → hoja Tasas (FCE C2 = Tasas!D8)",
+    legendId: "s6_tasas",
+    hint: "Ingresa Rf, prima de mercado, beta y riesgo país. Luego arma Ke en D8 tocando las celdas.",
+    tableRows: ["D3", "D4", "D5", "D6", "D8"],
+    cells: {
+      B3: { type: "label", concept: "Etiqueta", value: "Tasa libre de riesgo (Rf)" },
+      D3: {
+        type: "input",
+        concept: "Rf — tasa libre de riesgo",
+        value: "0.0315",
+        editable: true,
+        excelRef: "Ej. 3,15% en S6",
+      },
+      B4: { type: "label", concept: "Etiqueta", value: "Prima de mercado (Rm − Rf)" },
+      D4: {
+        type: "input",
+        concept: "Prima de mercado (Rm − Rf)",
+        value: "0.0307",
+        editable: true,
+        excelRef: "Ej. 3,07% en S6",
+      },
+      B5: { type: "label", concept: "Etiqueta", value: "Beta (β)" },
+      D5: {
+        type: "input",
+        concept: "Beta del proyecto",
+        value: "1.4",
+        editable: true,
+        excelRef: "Sensibilidad al mercado",
+      },
+      B6: { type: "label", concept: "Etiqueta", value: "Riesgo país (rp)" },
+      D6: {
+        type: "input",
+        concept: "Riesgo país",
+        value: "0.0255",
+        editable: true,
+        excelRef: "Prima adicional por país",
+      },
+      B8: { type: "label", concept: "Etiqueta", value: "Ke — costo capital propio" },
+      D8: {
+        type: "formula",
+        concept: "Ke — costo del capital (CAPM)",
+        formulaRaw: "",
+        expectedFormula: "=D3+D5*D4+D6",
+        excelRef: "Rf + β × (Rm−Rf) + rp — igual a Tasas!D8",
+        editable: true,
+        expectedValue: 0.09998,
+      },
+    },
+    validate: (cells) => ({
+      ok: closeEnough(getCellValue(cells, "D8"), 0.09998, 0.01),
+    }),
+  },
+
   fce_cadena_s6: {
     id: "fce_cadena_s6",
     title: "Flujo de caja económico — periodo 1",

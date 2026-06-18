@@ -202,6 +202,18 @@ function renderExcelPractice(wsId) {
   if (!ws) return `<p>Hoja ${wsId} no encontrada.</p>`;
 
   const expected = ws.getExpected?.();
+
+  const inputsTable =
+    ws.inputs?.length &&
+    `<table class="excel-table wide inputs-table">
+      <thead><tr><th>Dato del enunciado</th><th>Celda</th><th>Valor (S6/S7/S8)</th></tr></thead>
+      <tbody>${ws.inputs
+        .map(
+          (inp) =>
+            `<tr><td>${inp.label.replace(/\s*\([^)]+\)/, "")}</td><td><code>${inp.label.match(/\(([^)]+)\)/)?.[1] || "—"}</code></td><td>${inp.value}</td></tr>`
+        )
+        .join("")}</tbody></table>`;
+
   const refTable =
     expected?.cols &&
     `<details class="ref-table"><summary>Ver flujos calculados (referencia Excel)</summary>
@@ -217,6 +229,7 @@ function renderExcelPractice(wsId) {
     <div class="sheet" data-ws="${wsId}">
       <p class="source-tag">📎 ${ws.source}</p>
       <p class="sheet-desc">${ws.description || ""}</p>
+      ${inputsTable || ""}
       ${refTable || ""}
       ${amortTable || ""}
       <table class="excel-table practice-table">

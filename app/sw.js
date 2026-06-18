@@ -1,12 +1,15 @@
-const CACHE = "beg06-v4";
+const CACHE = "beg06-v5";
 const ASSETS = [
   "./",
   "./index.html",
   "./css/styles.css",
   "./js/app.js",
   "./js/engine.js",
+  "./js/excelModel.js",
   "./js/formulaParser.js",
   "./js/formulaGrid.js",
+  "./js/cellLegend.js",
+  "./js/skills.js",
   "./js/worksheets.js",
   "./data/curriculum.json",
   "./data/excel_formulas_exact.json",
