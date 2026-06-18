@@ -122,21 +122,25 @@
       "order": 4,
       "title": "Vaf, VAN y TIR",
       "duration_min": 40,
+      "objectives": [
+        "Vaf = VNA (función Excel) sobre flujos P1…Pn",
+        "VAN = Vaf + inversión inicial (periodo 0)"
+      ],
       "tips": [
         {
-          "human": "Vaf = valor actual de los flujos futuros (sin contar la inversion inicial).",
-          "excel": "=NPV(k, flujos P1 a Pn)"
+          "human": "VNA es la función de Excel en español (en inglés se llama NPV). La usas para el Vaf: descuenta solo los flujos futuros.",
+          "excel": "=VNA(k, D16:F16) — sin incluir la inversión inicial"
         },
         {
-          "human": "VAN = Vaf + flujo del periodo 0 (la inversion negativa).",
+          "human": "VAN suena parecido a VNA pero es otra cosa: es el Vaf más la inversión del periodo 0. Ahí decides si el proyecto conviene.",
           "excel": "C18 = C17 + C6"
         }
       ],
       "steps": [
         {
           "type": "concept",
-          "title": "Vaf vs VAN",
-          "body": "Vaf descuenta solo los flujos de operacion. VAN suma la inversion inicial. Si VAN > 0, el proyecto crea valor.",
+          "title": "VNA (función) vs VAN (resultado)",
+          "body": "VNA es la función de Excel en español (=NPV en inglés): la usas para el Vaf, solo con flujos del periodo 1 en adelante. VAN suena parecido pero es el concepto del curso: Vaf + inversión inicial (P0). Si VAN > 0, el proyecto crea valor. En S6 a veces dicen Vaf-I en vez de VAN.",
           "legendId": "van_s7"
         },
         {
@@ -218,7 +222,7 @@
         {
           "type": "concept",
           "title": "Receta examen",
-          "body": "1) Armar flujos fila a fila. 2) Vaf=NPV. 3) VAN=Vaf+P0. 4) Si hay credito: PMT, VANF. 5) Comparar alternativas."
+          "body": "1) Armar flujos fila a fila. 2) Vaf=VNA. 3) VAN=Vaf+P0. 4) Si hay credito: PMT, VANF. 5) Comparar alternativas."
         },
         {
           "type": "practice",

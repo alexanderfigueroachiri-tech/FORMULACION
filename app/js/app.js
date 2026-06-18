@@ -98,8 +98,9 @@ function renderHome() {
     <details class="tips-panel convention-later">
       <summary>Convenciones Excel (M4 en adelante)</summary>
       <ul>
-        <li><strong>Vaf</strong> = <code>=NPV(k, P1:Pn)</code> sin periodo 0</li>
-        <li><strong>VAN / VANE / VANF</strong> = Vaf + Flujo_P0</li>
+        <li><strong>Vaf</strong> = <code>=VNA(k, P1:Pn)</code> en Excel español (sin periodo 0)</li>
+        <li><strong>VAN / VANE / VANF</strong> = Vaf + Flujo_P0 (no uses VNA aquí)</li>
+        <li class="conv-note"><em>VNA</em> es la <strong>función</strong> de Excel. <em>VAN</em> es el <strong>resultado</strong> (Vaf + inversión).</li>
         <li><strong>S6 FCE</strong>: impuesto <code>=-0.3*UAI</code>, flujo <code>=UN-D8+D5</code></li>
         <li><strong>S8</strong>: impuesto solo si UAI&gt;0, cuota <code>=-PMT(i,n,P)</code></li>
       </ul>

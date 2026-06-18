@@ -701,6 +701,12 @@ body {
   font-size: 0.9rem;
 }
 
+.conv-note {
+  font-size: 0.85rem;
+  color: var(--muted, #94a3b8);
+  margin-top: 0.35rem;
+}
+
 @media (min-width: 640px) {
   .hero h1 { font-size: 2rem; }
   .module-card { grid-template-columns: auto 1fr auto; }

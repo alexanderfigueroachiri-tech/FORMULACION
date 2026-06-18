@@ -45,7 +45,7 @@ export const FORMULA_SKILLS = [
   {
     id: "vaf",
     name: "Vaf",
-    formula: "Vaf = NPV(tasa, flujos P1…Pn)",
+    formula: "Vaf = VNA(tasa, flujos P1…Pn)",
     unlockOn: { gridId: "van_s7" },
     module: 4,
   },
