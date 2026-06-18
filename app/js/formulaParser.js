@@ -1,6 +1,6 @@
 /**
  * Evaluador de fórmulas tipo Excel con referencias a celdas (A1, I5, D11…).
- * Soporta: + - * / ^ (), IF(cond,a,b), SUM(A1:A3), NPV(tasa,A1:A3)
+ * Soporta: + - * / ^ (), IF(cond,a,b), SUM(A1:A3), NPV/VNA(tasa,A1:A3)
  */
 
 const CELL_RE = /\b([A-Z]+\d+)\b/gi;
@@ -83,8 +83,10 @@ function evaluateFormula(raw, cells, stack = new Set()) {
     return cv ? av : bv;
   });
 
-  // NPV(rate, range) — rate puede ser celda o número
-  expr = expr.replace(/NPV\s*\(\s*([^,]+)\s*,\s*([A-Z]+\d+)\s*:\s*([A-Z]+\d+)\s*\)/gi, (_, rate, s, e) => {
+  // NPV / VNA (Excel inglés / español) — solo flujos futuros, sin periodo 0
+  const npvPattern =
+    /(NPV|VNA)\s*\(\s*([^,]+)\s*,\s*([A-Z]+\d+)\s*:\s*([A-Z]+\d+)\s*\)/gi;
+  expr = expr.replace(npvPattern, (_, _fn, rate, s, e) => {
     const r = evalSimple(replaceCellRefs(rate.trim(), cells, stack));
     const ids = expandRange(s, e, (id) => cells[id.toUpperCase()]);
     let sum = 0;
@@ -149,7 +151,8 @@ export function formulasMatch(a, b) {
       .trim()
       .toUpperCase()
       .replace(/\s/g, "")
-      .replace(/^=/, "");
+      .replace(/^=/, "")
+      .replace(/VNA\(/g, "NPV(");
   return norm(a) === norm(b);
 }
 

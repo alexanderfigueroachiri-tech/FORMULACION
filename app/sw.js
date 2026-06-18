@@ -1,4 +1,4 @@
-const CACHE = "beg06-v5";
+const CACHE = "beg06-v6";
 const ASSETS = [
   "./",
   "./index.html",

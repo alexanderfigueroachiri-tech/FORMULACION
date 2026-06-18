@@ -49,7 +49,7 @@ export const CELL_LEGENDS = {
       { cell: "D16", concept: "Flujo periodo 1", example: "435" },
       { cell: "E16", concept: "Flujo periodo 2", example: "575" },
       { cell: "F16", concept: "Flujo periodo 3", example: "580" },
-      { cell: "C17", concept: "Vaf — valor actual de flujos futuros", formula: "NPV(k, P1:P3)" },
+      { cell: "C17", concept: "Vaf — valor actual de flujos futuros", formula: "VNA(k, P1:P3) en Excel español" },
       { cell: "C18", concept: "VAN — valor actual neto", formula: "Vaf + Flujo P0" },
     ],
   },
