@@ -13,6 +13,17 @@ export const CELL_LEGENDS = {
       { cell: "D8", concept: "Dep en el flujo económico (negativa: no es desembolso)", formula: "− Dep anual" },
     ],
   },
+  s6_tasas: {
+    title: "Hoja Tasas — CAPM (S6)",
+    file: "S6 → hoja Tasas; FCE usa C2 = Tasas!D8",
+    rows: [
+      { cell: "D3", concept: "Rf — tasa libre de riesgo", example: "0,0315" },
+      { cell: "D4", concept: "Prima de mercado (Rm − Rf)", example: "0,0307" },
+      { cell: "D5", concept: "Beta (β) del proyecto", example: "1,4" },
+      { cell: "D6", concept: "Riesgo país (rp)", example: "0,0255" },
+      { cell: "D8", concept: "Ke — costo del capital propio", formula: "Rf + β × (Rm−Rf) + rp" },
+    ],
+  },
   fce_cadena_s6: {
     title: "Un periodo del flujo económico (año 1, ejemplo)",
     file: "Referencia Excel opcional — S6, hoja FCE",
@@ -84,8 +95,9 @@ export function renderHumanTips(tips) {
   return `<aside class="coach-tips human-tips">${tips
     .map((t) => {
       const tip = typeof t === "string" ? { human: t } : t;
-      const formula = tip.formula
-        ? `<span class="tip-formula">Fórmula: <em>${tip.formula}</em></span>`
+      const ref = tip.formula || tip.excel;
+      const formula = ref
+        ? `<span class="tip-formula">${tip.formula ? "Fórmula" : "Excel"}: <em>${ref}</em></span>`
         : "";
       return `<p>💡 ${tip.human}${formula ? `<br/>${formula}` : ""}</p>`;
     })

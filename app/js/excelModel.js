@@ -186,7 +186,7 @@ export function computeSheetS8Case({
   periods = 3,
 }) {
   const cuota =
-    prestamo > 0 ? round(excelPMT(iLoan, periods, prestamo)) : 0;
+    prestamo > 0 ? round(-excelPMT(iLoan, periods, prestamo)) : 0;
   let saldo = prestamo;
   const amortRows = [];
 
@@ -208,10 +208,10 @@ export function computeSheetS8Case({
     const uai = round(uaii - intereses);
     const imp = excelImpuestoS8(uai);
     const neto = round(uai - imp);
-    // S8 fila Prestamo: P0=+monto, P1..n=-cuota
+    // S8 fila Prestamo: P0=+monto, P1..n=−amortización (no la cuota completa)
     let prestamoCol = 0;
     if (p === 0) prestamoCol = prestamo;
-    else if (prestamo > 0) prestamoCol = -amortRows[p - 1].cuota;
+    else if (prestamo > 0) prestamoCol = -amortRows[p - 1].amort;
 
     const flujoFondos = round(neto + depP + invP + prestamoCol);
 

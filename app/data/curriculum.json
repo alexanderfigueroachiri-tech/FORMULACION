@@ -86,23 +86,34 @@
       "order": 3,
       "title": "Tasa de actualizacion",
       "duration_min": 30,
+      "source": ["S6 Flujo basico FCE y FCF.xlsx → hoja Tasas"],
+      "objectives": [
+        "Ke = Rf + Beta × (Rm − Rf) + Riesgo pais",
+        "En S6, FCE toma la tasa de Tasas!D8"
+      ],
       "tips": [
         {
-          "human": "Ke = costo del capital. Combina tasa libre de riesgo, beta y riesgo pais.",
-          "excel": "Celda D8 en hoja Tasas de S6"
+          "human": "Ke es el costo del capital del proyecto. Combina tasa libre de riesgo, beta y riesgo pais.",
+          "excel": "D8 = D3 + D5×D4 + D6 en hoja Tasas"
+        },
+        {
+          "human": "En el FCE de S6, la celda C2 apunta a la hoja Tasas — no escribas la tasa a mano.",
+          "excel": "FCE C2 = Tasas!D8"
         }
       ],
       "steps": [
         {
           "type": "formula",
-          "title": "CAPM",
+          "title": "CAPM — costo del capital",
           "formula": "Ke = Rf + Beta × (Rm − Rf) + Riesgo pais",
-          "excel_equiv": "=Rf+Beta*(Rm-Rf)+RiesgoPais"
+          "excel_equiv": "=D3+D5*D4+D6",
+          "excel_note": "D3=Rf, D4=prima mercado, D5=beta, D6=riesgo pais. Resultado en D8.",
+          "legendId": "s6_tasas"
         },
         {
-          "type": "practice",
-          "worksheet": "s6_tasas",
-          "title": "Calcula Ke"
+          "type": "grid",
+          "gridId": "s6_tasas",
+          "title": "Practica: calcula Ke en la hoja Tasas"
         }
       ]
     },
