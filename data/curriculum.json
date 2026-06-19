@@ -63,6 +63,10 @@
           "excel": "D14 = D13 − D8 + D5"
         },
         {
+          "human": "Si UAII o UAI dan 0 no esta mal: en S6 la dep es negativa y compensa ingresos con egresos. El flujo de fondos igual puede ser positivo porque la dep vuelve al calcular caja.",
+          "excel": "Ejemplo: UAII=0 pero f=400 porque UN−Dep suma la dep de vuelta"
+        },
+        {
           "human": "VAN se llama Vaf-I en S6: valor actual neto.",
           "excel": "C17 = C16 + C14"
         }
@@ -71,7 +75,7 @@
         {
           "type": "concept",
           "title": "Cadena del FCE (periodo 1)",
-          "body": "Ingresos → Egresos → Depreciacion → UAII → Intereses → UAI → Impuesto 30% → Utilidad neta → Flujo de fondos. Lee la tabla de celdas antes de practicar.",
+          "body": "Ingresos → Egresos → Depreciacion → UAII → Intereses → UAI → Impuesto 30% → Utilidad neta → Flujo de fondos. En S6 la dep va negativa: por eso UAII puede dar 0 y el flujo no. En S8 (modulo 5) la dep va positiva — otra convencion.",
           "legendId": "fce_cadena_s6"
         },
         {
@@ -154,33 +158,58 @@
       "id": "m5-financiamiento",
       "order": 5,
       "title": "Financiamiento S8",
-      "duration_min": 50,
+      "duration_min": 55,
+      "source": ["S8 Ejerc icios financiamiento.xls → Financ"],
+      "objectives": [
+        "Armar el flujo de fondos fila a fila por periodo",
+        "Con deuda: intereses, amortizacion en fila prestamo, VANF"
+      ],
       "tips": [
         {
-          "human": "Cuota constante del prestamo con PMT.",
-          "excel": "=-PMT(tasa, plazo, monto)"
+          "human": "S8 es distinto a S6: la depreciacion va positiva y el impuesto solo si UAI>0.",
+          "excel": "Flujo = Neto + Dep + Inv + fila Prestamo"
         },
         {
-          "human": "Con deuda: intereses reducen UAI; cuota sale en fila prestamo.",
-          "excel": "VANF en S8 (columna con prestamo)"
+          "human": "En fila Prestamo del periodo 0 entra el monto recibido (+500). En P1..P3 va la amortizacion (no la cuota completa).",
+          "excel": "P0: +500 · P1: −151,06"
+        },
+        {
+          "human": "Cuota constante con PAGO (Excel en español).",
+          "excel": "=PAGO(tasa, plazo, monto)"
         }
       ],
       "steps": [
         {
           "type": "concept",
-          "title": "Prestamo y cuota",
-          "body": "Interes periodo 1 = saldo × tasa. Cuota = PMT. Amortizacion = cuota − interes.",
+          "title": "Como se calcula el flujo por periodo",
+          "body": "Cada año repites la misma cadena: Ingresos − Gastos − Dep = UAII → resta Intereses = UAI → Impuesto 30% si UAI>0 → Neto. Luego Flujo de fondos = Neto + Dep + Inversion del periodo + fila Prestamo. El periodo 0 solo tiene inversion y prestamo recibido.",
+          "legendId": "s8_cadena_flujo"
+        },
+        {
+          "type": "grid",
+          "gridId": "s8_fce_p1",
+          "title": "Practica periodo 1 sin deuda (numeros reales)"
+        },
+        {
+          "type": "concept",
+          "title": "Prestamo: que cambia",
+          "body": "Aparecen intereses (bajan UAI) y en fila Prestamo la amortizacion cada año. La cuota la calculas con PAGO; en el flujo va la parte de capital amortizado.",
           "legendId": "s8_amort_pmt"
         },
         {
           "type": "grid",
           "gridId": "s8_amort_pmt",
-          "title": "Practica PMT e interes"
+          "title": "Practica PAGO e interes"
         },
         {
-          "type": "practice",
-          "worksheet": "s8_fcf",
-          "title": "VANF con prestamo 500"
+          "type": "grid",
+          "gridId": "s8_fcf_p1",
+          "title": "Practica periodo 1 con prestamo 500"
+        },
+        {
+          "type": "grid",
+          "gridId": "s8_flujos_vanf",
+          "title": "Todos los periodos y VANF"
         }
       ]
     },
@@ -199,17 +228,18 @@
         {
           "type": "concept",
           "title": "VANE vs VANF",
-          "body": "Mas deuda puede subir VANF al accionista si el proyecto renta mas que la tasa del credito, pero aumenta riesgo."
+          "body": "VANE = mismo proyecto sin fila prestamo (P0 = −1240). VANF = con financiamiento (P0 = −740). Mas deuda puede subir VANF al accionista si el proyecto renta mas que la tasa del credito.",
+          "legendId": "s8_flujos_tabla"
         },
         {
-          "type": "practice",
-          "worksheet": "s8_fce",
-          "title": "Caso base VANE"
+          "type": "grid",
+          "gridId": "s8_vane_resumen",
+          "title": "Caso base VANE (sin deuda)"
         },
         {
-          "type": "practice",
-          "worksheet": "s8_fcf",
-          "title": "Con deuda VANF"
+          "type": "concept",
+          "title": "Comparar",
+          "body": "Repite mentalmente: VANE ≈ 19,61 vs VANF ≈ 62,35 en el S8 del curso. La deuda cambia P0 y los flujos operativos por los intereses."
         }
       ]
     },
