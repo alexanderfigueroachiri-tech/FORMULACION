@@ -17,7 +17,10 @@ Ayudar al usuario a **aprobar el examen de BEG06** (Formulación y Evaluación d
 | PWA en `app/` | ✅ Funcional — 7 módulos, grids interactivos (M3 CAPM corregido) |
 | Análisis Excel | ✅ `data/workbook_analysis.json` |
 | Curriculum | ✅ `data/curriculum.json` + copia en `app/data/` |
-| GitHub + Pages | ✅ Repo `FORMULACION` publicado y desplegado |
+| Git remoto | ✅ `origin` → github.com/alexanderfigueroachiri-tech/FORMULACION |
+| GitHub Pages | ✅ https://alexanderfigueroachiri-tech.github.io/FORMULACION/ |
+| Fórmulas desbloqueables | ✅ `app/js/skills.js` + localStorage |
+| Tablita 2 cols (Concepto \| Valor) | ✅ M1/M2 en `formulaGrid.js` |
 | PDF Depreciación I/II | ⚠️ En BASE pero no parseados al curriculum |
 | PPT Cap VI/VII | ⚠️ No parseados (error python-pptx en algunos) |
 | S8 `.xls` fórmulas | ⚠️ Solo valores leídos; lógica replicada manualmente (cuota S8 corregida jun 2026) |
@@ -77,12 +80,38 @@ Rf=0.0315, Rm-Rf=0.0307, Beta=1.4 (ejemplo)
 
 ## Tareas prioritarias para el siguiente agente
 
-1. **Parsear PDFs Depreciación** → enriquecer M1 con contenido real
+1. **Parsear PDFs Depreciación** → enriquecer M1 con contenido real (no solo celdas S6)
 2. **Agregar worksheets S7** (eólico, telecom rural) desde `S7 Ejercicios...xlsx`
 3. **Modo examen** — timer 2h, preguntas del `.docx`
-4. **Icono PWA** — generar `app/icons/icon-192.png`
-5. **CI/GitHub Pages** — workflow que publique `app/`
-6. **Tests** — unit tests para `engine.js` (NPV/IRR vs Excel known values)
+4. **Extender tablita 2×N** a M4/M5 y casos Word (6 escenarios del docx)
+5. **Tests** — unit tests para `engine.js` (NPV/IRR vs Excel known values)
+6. ~~CI/GitHub Pages~~ — hecho (`.github/workflows/pages.yml`, rama `main`)
+
+## Brief para agente (usuario abre Cursor desde el móvil)
+
+Copia esto al iniciar chat si no hay historial:
+
+---
+
+**Proyecto:** PWA BEG06 — Formulación y Evaluación de Proyectos (UNI).  
+**Repo:** https://github.com/alexanderfigueroachiri-tech/FORMULACION  
+**App en producción:** https://alexanderfigueroachiri-tech.github.io/FORMULACION/
+
+**Usuario:** Alexander, examen BEG06 próximo. Estudia desde **teléfono** (PWA) y tunea desde **laptop + Cursor**. No quiere jerga Excel prematura — tips en español con **concepto + fórmula**, celdas solo en práctica opcional.
+
+**Stack:** vanilla JS en `app/`, sin npm. Curriculum en `data/curriculum.json` → **siempre copiar a** `app/data/curriculum.json` antes de push. Deploy automático: push a `main` → GitHub Actions → Pages.
+
+**Progreso del usuario:** localStorage `beg06_progress_v2` (pasos) y fórmulas en `progress.unlockedSkills`. **No sincroniza** entre dispositivos.
+
+**Rama de trabajo:** `main` = producción. Crear `dev` para experimentos; merge a `main` cuando esté listo.
+
+**Archivos que más tocarás:** `data/curriculum.json`, `app/js/formulaGrid.js`, `app/js/cellLegend.js`, `app/js/skills.js`, `app/js/app.js`.
+
+**Reglas UX (INSPECTOR.md):** ningún tip solo con `D6+D7+D8` sin explicar conceptos. Validar contra Excel en `BASE/` (S6, S7, S8).
+
+**Preguntar al usuario:** módulos completados, si el examen es parcial/final, qué escenario del Word practicar.
+
+---
 
 ## Regenerar datos desde Excel
 
@@ -112,9 +141,9 @@ cp data/curriculum.json app/data/curriculum.json
 ## Contacto con el usuario
 
 Si falta contexto, preguntar:
-1. ¿Qué módulos ya dominó? (progress en localStorage `beg06_progress_v1`)
+1. ¿Qué módulos ya dominó? (localStorage `beg06_progress_v2`)
 2. ¿El examen es parcial o final?
-3. ¿URL del repo remoto para push?
+3. ¿Qué escenario del Word quiere practicar?
 
 ---
 
