@@ -57,9 +57,16 @@ export const FORMULA_SKILLS = [
     module: 4,
   },
   {
+    id: "flujo_s8",
+    name: "Flujo fondos S8",
+    formula: "FF = Neto + Dep + Inv + Préstamo",
+    unlockOn: { gridId: "s8_fce_p1" },
+    module: 5,
+  },
+  {
     id: "pmt",
-    name: "Cuota PMT",
-    formula: "Cuota = PMT(tasa, plazo, préstamo)",
+    name: "Cuota PAGO",
+    formula: "Cuota = PAGO(tasa, plazo, préstamo)",
     unlockOn: { gridId: "s8_amort_pmt" },
     module: 5,
   },
@@ -68,6 +75,13 @@ export const FORMULA_SKILLS = [
     name: "Interés del préstamo",
     formula: "Interés = Saldo × tasa",
     unlockOn: { gridId: "s8_amort_pmt" },
+    module: 5,
+  },
+  {
+    id: "vanf",
+    name: "VANF",
+    formula: "VANF = Vaf + Flujo P0",
+    unlockOn: { gridId: "s8_flujos_vanf" },
     module: 5,
   },
 ];

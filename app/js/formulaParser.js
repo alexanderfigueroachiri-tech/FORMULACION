@@ -103,8 +103,8 @@ function evaluateFormula(raw, cells, stack = new Set()) {
     return ids.reduce((a, id) => a + getCellValue(cells, id, stack), 0);
   });
 
-  // PMT(rate, nper, pv) — como Excel
-  expr = expr.replace(/PMT\s*\(\s*([^,]+)\s*,\s*([^,]+)\s*,\s*([^)]+)\)/gi, (_, rate, n, pv) => {
+  // PMT / PAGO (Excel inglés / español)
+  expr = expr.replace(/(PMT|PAGO)\s*\(\s*([^,]+)\s*,\s*([^,]+)\s*,\s*([^)]+)\)/gi, (_, _fn, rate, n, pv) => {
     const r = evalSimple(replaceCellRefs(rate.trim(), cells, stack));
     const nper = evalSimple(replaceCellRefs(n.trim(), cells, stack));
     const p = evalSimple(replaceCellRefs(pv.trim(), cells, stack));
@@ -152,7 +152,8 @@ export function formulasMatch(a, b) {
       .toUpperCase()
       .replace(/\s/g, "")
       .replace(/^=/, "")
-      .replace(/VNA\(/g, "NPV(");
+      .replace(/VNA\(/g, "NPV(")
+      .replace(/PAGO\(/g, "PMT(");
   return norm(a) === norm(b);
 }
 
