@@ -2,6 +2,15 @@
 
 Este archivo orienta a **Cursor Cloud Agents**, Copilot u otros agentes que continúen el trabajo sin el historial de chat original.
 
+## Cursor Cloud specific instructions
+
+Entorno del VM (Node 22 y Python 3.12 ya vienen instalados; el update script instala `openpyxl` y `xlrd`). Notas no obvias:
+
+- **Servidor / app**: la app es estática (vanilla JS ES modules, sin build step). Servir SIEMPRE por HTTP: `cd app && python3 -m http.server 8080`. Usar `python3` (no existe el alias `python` en el VM, a diferencia del README). Abrir páginas con `file://` rompe los módulos ES y el `fetch` de `data/curriculum.json`.
+- **Tests**: `node --test tests/financial.test.mjs` desde la raíz. No requiere instalar dependencias (usa el test runner nativo de Node) y valida el motor financiero contra valores S6/S7/S8.
+- **Lint / build**: no hay configuración de lint (no hay `package.json` ni ESLint) ni paso de build. No inventar comandos de lint/build.
+- **Scripts de datos** (`scripts/analyze_workbooks.py`, `scripts/extract_excel_formulas.py`): solo necesarios para regenerar datos desde `BASE/`; requieren `openpyxl` + `xlrd`. **Ojo**: al correrlos reescriben archivos versionados (`data/curriculum.json`, `data/workbook_analysis.json`, `data/excel_formulas_exact.json`). Si solo verificas que corren, restaura con `git checkout -- data/`. Recuerda copiar `data/curriculum.json` → `app/data/curriculum.json` si cambias el curriculum de verdad.
+
 ## Objetivo del proyecto
 
 Ayudar al usuario a **aprobar el examen de BEG06** (Formulación y Evaluación de Proyectos, UNI) mediante:
