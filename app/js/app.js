@@ -1,43 +1,106 @@
-import { WORKSHEETS, validateWorksheet } from "./worksheets.js";
-import { mountFormulaGrid, GRID_SHEETS } from "./formulaGrid.js";
-import { renderHumanTips, renderCellLegendHtml } from "./cellLegend.js";
-import {
-  unlockSkillsForSheet,
-  renderSkillsPanelHtml,
-} from "./skills.js";
+/**
+ * Shell genérico multi-curso.
+ * - Muestra un selector de cursos (tarjetas).
+ * - Al elegir un curso carga su "adaptador" (courses/registry.js) y su curriculum.
+ * - Renderiza módulos/pasos de forma genérica y delega la práctica interactiva
+ *   y las leyendas al adaptador del curso activo.
+ */
+import { COURSE_LIST, loadCourseAdapter } from "./courses/registry.js";
 
-const STORAGE_KEY = "beg06_progress_v2";
+const LAST_COURSE_KEY = "eduapp_last_course";
 
+let course = null; // adaptador del curso activo
 let curriculum = null;
-let state = { moduleIndex: 0, stepIndex: 0, progress: loadProgress(), gridInstance: null };
+let state = { moduleIndex: 0, stepIndex: 0, progress: emptyProgress(), gridInstance: null };
+
+function emptyProgress() {
+  return { completedSteps: [], unlockedSkills: [] };
+}
+
+function main() {
+  return document.getElementById("main");
+}
 
 async function init() {
-  curriculum = await (await fetch("./data/curriculum.json")).json();
-  renderHome();
-  document.getElementById("btn-home").onclick = () => renderHome();
+  renderCourseSelector();
+  document.getElementById("btn-home").onclick = () => renderCourseSelector();
 }
+
+/* ------------------------------------------------------------------ */
+/* Selector de cursos                                                  */
+/* ------------------------------------------------------------------ */
+
+function renderCourseSelector() {
+  course = null;
+  curriculum = null;
+  state.gridInstance = null;
+  main().innerHTML = `
+    <header class="hero">
+      <p class="eyebrow">Plataforma de estudio</p>
+      <h1>Elige tu curso</h1>
+      <p class="subtitle">Aprende paso a paso con práctica interactiva. Tu progreso se guarda por curso en este dispositivo.</p>
+    </header>
+    <section class="course-list">
+      ${COURSE_LIST.map(
+        (c) => `
+        <article class="course-card" data-course="${c.id}">
+          <div class="course-icon">${c.icon || "📘"}</div>
+          <div class="course-body">
+            <span class="course-tag">${c.tag || ""}</span>
+            <h2>${c.title}</h2>
+            <p>${c.subtitle || ""}</p>
+          </div>
+          <button class="btn-start" data-open="${c.id}">Entrar →</button>
+        </article>`
+      ).join("")}
+    </section>`;
+
+  main()
+    .querySelectorAll("[data-open]")
+    .forEach((b) => {
+      b.onclick = () => openCourse(b.dataset.open);
+    });
+}
+
+async function openCourse(courseId) {
+  main().innerHTML = `<p class="loading">Cargando curso…</p>`;
+  try {
+    course = await loadCourseAdapter(courseId);
+    curriculum = await (await fetch(course.curriculumUrl)).json();
+  } catch (err) {
+    main().innerHTML = `<p class="validation-msg err">No se pudo cargar el curso (${courseId}). ${err.message}</p>
+      <button class="btn-secondary" id="back-sel">← Volver</button>`;
+    document.getElementById("back-sel").onclick = renderCourseSelector;
+    return;
+  }
+  localStorage.setItem(LAST_COURSE_KEY, courseId);
+  state = { moduleIndex: 0, stepIndex: 0, progress: loadProgress(), gridInstance: null };
+  renderHome();
+}
+
+/* ------------------------------------------------------------------ */
+/* Progreso (por curso)                                                */
+/* ------------------------------------------------------------------ */
 
 function loadProgress() {
   try {
-    const p = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+    const p = JSON.parse(localStorage.getItem(course.storageKey)) || {};
     return { completedSteps: p.completedSteps || [], unlockedSkills: p.unlockedSkills || [] };
   } catch {
-    return { completedSteps: [], unlockedSkills: [] };
+    return emptyProgress();
   }
 }
 
 function saveProgress() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(state.progress));
+  localStorage.setItem(course.storageKey, JSON.stringify(state.progress));
 }
 
 function stepKey(mIdx, sIdx) {
   return `${curriculum.modules[mIdx].id}:${sIdx}`;
 }
-
 function isStepDone(mIdx, sIdx) {
   return state.progress.completedSteps.includes(stepKey(mIdx, sIdx));
 }
-
 function markStepDone(mIdx, sIdx) {
   const k = stepKey(mIdx, sIdx);
   if (!state.progress.completedSteps.includes(k)) {
@@ -45,22 +108,27 @@ function markStepDone(mIdx, sIdx) {
     saveProgress();
   }
 }
-
 function totalProgress() {
   const t = curriculum.modules.reduce((a, m) => a + m.steps.length, 0);
   return t ? Math.round((state.progress.completedSteps.length / t) * 100) : 0;
 }
 
+/* ------------------------------------------------------------------ */
+/* Home del curso                                                      */
+/* ------------------------------------------------------------------ */
+
 function renderHome() {
-  const main = document.getElementById("main");
   const pct = totalProgress();
-  main.innerHTML = `
+  const heroTitle = curriculum.tagline || course.hero?.title || "Aprende paso a paso";
+  const heroSub = curriculum.subtitle || course.hero?.subtitle || "";
+  main().innerHTML = `
     <header class="hero">
+      <button class="link course-switch" id="switch-course">← Cambiar curso</button>
       <p class="eyebrow">${curriculum.course}</p>
-      <h1>Practica como en Excel</h1>
-      <p class="subtitle">Formulas identicas a S6, S7, S8 — validacion contra celdas reales</p>
+      <h1>${heroTitle}</h1>
+      ${heroSub ? `<p class="subtitle">${heroSub}</p>` : ""}
       <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
-      <p class="progress-text">${pct}% · ~${curriculum.estimated_hours}h</p>
+      <p class="progress-text">${pct}%${curriculum.estimated_hours ? ` · ~${curriculum.estimated_hours}h` : ""}</p>
     </header>
     <section class="module-list">
       ${curriculum.modules
@@ -76,79 +144,83 @@ function renderHome() {
                 ? `<ul class="objectives-preview">${mod.objectives.map((o) => `<li>${o}</li>`).join("")}</ul>`
                 : ""
             }
-            <p class="meta">${mod.duration_min} min · ${done}/${mod.steps.length}</p>
+            <p class="meta">${mod.duration_min ? `${mod.duration_min} min · ` : ""}${done}/${mod.steps.length}</p>
           </div>
           <button class="btn-start" data-start="${i}">Continuar →</button>
         </article>`;
         })
         .join("")}
     </section>
-    <section class="tips-panel">
-      <h3>Hoja interactiva (como Excel en el móvil)</h3>
-      <p class="grid-hint">Toca celda fórmula → escribe o <strong>toca otras celdas</strong> para insertar I5, D6…</p>
-      <div class="grid-quick-links">
-        ${Object.values(GRID_SHEETS)
-          .map(
-            (g) =>
-              `<button type="button" class="btn-secondary grid-quick" data-grid="${g.id}">${g.title}</button>`
-          )
-          .join("")}
-      </div>
-    </section>
-    <details class="tips-panel convention-later">
-      <summary>Convenciones Excel (M4 en adelante)</summary>
-      <ul>
-        <li><strong>Vaf</strong> = <code>=VNA(k, P1:Pn)</code> en Excel español (sin periodo 0)</li>
-        <li><strong>VAN / VANE / VANF</strong> = Vaf + Flujo_P0 (no uses VNA aquí)</li>
-        <li class="conv-note"><em>VNA</em> es la <strong>función</strong> de Excel. <em>VAN</em> es el <strong>resultado</strong> (Vaf + inversión).</li>
-        <li><strong>S6 FCE</strong>: impuesto <code>=-0.3*UAI</code>, flujo <code>=UN-D8+D5</code></li>
-        <li><strong>S8</strong>: impuesto solo si UAI&gt;0, cuota <code>=-PMT(i,n,P)</code></li>
-      </ul>
-    </details>
-    ${renderSkillsPanelHtml(state.progress)}`;
-  main.querySelectorAll("[data-start]").forEach((b) => {
-    b.onclick = () => {
-      const mi = +b.dataset.start;
-      const mod = curriculum.modules[mi];
-      state.moduleIndex = mi;
-      const first = mod.steps.findIndex((_, si) => !isStepDone(mi, si));
-      state.stepIndex = first >= 0 ? first : 0;
-      renderStep();
-    };
-  });
-  main.querySelectorAll(".grid-quick").forEach((b) => {
-    b.onclick = () => renderStandaloneGrid(b.dataset.grid);
-  });
+    ${course.renderHomeExtras ? course.renderHomeExtras(state.progress) : ""}`;
+
+  document.getElementById("switch-course").onclick = renderCourseSelector;
+  main()
+    .querySelectorAll("[data-start]")
+    .forEach((b) => {
+      b.onclick = () => {
+        const mi = +b.dataset.start;
+        const mod = curriculum.modules[mi];
+        state.moduleIndex = mi;
+        const first = mod.steps.findIndex((_, si) => !isStepDone(mi, si));
+        state.stepIndex = first >= 0 ? first : 0;
+        renderStep();
+      };
+    });
+
+  if (course.wireHomeExtras) {
+    course.wireHomeExtras(main(), { showStandalone, progress: state.progress });
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Render de tips y pasos genéricos                                    */
+/* ------------------------------------------------------------------ */
+
+function renderTips(tips) {
+  if (course.renderTips) return course.renderTips(tips);
+  if (!tips?.length) return "";
+  return `<aside class="coach-tips human-tips">${tips
+    .map((t) => {
+      const tip = typeof t === "string" ? { human: t } : t;
+      const ref = tip.formula || tip.excel;
+      const refHtml = ref
+        ? `<span class="tip-formula">${tip.formula ? "Fórmula" : "Excel"}: <em>${ref}</em></span>`
+        : "";
+      return `<p>💡 ${tip.human}${refHtml ? `<br/>${refHtml}` : ""}</p>`;
+    })
+    .join("")}</aside>`;
+}
+
+function renderConcept(step) {
+  let body = `<div class="concept-card"><h3>${step.title}</h3><p>${step.body}</p></div>`;
+  if (step.legendId && course.renderLegend) body += course.renderLegend(step.legendId);
+  return body;
+}
+
+function renderFormula(step) {
+  let body = `<div class="formula-card"><h3>${step.title}</h3>
+    <div class="formula-math">${step.formula}</div>
+    ${step.excel_note ? `<p class="formula-note">${step.excel_note}</p>` : ""}
+    ${
+      step.excel_equiv
+        ? `<details class="excel-ref-optional"><summary>Si practicas en el Excel del curso</summary><code>${step.excel_equiv}</code></details>`
+        : ""
+    }</div>`;
+  if (step.legendId && course.renderLegend) body += course.renderLegend(step.legendId);
+  return body;
 }
 
 function renderStep() {
   const mod = curriculum.modules[state.moduleIndex];
   const step = mod.steps[state.stepIndex];
-  const main = document.getElementById("main");
+  const mountFn = course.getInteractive ? course.getInteractive(step) : null;
 
   let body = "";
-  if (step.type === "concept") {
-    body = `<div class="concept-card"><h3>${step.title}</h3><p>${step.body}</p></div>`;
-    if (step.legendId) body += renderCellLegendHtml(step.legendId);
-  } else if (step.type === "formula") {
-    body = `<div class="formula-card"><h3>${step.title}</h3>
-      <div class="formula-math">${step.formula}</div>
-      ${step.excel_note ? `<p class="formula-note">${step.excel_note}</p>` : ""}
-      ${
-        step.excel_equiv
-          ? `<details class="excel-ref-optional"><summary>Si practicas en el Excel del curso</summary><code>${step.excel_equiv}</code></details>`
-          : ""
-      }</div>`;
-    if (step.legendId) body += renderCellLegendHtml(step.legendId);
-  } else if (step.type === "grid") {
-    body = `<div id="grid-mount"></div>`;
-  } else if (step.type === "practice") {
-    body = GRID_SHEETS[step.worksheet]
-      ? `<div id="grid-mount"></div>`
-      : renderExcelPractice(step.worksheet);
-  }
+  if (mountFn) body = `<div id="grid-mount"></div>`;
+  else if (step.type === "concept") body = renderConcept(step);
+  else if (step.type === "formula") body = renderFormula(step);
 
-  main.innerHTML = `
+  main().innerHTML = `
     <nav class="breadcrumb">
       <button id="back-modules" class="link">← Modulos</button>
       <span>M${mod.order} · ${state.stepIndex + 1}/${mod.steps.length}</span>
@@ -161,7 +233,7 @@ function renderStep() {
           : ""
       }
       <p class="step-title">${step.title}</p>
-      ${renderHumanTips(mod.tips)}
+      ${renderTips(mod.tips)}
       ${body}
       <footer class="lesson-footer">
         <button id="prev-step" class="btn-secondary" ${state.stepIndex === 0 ? "disabled" : ""}>Anterior</button>
@@ -176,106 +248,38 @@ function renderStep() {
       renderStep();
     }
   };
-  document.getElementById("next-step").onclick = () => onNext(step, mod);
+  document.getElementById("next-step").onclick = () => onNext(step, mod, mountFn);
 
   state.gridInstance = null;
-  const gridId = step.type === "grid" ? step.gridId : step.worksheet;
-  if ((step.type === "grid" || GRID_SHEETS[step.worksheet]) && document.getElementById("grid-mount")) {
-    state.gridInstance = mountFormulaGrid(document.getElementById("grid-mount"), gridId, state.progress);
+  if (mountFn && document.getElementById("grid-mount")) {
+    state.gridInstance = mountFn(document.getElementById("grid-mount"), {
+      progress: state.progress,
+    });
   }
 }
 
-function renderStandaloneGrid(gridId) {
-  const g = GRID_SHEETS[gridId];
-  const main = document.getElementById("main");
-  main.innerHTML = `
-    <nav class="breadcrumb"><button id="back-home" class="link">← Inicio</button></nav>
-    <h1>${g?.title || "Hoja"}</h1>
+function showStandalone(title, mountFn) {
+  main().innerHTML = `
+    <nav class="breadcrumb"><button id="back-home" class="link">← Inicio del curso</button></nav>
+    <h1>${title}</h1>
     <div id="grid-mount"></div>
-    <footer class="lesson-footer"><button id="grid-validate" class="btn-primary">Validar fórmulas</button></footer>`;
+    <footer class="lesson-footer"><button id="grid-validate" class="btn-primary">Validar</button></footer>`;
   document.getElementById("back-home").onclick = renderHome;
-  state.gridInstance = mountFormulaGrid(document.getElementById("grid-mount"), gridId, state.progress);
-  document.getElementById("grid-validate").onclick = () => state.gridInstance?.validate();
+  const inst = mountFn(document.getElementById("grid-mount"), { progress: state.progress });
+  state.gridInstance = inst;
+  document.getElementById("grid-validate").onclick = () => inst?.validate();
 }
 
-function renderExcelPractice(wsId) {
-  const ws = WORKSHEETS[wsId];
-  if (!ws) return `<p>Hoja ${wsId} no encontrada.</p>`;
-
-  const expected = ws.getExpected?.();
-
-  const inputsTable =
-    ws.inputs?.length &&
-    `<table class="excel-table wide inputs-table">
-      <thead><tr><th>Dato del enunciado</th><th>Celda</th><th>Valor (S6/S7/S8)</th></tr></thead>
-      <tbody>${ws.inputs
-        .map(
-          (inp) =>
-            `<tr><td>${inp.label.replace(/\s*\([^)]+\)/, "")}</td><td><code>${inp.label.match(/\(([^)]+)\)/)?.[1] || "—"}</code></td><td>${inp.value}</td></tr>`
-        )
-        .join("")}</tbody></table>`;
-
-  const refTable =
-    expected?.cols &&
-    `<details class="ref-table"><summary>Ver flujos calculados (referencia Excel)</summary>
-    <table class="excel-table wide"><thead><tr><th>P</th><th>UAII</th><th>UAI</th><th>Neto</th><th>Flujo f</th></tr></thead>
-    <tbody>${expected.cols.map((c) => `<tr><td>${c.periodo}</td><td>${c.uaii ?? ""}</td><td>${c.uai ?? ""}</td><td>${c.neto ?? c.un ?? ""}</td><td>${c.flujoFondos ?? c.f ?? ""}</td></tr>`).join("")}</tbody></table></details>`;
-
-  const amortTable =
-    expected?.rows &&
-    `<table class="excel-table wide"><thead><tr><th>P</th><th>Capital</th><th>Interes</th><th>Amort</th><th>Cuota</th></tr></thead>
-    <tbody>${expected.rows.map((r) => `<tr><td>${r.periodo}</td><td>${r.capital}</td><td>${r.interes}</td><td>${r.amortizac}</td><td>${r.cuota}</td></tr>`).join("")}</tbody></table>`;
-
-  return `
-    <div class="sheet" data-ws="${wsId}">
-      <p class="source-tag">📎 ${ws.source}</p>
-      <p class="sheet-desc">${ws.description || ""}</p>
-      ${inputsTable || ""}
-      ${refTable || ""}
-      ${amortTable || ""}
-      <table class="excel-table practice-table">
-        <thead><tr><th>Celda / concepto</th><th>Fórmula Excel (igual al curso)</th><th>Tu resultado</th></tr></thead>
-        <tbody>
-          ${ws.practiceCells
-            .map(
-              (c) => `
-            <tr>
-              <td>${c.label}</td>
-              <td><code class="formula-cell">${c.formula}</code></td>
-              <td><input type="number" step="any" data-answer="${c.id}" class="cell-input answer" placeholder="?"/></td>
-            </tr>`
-            )
-            .join("")}
-        </tbody>
-      </table>
-      <div class="validation-msg" id="validation"></div>
-    </div>`;
-}
-
-function onNext(step, mod) {
-  if (step.type === "grid" || (step.type === "practice" && GRID_SHEETS[step.worksheet])) {
-    if (!state.gridInstance?.validate()) return;
-    const gid = step.type === "grid" ? step.gridId : step.worksheet;
-    const added = unlockSkillsForSheet(gid, state.progress);
-    if (added.length) {
+function onNext(step, mod, mountFn) {
+  if (mountFn) {
+    const inst = state.gridInstance;
+    if (!inst || !inst.validate()) return;
+    const extra = inst.afterValidate?.(state.progress);
+    if (extra?.addedHtml) {
       saveProgress();
-      const box = document.getElementById("grid-validation");
-      if (box) {
-        box.innerHTML += `<p class="skill-unlock-msg">🎉 Desbloqueaste: ${added.length} fórmula(s) nueva(s). Mira «Tus fórmulas» en inicio.</p>`;
-      }
+      const box = document.getElementById(extra.boxId || "grid-validation");
+      if (box) box.innerHTML += extra.addedHtml;
     }
-  } else if (step.type === "practice") {
-    const answers = {};
-    document.querySelectorAll("[data-answer]").forEach((el) => {
-      answers[el.dataset.answer] = el.value;
-    });
-    const { ok, msg, results } = validateWorksheet(step.worksheet, answers);
-    const box = document.getElementById("validation");
-    box.className = "validation-msg " + (ok ? "ok" : "err");
-    box.innerHTML = ok
-      ? msg
-      : `${msg}<ul class="err-list">${results.filter((r) => !r.ok).map((r) => `<li>${r.label}: tu ${r.answer} → Excel ${r.expected} <code>${r.formula}</code></li>`).join("")}</ul>`;
-    if (!ok) return;
   }
   markStepDone(state.moduleIndex, state.stepIndex);
   if (state.stepIndex < mod.steps.length - 1) {
@@ -286,7 +290,12 @@ function onNext(step, mod) {
     state.stepIndex = 0;
     renderStep();
   } else {
-    document.getElementById("main").innerHTML = `<div class="complete-card"><h1>Listo</h1><p>Practica con los Excel en BASE/ para el examen del Word.</p><button class="btn-primary" onclick="location.reload()">Inicio</button></div>`;
+    main().innerHTML = `<div class="complete-card"><h1>¡Módulos completados!</h1>
+      <p>Terminaste «${curriculum.course}». Repasa cuando quieras.</p>
+      <button class="btn-primary" id="done-home">Inicio del curso</button>
+      <button class="btn-secondary" id="done-courses">Otros cursos</button></div>`;
+    document.getElementById("done-home").onclick = renderHome;
+    document.getElementById("done-courses").onclick = renderCourseSelector;
   }
 }
 

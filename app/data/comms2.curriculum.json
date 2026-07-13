@@ -1,0 +1,102 @@
+{
+  "course": "Sistemas de Comunicaciones 2",
+  "tagline": "Del bit al mensaje sin errores",
+  "subtitle": "Ejercicios canónicos de detección y corrección de errores. Sube el material del curso para casos reales.",
+  "estimated_hours": 2,
+  "modules": [
+    {
+      "id": "c1-bits-paridad",
+      "order": 1,
+      "title": "Bits, bytes y paridad",
+      "duration_min": 30,
+      "objectives": [
+        "Un byte son 8 bits; el peso de cada bit es una potencia de 2",
+        "El bit de paridad detecta errores de 1 bit"
+      ],
+      "tips": [
+        {
+          "human": "Paridad par: el bit extra hace que el número total de unos sea par. Paridad impar: que sea impar.",
+          "formula": "paridad_par = XOR de todos los bits de datos"
+        },
+        {
+          "human": "La paridad detecta un error (un bit cambiado) pero no dice cuál ni lo corrige."
+        }
+      ],
+      "steps": [
+        {
+          "type": "concept",
+          "title": "Bits y bytes",
+          "body": "Un <strong>bit</strong> es un 0 o un 1. Un <strong>byte</strong> son 8 bits. El valor de un byte se arma sumando el peso de cada bit encendido (potencias de 2): <code>128 64 32 16 8 4 2 1</code>. Ejemplo: <code>0100 0001</code> = 64 + 1 = <strong>65</strong> (la letra 'A' en ASCII). Al transmitir por un canal ruidoso, un bit puede cambiar: necesitamos formas de <em>detectar</em> y luego <em>corregir</em> esos errores."
+        },
+        {
+          "type": "concept",
+          "title": "Bit de paridad",
+          "body": "Añadimos 1 bit extra a los datos. En <strong>paridad par</strong>, el bit se elige para que el total de unos (datos + paridad) sea par. En <strong>paridad impar</strong>, para que sea impar. Si al recibir el conteo no cuadra, hubo un error. Es barato pero solo detecta un número impar de errores y no los corrige."
+        },
+        {
+          "type": "widget",
+          "widget": "parity",
+          "scheme": "even",
+          "data": "1011000",
+          "title": "Práctica: bit de paridad PAR",
+          "hint": "Elige el bit de paridad para que el total de unos sea <strong>par</strong>."
+        },
+        {
+          "type": "widget",
+          "widget": "parity",
+          "scheme": "odd",
+          "data": "1100101",
+          "title": "Práctica: bit de paridad IMPAR",
+          "hint": "Ahora para paridad <strong>impar</strong>: el total de unos debe ser impar."
+        }
+      ]
+    },
+    {
+      "id": "c2-hamming",
+      "order": 2,
+      "title": "Código de Hamming(7,4)",
+      "duration_min": 40,
+      "objectives": [
+        "Hamming(7,4): 4 bits de datos + 3 de paridad",
+        "El síndrome indica la posición exacta del bit erróneo"
+      ],
+      "tips": [
+        {
+          "human": "Los bits de paridad van en las posiciones potencia de 2: 1, 2 y 4. Los datos ocupan 3, 5, 6 y 7.",
+          "formula": "p1→{1,3,5,7} · p2→{2,3,6,7} · p4→{4,5,6,7}"
+        },
+        {
+          "human": "El síndrome es el número binario p4 p2 p1. Si es 0, no hay error; si no, es la posición del bit a corregir."
+        }
+      ],
+      "steps": [
+        {
+          "type": "concept",
+          "title": "¿Por qué Hamming?",
+          "body": "La paridad simple detecta pero no corrige. <strong>Hamming(7,4)</strong> usa 3 bits de paridad para <em>corregir</em> cualquier error de 1 bit en una palabra de 7 bits (4 de datos). Cada bit de paridad cubre un subconjunto de posiciones de forma que, si algo falla, la combinación de fallos apunta directo a la posición equivocada."
+        },
+        {
+          "type": "widget",
+          "widget": "hamming",
+          "mode": "encode",
+          "data": "1011",
+          "title": "Práctica: codificar (calcular p1, p2, p4)",
+          "hint": "Datos d1 d2 d3 d4 = 1 0 1 1. Calcula p1, p2, p4 con paridad par sobre las posiciones que cubren."
+        },
+        {
+          "type": "concept",
+          "title": "Síndrome y corrección",
+          "body": "Al recibir, se recalculan las tres paridades. Cada una da 0 (ok) o 1 (falla). El <strong>síndrome</strong> = <code>p4 p2 p1</code> en binario. Si vale 0, la palabra está bien. Si vale, por ejemplo, <code>101</code> = 5, el bit de la <strong>posición 5</strong> está mal y basta con invertirlo."
+        },
+        {
+          "type": "widget",
+          "widget": "hamming",
+          "mode": "correct",
+          "received": "0110111",
+          "title": "Práctica: corregir 1 error",
+          "hint": "Esta palabra recibida tiene 1 bit mal. Calcula el síndrome mentalmente y toca el bit erróneo para corregirlo."
+        }
+      ]
+    }
+  ]
+}

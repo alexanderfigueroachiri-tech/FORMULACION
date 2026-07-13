@@ -712,3 +712,109 @@ body {
   .module-card { grid-template-columns: auto 1fr auto; }
   .btn-start { grid-column: 3; grid-row: 1 / span 2; align-self: center; margin-top: 0; }
 }
+
+/* ---------------- Selector de cursos ---------------- */
+.course-list {
+  display: grid;
+  gap: 1rem;
+}
+.course-card {
+  background: var(--surface);
+  border: 1px solid var(--surface2);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  gap: 0.5rem 1rem;
+  transition: border-color 0.15s, transform 0.15s;
+}
+.course-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.course-icon {
+  grid-row: span 2;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(129, 140, 248, 0.2));
+  border-radius: 12px;
+}
+.course-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  margin-bottom: 0.15rem;
+}
+.course-body h2 { font-size: 1.1rem; margin: 0.1rem 0; }
+.course-body p { color: var(--muted); font-size: 0.9rem; }
+.course-card .btn-start { grid-column: 1 / -1; }
+.course-switch { display: inline-block; margin-bottom: 0.5rem; }
+.loading { color: var(--muted); padding: 2rem 0; text-align: center; }
+
+/* ---------------- Widgets de comunicaciones ---------------- */
+.comms-widget {
+  background: var(--surface);
+  border: 1px solid var(--surface2);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin: 1rem 0 5rem;
+}
+.widget-hint { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.75rem; }
+.widget-meta { font-size: 0.85rem; color: var(--muted); margin-top: 0.75rem; }
+.bit-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0.5rem 0;
+}
+.bit-group-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+.bit-sep { color: var(--muted); padding: 0 0.25rem; }
+.bit-cell {
+  font-family: "Consolas", "SF Mono", ui-monospace, monospace;
+  font-size: 1.2rem;
+  font-weight: 700;
+  min-width: 2.4rem;
+  min-height: 2.9rem;
+  padding: 0.25rem 0.35rem;
+  border-radius: 8px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.1;
+}
+.bit-cell small { font-size: 0.6rem; font-weight: 600; color: var(--muted); }
+.bit-fixed {
+  background: var(--bg);
+  border: 1px solid var(--surface2);
+  color: var(--text);
+}
+.bit-toggle {
+  background: var(--surface2);
+  border: 2px solid var(--accent2);
+  color: var(--text);
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s;
+}
+.bit-toggle small { color: var(--accent2); }
+.bit-toggle.on {
+  background: var(--accent);
+  color: #0f172a;
+  border-color: var(--accent);
+}
+.bit-toggle.on small { color: #0f172a; }
+.hamming-row .bit-cell { min-width: 2.7rem; }
+.cover-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.cover-list li { margin: 0.15rem 0; }
+.widget-validation { margin-top: 1rem; }
