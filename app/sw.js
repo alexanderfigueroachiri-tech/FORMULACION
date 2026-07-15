@@ -1,4 +1,4 @@
-const CACHE = "eduapp-v11";
+const CACHE = "eduapp-v12";
 const ASSETS = [
   "./",
   "./index.html",

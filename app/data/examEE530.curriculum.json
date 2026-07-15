@@ -30,6 +30,12 @@
           "widget": "solver",
           "title": "a) Elegir la frecuencia de muestreo f_s",
           "goal": "Decidir qué f_s usar y justificarlo con el canal.",
+          "choices": [
+            { "text": "f_s ≈ 1 MHz (cerca del techo del canal), porque en DM la SNR crece con f_s³", "correct": true, "feedback": "El canal aguanta hasta 1 MHz y DM mejora con f_s³ (+9 dB por octava)." },
+            { "text": "f_s = 6.8 kHz (Nyquist), lo mínimo para no perder información", "feedback": "Nyquist basta para PCM, pero DM necesita mucho sobremuestreo o la SNR es pésima." },
+            { "text": "f_s = 64 kHz, un estándar de telefonía", "feedback": "Desperdicia el canal de 1 MHz → SNR de solo ~24 dB." },
+            { "text": "Da igual, f_s no depende del canal", "feedback": "Sí depende: el canal fija el TECHO de f_s." }
+          ],
           "hints": [
             "En DM se envía 1 bit por cada muestra, así que la tasa de bits es igual a f_s. Piensa cuánto puedes muestrear sin salirte del canal.",
             "El flujo binario (NRZ) ocupa un ancho ≈ f_s (primer nulo del espectro). Como el canal muere sobre 1 MHz, f_s tiene un TECHO: f_s ≲ 1 MHz.",
@@ -41,7 +47,13 @@
           "type": "widget",
           "widget": "solver",
           "title": "a) Condición anti-sobrecarga y tamaño de paso Δ",
-          "goal": "Hallar el Δ mínimo que evita la sobrecarga de pendiente.",
+          "goal": "Hallar el Δ mínimo que evita la sobrecarga de pendiente (con f_s = 1 MHz).",
+          "choices": [
+            { "text": "Δ = 2π·f_m·A_m / f_s ≈ 21 mV", "correct": true, "feedback": "Δ·f_s ≥ 2π·f_m·A_m ⇒ Δ = 2π(3400)(1)/10⁶ ≈ 21 mV." },
+            { "text": "Δ = A_m = 1 V", "feedback": "Un paso igual a la amplitud daría enorme ruido granular." },
+            { "text": "Δ = f_s / f_m ≈ 294 V", "feedback": "Eso ni siquiera tiene unidades de voltaje; revisa la condición de pendiente." },
+            { "text": "Δ ≈ 0.85 V", "feedback": "Ese es el caso de f_s = 25 kHz (parte b), no con 1 MHz." }
+          ],
           "hints": [
             "La sobrecarga de pendiente ocurre cuando la señal cambia más rápido de lo que el escalón Δ por muestra puede seguir.",
             "Condición de Couch: Δ · f_s ≥ |dm/dt|máx. Para una senoide m(t)=A_m·sen(2π f_m t), la pendiente máxima es 2π·f_m·A_m.",
@@ -53,7 +65,13 @@
           "type": "widget",
           "widget": "solver",
           "title": "a) Rendimiento (SNR) y discusión",
-          "goal": "Calcular la SNR de salida y discutir el desempeño.",
+          "goal": "Estimar la SNR de salida con f_s = 1 MHz.",
+          "choices": [
+            { "text": "≈ 60 dB", "correct": true, "feedback": "SNR = 0.04·(10⁶/3400)³ ≈ 1.0×10⁶ → 60 dB." },
+            { "text": "≈ 24 dB", "feedback": "Eso sería con f_s = 64 kHz, no con 1 MHz." },
+            { "text": "≈ 30 dB", "feedback": "Muy bajo: recuerda que SNR ∝ f_s³." },
+            { "text": "≈ 6 dB", "feedback": "Demasiado bajo; esa no es la magnitud con sobremuestreo alto." }
+          ],
           "hints": [
             "El desempeño de DM se mide por la SNR de granularidad, que depende MUY fuerte de f_s.",
             "Fórmula (Couch): SNR = (3/8π²)·(f_s/f_B)³ ≈ 0.04·(f_s/f_B)³, con f_B = ancho de banda del mensaje.",
@@ -65,7 +83,13 @@
           "type": "widget",
           "widget": "solver",
           "title": "b) DM para voz con f_s = 25 kHz — elegir Δ",
-          "goal": "Elegir Δ apropiado para voz (f_s fija = 25 kHz) y discutir el desempeño.",
+          "goal": "Elegir Δ apropiado para voz (f_s fija = 25 kHz).",
+          "choices": [
+            { "text": "Δ ≈ 0.2 V (diseñando para ~800 Hz, donde está la energía de la voz)", "correct": true, "feedback": "En voz la pendiente dominante está en frecuencias bajas (~800 Hz)." },
+            { "text": "Δ ≈ 0.85 V (diseñando para 3.4 kHz)", "feedback": "Sería ~85 % de A_m → ruido granular severo." },
+            { "text": "Δ ≈ 21 mV (como en la parte a)", "feedback": "Con f_s baja causaría sobrecarga de pendiente casi siempre." },
+            { "text": "Δ = 1 V", "feedback": "Un paso enorme; la señal se vería en escalones toscos." }
+          ],
           "hints": [
             "Ahora f_s está fija y es baja (25 kHz). Diseñar para el tono más agudo (3.4 kHz) daría un Δ enorme.",
             "Si usas 3.4 kHz: Δ = 2π(3400)/25000 ≈ 0.85 V ≈ 85 % de A_m &rarr; ruido granular severo. No sirve.",
