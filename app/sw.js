@@ -1,4 +1,4 @@
-const CACHE = "beg06-v8";
+const CACHE = "eduapp-v13";
 const ASSETS = [
   "./",
   "./index.html",
@@ -11,7 +11,16 @@ const ASSETS = [
   "./js/cellLegend.js",
   "./js/skills.js",
   "./js/worksheets.js",
+  "./js/courses/registry.js",
+  "./js/courses/beg06.js",
+  "./js/courses/comms2.js",
+  "./js/courses/commsWidgets.js",
+  "./js/courses/examEE530.js",
+  "./js/courses/examWidgets.js",
+  "./js/courses/mathFormat.js",
   "./data/curriculum.json",
+  "./data/comms2.curriculum.json",
+  "./data/examEE530.curriculum.json",
   "./data/excel_formulas_exact.json",
   "./manifest.json",
 ];

@@ -25,6 +25,19 @@ Ayudar al usuario a **aprobar el examen de BEG06** (Formulación y Evaluación d
 | PPT Cap VI/VII | ⚠️ No parseados (error python-pptx en algunos) |
 | S8 `.xls` fórmulas | ⚠️ Solo valores leídos; lógica replicada manualmente (cuota S8 corregida jun 2026) |
 
+## Arquitectura multi-curso (jul 2026)
+
+La app dejó de ser solo BEG06: ahora es una **plataforma multi-curso**. El home es un **selector de cursos** (tarjetas) y cada curso es un "adaptador" cargado bajo demanda.
+
+- `app/js/app.js` — shell genérico: selector, navegación de módulos/pasos, progreso por curso. **No** contiene lógica de finanzas.
+- `app/js/courses/registry.js` — lista de cursos (metadata + `import()` diferido).
+- `app/js/courses/beg06.js` — adaptador BEG06; **envuelve** `worksheets.js`, `formulaGrid.js`, `cellLegend.js`, `skills.js` sin modificarlos.
+- `app/js/courses/comms2.js` + `commsWidgets.js` — curso "Sistemas de Comunicaciones 2" (widgets de bits: paridad, Hamming). Ejercicios canónicos hasta subir material real.
+- Curriculums: BEG06 en `app/data/curriculum.json`; Comms 2 en `app/data/comms2.curriculum.json`.
+- **Contrato de curso** (export default del adaptador): `{ id, storageKey, curriculumUrl, hero, renderLegend(id), getInteractive(step)→mountFn|null, renderHomeExtras?, wireHomeExtras? }`. `getInteractive` devuelve `mountFn(container,{progress})→{ validate()→bool, afterValidate?(progress) }`.
+- Progreso separado por curso en localStorage (`storageKey` del adaptador). BEG06 conserva su clave `beg06_progress_v2`.
+- Para **agregar un curso**: añade entrada en `registry.js`, un adaptador en `courses/`, su `*.curriculum.json` en `app/data/`, y registra los assets nuevos en `app/sw.js` (subir `CACHE`).
+
 ## Archivos clave — leer primero
 
 1. `README.md` — cómo correr y desplegar
