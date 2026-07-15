@@ -261,6 +261,8 @@ function renderStep() {
   if (mountFn && document.getElementById("grid-mount")) {
     state.gridInstance = mountFn(document.getElementById("grid-mount"), {
       progress: state.progress,
+      module: mod,
+      step,
     });
   }
 }

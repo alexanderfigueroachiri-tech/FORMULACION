@@ -839,6 +839,30 @@ body {
 }
 .solver-goal span { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--accent2); }
 .solver-goal p { margin: 0; font-weight: 600; }
+.givens-panel {
+  background: rgba(250, 204, 21, 0.08);
+  border: 1px solid rgba(250, 204, 21, 0.28);
+  border-radius: 12px;
+  padding: 0.7rem 0.95rem;
+  margin-bottom: 0.9rem;
+}
+.givens-title {
+  display: block;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #fbbf24;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+.givens-panel ul { margin: 0; padding-left: 1.1rem; }
+.givens-panel li { margin: 0.2rem 0; font-size: 0.9rem; }
+.givens-panel code {
+  background: rgba(250, 204, 21, 0.15);
+  padding: 0.05rem 0.35rem;
+  border-radius: 6px;
+}
+
 .solver-answer { margin: 0.25rem 0 0.9rem; }
 .answer-label {
   display: block;

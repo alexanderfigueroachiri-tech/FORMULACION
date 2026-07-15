@@ -31,7 +31,7 @@ export default {
 
   getInteractive(step) {
     if (step.type === "widget" && EXAM_WIDGETS[step.widget]) {
-      return (container) => EXAM_WIDGETS[step.widget](step).mount(container);
+      return (container, ctx) => EXAM_WIDGETS[step.widget](step).mount(container, ctx);
     }
     return null;
   },

@@ -24,9 +24,17 @@ function solverWidget(step) {
   const total = hints.length;
 
   return {
-    mount(container) {
+    mount(container, ctx = {}) {
       let level = 0; // pistas reveladas (0..total); total+1 = solución mostrada
       let solved = false;
+
+      const givens = Array.isArray(ctx.module?.givens) ? ctx.module.givens : [];
+      const givensBlock = givens.length
+        ? `<div class="givens-panel">
+             <span class="givens-title">📋 Datos del enunciado</span>
+             <ul>${givens.map((g) => `<li>${fmtMath(g)}</li>`).join("")}</ul>
+           </div>`
+        : "";
 
       const answerBlock = choices.length
         ? `<div class="solver-answer">
@@ -45,6 +53,7 @@ function solverWidget(step) {
 
       container.innerHTML = `
         <div class="solver-widget">
+          ${givensBlock}
           ${goal ? `<div class="solver-goal"><span>🎯 Objetivo</span><p>${goal}</p></div>` : ""}
           ${answerBlock}
           <div class="solver-help">

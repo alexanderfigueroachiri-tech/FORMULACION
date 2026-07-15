@@ -13,6 +13,12 @@
         "Elegir Δ y f_s evitando sobrecarga de pendiente",
         "Entender por qué el CANAL fija el máximo f_s"
       ],
+      "givens": [
+        "<code>V_pp</code> = 2 V → amplitud pico A_m = 1 V",
+        "<code>B = f_m</code> = 3.4 kHz (peor caso: tono agudo)",
+        "Canal útil hasta 1 MHz → es el TECHO de f_s",
+        "Parte b): f_s = 25 kHz (fija) para voz"
+      ],
       "tips": [
         {
           "human": "En DM se transmite 1 bit por muestra: la tasa de bits es f_s. Y la calidad de DM crece con f_s³ (+9 dB por cada duplicación de f_s).",
