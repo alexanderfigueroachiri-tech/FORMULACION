@@ -4,6 +4,7 @@
  * que escalan hasta la solución. Reusa el motor genérico y el widget "solver".
  */
 import { EXAM_WIDGETS } from "./examWidgets.js";
+import { fmtMath, renderSymbolLegend } from "./mathFormat.js";
 
 export default {
   id: "examEE530",
@@ -15,8 +16,17 @@ export default {
     subtitle: "Lee el enunciado, pide pistas cuando las necesites y avanza entendiendo cada concepto.",
   },
 
+  formatText: fmtMath,
+
   renderLegend() {
     return "";
+  },
+
+  renderHomeExtras() {
+    return `<section class="tips-panel">
+      <h3>Referencia rápida</h3>
+      ${renderSymbolLegend(true)}
+    </section>`;
   },
 
   getInteractive(step) {

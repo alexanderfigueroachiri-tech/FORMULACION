@@ -10,10 +10,12 @@
  * Forma esperada del step:
  *   { widget:"solver", goal:"…", hints:["…","…","…"], solution:"… (HTML)" }
  */
+import { fmtMath, renderSymbolLegend } from "./mathFormat.js";
+
 function solverWidget(step) {
-  const goal = step.goal || "";
-  const hints = Array.isArray(step.hints) ? step.hints : [];
-  const solution = step.solution || "";
+  const goal = fmtMath(step.goal || "");
+  const hints = (Array.isArray(step.hints) ? step.hints : []).map(fmtMath);
+  const solution = fmtMath(step.solution || "");
   const total = hints.length;
 
   return {
@@ -27,6 +29,7 @@ function solverWidget(step) {
           <div class="solver-actions">
             <button type="button" class="btn-secondary solver-hint-btn" id="hint-btn"></button>
           </div>
+          ${renderSymbolLegend(false)}
         </div>`;
 
       const hintsEl = container.querySelector("#solver-hints");

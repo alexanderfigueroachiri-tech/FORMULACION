@@ -21,6 +21,11 @@ function main() {
   return document.getElementById("main");
 }
 
+/** Formatea notación matemática si el curso activo lo pide (no afecta a BEG06). */
+function fmt(s) {
+  return course && course.formatText ? course.formatText(s) : s;
+}
+
 async function init() {
   renderCourseSelector();
   document.getElementById("btn-home").onclick = () => renderCourseSelector();
@@ -34,6 +39,7 @@ function renderCourseSelector() {
   course = null;
   curriculum = null;
   state.gridInstance = null;
+  document.body.className = "";
   main().innerHTML = `
     <header class="hero">
       <p class="eyebrow">Plataforma de estudio</p>
@@ -74,6 +80,7 @@ async function openCourse(courseId) {
     return;
   }
   localStorage.setItem(LAST_COURSE_KEY, courseId);
+  document.body.className = "course-" + courseId;
   state = { moduleIndex: 0, stepIndex: 0, progress: loadProgress(), gridInstance: null };
   renderHome();
 }
@@ -138,10 +145,10 @@ function renderHome() {
         <article class="module-card">
           <div class="module-num">M${mod.order}</div>
           <div class="module-body">
-            <h2>${mod.title}</h2>
+            <h2>${fmt(mod.title)}</h2>
             ${
               mod.objectives?.length
-                ? `<ul class="objectives-preview">${mod.objectives.map((o) => `<li>${o}</li>`).join("")}</ul>`
+                ? `<ul class="objectives-preview">${mod.objectives.map((o) => `<li>${fmt(o)}</li>`).join("")}</ul>`
                 : ""
             }
             <p class="meta">${mod.duration_min ? `${mod.duration_min} min · ` : ""}${done}/${mod.steps.length}</p>
@@ -184,23 +191,23 @@ function renderTips(tips) {
       const tip = typeof t === "string" ? { human: t } : t;
       const ref = tip.formula || tip.excel;
       const refHtml = ref
-        ? `<span class="tip-formula">${tip.formula ? "Fórmula" : "Excel"}: <em>${ref}</em></span>`
+        ? `<span class="tip-formula">${tip.formula ? "Fórmula" : "Excel"}: <em>${fmt(ref)}</em></span>`
         : "";
-      return `<p>💡 ${tip.human}${refHtml ? `<br/>${refHtml}` : ""}</p>`;
+      return `<p>💡 ${fmt(tip.human)}${refHtml ? `<br/>${refHtml}` : ""}</p>`;
     })
     .join("")}</aside>`;
 }
 
 function renderConcept(step) {
-  let body = `<div class="concept-card"><h3>${step.title}</h3><p>${step.body}</p></div>`;
+  let body = `<div class="concept-card"><h3>${fmt(step.title)}</h3><p>${fmt(step.body)}</p></div>`;
   if (step.legendId && course.renderLegend) body += course.renderLegend(step.legendId);
   return body;
 }
 
 function renderFormula(step) {
-  let body = `<div class="formula-card"><h3>${step.title}</h3>
-    <div class="formula-math">${step.formula}</div>
-    ${step.excel_note ? `<p class="formula-note">${step.excel_note}</p>` : ""}
+  let body = `<div class="formula-card"><h3>${fmt(step.title)}</h3>
+    <div class="formula-math">${fmt(step.formula)}</div>
+    ${step.excel_note ? `<p class="formula-note">${fmt(step.excel_note)}</p>` : ""}
     ${
       step.excel_equiv
         ? `<details class="excel-ref-optional"><summary>Si practicas en el Excel del curso</summary><code>${step.excel_equiv}</code></details>`
@@ -225,14 +232,14 @@ function renderStep() {
       <button id="back-modules" class="link">← Modulos</button>
       <span>M${mod.order} · ${state.stepIndex + 1}/${mod.steps.length}</span>
     </nav>
-    <article class="lesson">
-      <h1>${mod.title}</h1>
+    <article class="lesson" data-steptype="${step.type}">
+      <h1>${fmt(mod.title)}</h1>
       ${
         mod.objectives?.length
-          ? `<ul class="objectives-list">${mod.objectives.map((o) => `<li>${o}</li>`).join("")}</ul>`
+          ? `<ul class="objectives-list">${mod.objectives.map((o) => `<li>${fmt(o)}</li>`).join("")}</ul>`
           : ""
       }
-      <p class="step-title">${step.title}</p>
+      <p class="step-title">${fmt(step.title)}</p>
       ${renderTips(mod.tips)}
       ${body}
       <footer class="lesson-footer">
