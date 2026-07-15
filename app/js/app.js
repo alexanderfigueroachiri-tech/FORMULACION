@@ -237,7 +237,7 @@ function renderStep() {
       ${body}
       <footer class="lesson-footer">
         <button id="prev-step" class="btn-secondary" ${state.stepIndex === 0 ? "disabled" : ""}>Anterior</button>
-        <button id="next-step" class="btn-primary">Validar y continuar</button>
+        <button id="next-step" class="btn-primary">${course.nextLabel || "Validar y continuar"}</button>
       </footer>
     </article>`;
 

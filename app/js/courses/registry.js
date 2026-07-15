@@ -20,6 +20,14 @@ export const COURSE_LIST = [
     icon: "📡",
     load: () => import("./comms2.js"),
   },
+  {
+    id: "examEE530",
+    title: "Exámenes EE530 · paso a paso",
+    subtitle: "Resuelve preguntas de examen en modo tarjetas, con pistas bajo demanda que escalan hasta la solución.",
+    tag: "Examen · Guiado",
+    icon: "📝",
+    load: () => import("./examEE530.js"),
+  },
 ];
 
 export function getCourseMeta(id) {

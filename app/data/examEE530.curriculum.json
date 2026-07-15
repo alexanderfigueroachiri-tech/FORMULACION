@@ -1,0 +1,84 @@
+{
+  "course": "Examen Sustitutorio EE530 — Comunicaciones II",
+  "tagline": "Resuelve el examen, paso a paso",
+  "subtitle": "Piloto: Pregunta 1 (Modulación Delta). Pide pistas solo cuando las necesites.",
+  "estimated_hours": 1,
+  "modules": [
+    {
+      "id": "p1-dm",
+      "order": 1,
+      "title": "Pregunta 1 — Modulación Delta (DM)",
+      "duration_min": 25,
+      "objectives": [
+        "Elegir Δ y f_s evitando sobrecarga de pendiente",
+        "Entender por qué el CANAL fija el máximo f_s"
+      ],
+      "tips": [
+        {
+          "human": "En DM se transmite 1 bit por muestra: la tasa de bits es f_s. Y la calidad de DM crece con f_s³ (+9 dB por cada duplicación de f_s).",
+          "formula": "SNR ≈ 0.04 · (f_s / f_B)³"
+        }
+      ],
+      "steps": [
+        {
+          "type": "concept",
+          "title": "Enunciado y datos",
+          "body": "<strong>Enunciado:</strong> Un modulador delta (DM) transmitirá una onda analógica de <strong>2 V pico a pico</strong> y ancho de banda <strong>3.4 kHz</strong>. El canal tiene respuesta <em>extremadamente pobre sobre 1 MHz</em>.<br><br><strong>Datos que extraes:</strong><ul><li>V<sub>pp</sub> = 2 V &rarr; amplitud pico A<sub>m</sub> = <strong>1 V</strong></li><li>Ancho de banda B = f<sub>m</sub> = <strong>3.4 kHz</strong> (peor caso: tono agudo)</li><li>Canal útil hasta <strong>1 MHz</strong> (este es el TECHO de f_s)</li></ul>"
+        },
+        {
+          "type": "widget",
+          "widget": "solver",
+          "title": "a) Elegir la frecuencia de muestreo f_s",
+          "goal": "Decidir qué f_s usar y justificarlo con el canal.",
+          "hints": [
+            "En DM se envía 1 bit por cada muestra, así que la tasa de bits es igual a f_s. Piensa cuánto puedes muestrear sin salirte del canal.",
+            "El flujo binario (NRZ) ocupa un ancho ≈ f_s (primer nulo del espectro). Como el canal muere sobre 1 MHz, f_s tiene un TECHO: f_s ≲ 1 MHz.",
+            "La calidad de DM mejora con f_s³ (≈ +9 dB por octava). Conviene subir f_s casi hasta el techo, pero dejando ~20 % de margen para que los pulsos no se distorsionen."
+          ],
+          "solution": "El canal <strong>sí te condiciona</strong>: fija el máximo. <code>f_s ≤ 1 MHz</code>. Elegimos <strong>f_s ≈ 0.8–1 MHz</strong>. Con margen práctico: <strong>f_s = 0.8 MHz</strong> (máximo teórico: 1 MHz). No se elige un f_s bajo (tipo 64 kHz) porque desperdiciaría el canal y hundiría la SNR."
+        },
+        {
+          "type": "widget",
+          "widget": "solver",
+          "title": "a) Condición anti-sobrecarga y tamaño de paso Δ",
+          "goal": "Hallar el Δ mínimo que evita la sobrecarga de pendiente.",
+          "hints": [
+            "La sobrecarga de pendiente ocurre cuando la señal cambia más rápido de lo que el escalón Δ por muestra puede seguir.",
+            "Condición de Couch: Δ · f_s ≥ |dm/dt|máx. Para una senoide m(t)=A_m·sen(2π f_m t), la pendiente máxima es 2π·f_m·A_m.",
+            "Despeja el paso: Δ = 2π·f_m·A_m / f_s. Sustituye f_m = 3400 Hz, A_m = 1 V y el f_s que elegiste."
+          ],
+          "solution": "<code>Δ = 2π·f_m·A_m / f_s</code>. Con f_s = 1 MHz &rarr; Δ = 2π(3400)(1)/10⁶ ≈ <strong>21 mV</strong>. Con f_s = 0.8 MHz &rarr; Δ ≈ <strong>27 mV</strong>. (Paso pequeño = poco ruido granular.)"
+        },
+        {
+          "type": "widget",
+          "widget": "solver",
+          "title": "a) Rendimiento (SNR) y discusión",
+          "goal": "Calcular la SNR de salida y discutir el desempeño.",
+          "hints": [
+            "El desempeño de DM se mide por la SNR de granularidad, que depende MUY fuerte de f_s.",
+            "Fórmula (Couch): SNR = (3/8π²)·(f_s/f_B)³ ≈ 0.04·(f_s/f_B)³, con f_B = ancho de banda del mensaje.",
+            "Con f_s = 1 MHz: f_s/f_B = 10⁶/3400 ≈ 294 &rarr; SNR ≈ 0.04·294³. Pásalo a dB con 10·log₁₀(·)."
+          ],
+          "solution": "f_s = 1 MHz &rarr; SNR ≈ 0.04·(294)³ ≈ 1.0×10⁶ &rarr; <strong>≈ 60 dB</strong> (techo). f_s = 0.8 MHz &rarr; <strong>≈ 57 dB</strong>. Excelente: el canal generoso permite sobremuestreo ≈150× &rarr; calidad tipo PCM. <em>Contraste:</em> con f_s = 64 kHz solo se logran ≈ 24 dB."
+        },
+        {
+          "type": "widget",
+          "widget": "solver",
+          "title": "b) DM para voz con f_s = 25 kHz — elegir Δ",
+          "goal": "Elegir Δ apropiado para voz (f_s fija = 25 kHz) y discutir el desempeño.",
+          "hints": [
+            "Ahora f_s está fija y es baja (25 kHz). Diseñar para el tono más agudo (3.4 kHz) daría un Δ enorme.",
+            "Si usas 3.4 kHz: Δ = 2π(3400)/25000 ≈ 0.85 V ≈ 85 % de A_m &rarr; ruido granular severo. No sirve.",
+            "En voz, la energía y la pendiente se concentran en frecuencias bajas (~800 Hz). Diseña para 800 Hz: Δ = 2π(800)/25000."
+          ],
+          "solution": "<strong>Δ ≈ 0.2 V</strong> (diseño a ~800 Hz). Desempeño: bueno en promedio (vocales), pero <strong>sobrecarga de pendiente</strong> en fricativas/sibilantes (/s/, /f/), que son de alta frecuencia. Además OSR = f_s/2B ≈ 3.7 (bajo) &rarr; DM lineal es marginal; lo ideal es <strong>DM adaptativa (ADM/CVSD)</strong>."
+        },
+        {
+          "type": "concept",
+          "title": "Conceptos paralelos (por si viene otra variante)",
+          "body": "Temas que suelen acompañar a DM en EE530:<ul><li><strong>PCM</strong>: muestreo &rarr; cuantificación &rarr; codificación; SNR pico = 3·2²ⁿ/(1+4P_e(2²ⁿ−1)).</li><li><strong>ADM / CVSD</strong>: delta adaptativa; el paso Δ crece/decrece según la pendiente (resuelve el compromiso granular↔sobrecarga).</li><li><strong>DPCM</strong>: cuantifica la <em>diferencia</em> con una predicción (menos bits que PCM).</li><li><strong>Codificación de línea</strong> (NRZ, RZ, Manchester, AMI): define el ancho de banda del flujo de bits.</li></ul>"
+        }
+      ]
+    }
+  ]
+}

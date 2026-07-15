@@ -1,4 +1,4 @@
-const CACHE = "eduapp-v9";
+const CACHE = "eduapp-v10";
 const ASSETS = [
   "./",
   "./index.html",
@@ -15,8 +15,11 @@ const ASSETS = [
   "./js/courses/beg06.js",
   "./js/courses/comms2.js",
   "./js/courses/commsWidgets.js",
+  "./js/courses/examEE530.js",
+  "./js/courses/examWidgets.js",
   "./data/curriculum.json",
   "./data/comms2.curriculum.json",
+  "./data/examEE530.curriculum.json",
   "./data/excel_formulas_exact.json",
   "./manifest.json",
 ];
